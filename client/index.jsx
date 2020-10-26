@@ -4,9 +4,12 @@ import ReactDom from "react-dom";
 class App extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      view: "home",
+    };
   }
   render() {
-    return <div>hello</div>;
+    return <div></div>;
   }
 }
 
