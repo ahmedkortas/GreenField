@@ -29,7 +29,7 @@ handleDescription(e){
 }
 
 handlePrice(e){
-    this.setState({ price : NUMBER(e.target.value)})
+    this.setState({ price : e.target.value})
 }
 
 handleSubmit(event){

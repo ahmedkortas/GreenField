@@ -25,8 +25,7 @@ showTaskform(){
 
 
     render() {
-        const {view} = this.state;
-        if (view === 'main') {
+        if (this.state.view === 'main') {
             return (
              <div>
             <button onClick={this.showTaskform}> Add a task</button>
@@ -34,7 +33,7 @@ showTaskform(){
             </div>  
             )                 
           }
-        else if(view === "C.V"){
+        else if(this.state.view === "C.V"){
         return <CV/>
         } else {
             return <PostJob/>

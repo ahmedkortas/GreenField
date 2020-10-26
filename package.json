@@ -39,7 +39,9 @@
     "react-dom": "^16.13.1",
     "react-slideshow-image": "^3.3.0",
     "sass-loader": "^10.0.4",
-    "underscore": "^1.8.3"
+    "underscore": "^1.8.3",
+    "webpack": "^5.2.0",
+    "webpack-cli": "^4.1.0"
   },
   "devDependencies": {
     "babel-core": "^6.23.1",
