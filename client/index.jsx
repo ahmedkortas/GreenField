@@ -8,20 +8,18 @@ class App extends React.Component {
   }
   render() {
     return(
-    <div className="header">
-    <ul>
-      <li><a>Home</a></li>
-      <li><a>Put</a></li>
-      <li><a>Adds</a></li>
-      <li><a>Your offers</a></li>
-      <li><a>Login</a></li>
-    </ul>
-    </div>
-    
-   
-  )
-  
-}
+      <div className="header">
+        <ul>
+          <li><a>Home</a></li>
+          <li><a>Put</a></li>
+          <li><a>Adds</a></li>
+          <li><a>Your offers</a></li>
+          <li><a>Login</a></li>
+        </ul>
+      </div>
+       
+    )
+  }
 }
 
 
