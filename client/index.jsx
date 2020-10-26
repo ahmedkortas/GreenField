@@ -8,25 +8,30 @@ class App extends React.Component {
     this.state = {
       view: "home",
     };
+    this.onClick = this.onClick.bind(this);
   }
+  onClick(e) {
+    this.setState({ view: e.target.innerHTML });
+  }
+
   render() {
     return (
       <div className="header">
         <ul>
           <li>
-            <a>Home</a>
+            <a onClick={this.onClick}>Home</a>
           </li>
           <li>
-            <a>Put</a>
+            <a onClick={this.onClick}>Put</a>
           </li>
           <li>
-            <a>Adds</a>
+            <a onClick={this.onClick}>Adds</a>
           </li>
           <li>
-            <a>Your offers</a>
+            <a onClick={this.onClick}>Your offers</a>
           </li>
           <li>
-            <a>Login</a>
+            <a onClick={this.onClick}>Login</a>
           </li>
         </ul>
       </div>
