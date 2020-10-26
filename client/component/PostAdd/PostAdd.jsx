@@ -1,6 +1,6 @@
 import React from 'react';
-
-
+import CV from './CV';
+import PostJob from './PostJob';
 
 
 class PostAdd extends Component {
@@ -9,6 +9,7 @@ class PostAdd extends Component {
     this.state = { view : "main"  }
 
 this.showCVform = this.showCVform.bind(this);
+this.showTaskform = this.showTaskform.bind(this);
     }
 
 
@@ -18,31 +19,25 @@ showCVform(){
     this.setState({view : "C.V"});
 }
 
+showTaskform(){
+    this.setState({view : ""});
+}
+
 
     render() {
         const {view} = this.state;
         if (view === 'main') {
             return (
              <div>
-            <button> Add a task</button>
-            <button>Add your C.V</button>
+            <button onClick={this.showTaskform}> Add a task</button>
+            <button onClick={this.showCVform}>Add your C.V</button>
             </div>  
             )                 
           }
         else if(view === "C.V"){
-        return (
-             <div >
-        <div>
-          <form>
-            <input></input>
-            <input></input>
-            <textarea type="description"></textarea>
-            <button>Post job</button>
-          </form>
-        </div>
-      </div>
-      
-      );
+        return <CV/>
+        } else {
+            return <PostJob/>
         }
     }
 }
