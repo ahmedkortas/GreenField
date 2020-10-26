@@ -1,9 +1,9 @@
 import React from 'react';
-import CV from './CV';
-import PostJob from './PostJob';
+import CV from './CV.jsx';
+import PostJob from './PostJob.jsx';
 
 
-class PostAdd extends Component {
+class PostAdd extends React.Component {
     constructor(){
         super();
     this.state = { view : "main"  }

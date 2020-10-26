@@ -2,7 +2,7 @@ import React from 'react';
 
 
 
-class CV extends Component {
+class CV extends React.Component {
     constructor(){
     this.state = {
         emailValue : "",

@@ -1,6 +1,6 @@
 import React from 'react';
 
-class PostJob extends Component {
+class PostJob extends React.Component {
     constructor(){
         super()
     this.state = { 
