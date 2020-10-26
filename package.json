@@ -1,0 +1,48 @@
+{
+  "name": "greenfield",
+  "version": "1.0.0",
+  "description": "greenfield project for RBK",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack -d --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahmedkortas/GreenField.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ahmedkortas/GreenField/issues"
+  },
+  "homepage": "https://github.com/ahmedkortas/GreenField#readme",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "body-parser": "^1.19.0",
+    "bootstrap": "^4.5.2",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "jquery": "^3.5.1",
+    "mongoose": "^5.10.9",
+    "nodemailer": "^6.4.14",
+    "nodemailer-smtp-transport": "^2.7.4",
+    "nodemon": "^2.0.5",
+    "react": "^16.13.1",
+    "react-bootstrap": "^1.3.0",
+    "react-dom": "^16.13.1",
+    "react-slideshow-image": "^3.3.0",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.3.2",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-react": "^6.23.0",
+    "webpack": "^2.2.1",
+    "css-loader": "^5.0.0",
+    "style-loader": "^2.0.0",
+    "terser-webpack-plugin": "^5.0.0"
+  }
+}
