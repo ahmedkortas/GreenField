@@ -1,14 +1,27 @@
 import React from "react";
-import SignIn from "./login/SignIn.jsx.js";
-import SignUP from "./login/SignUp.jsx.js";
+import SignIn from "./SignIn.jsx";
+import SignUP from "./SignUp.jsx";
 
 class LogIn extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = {view:false}
-    }
-    render() {
-    return (<div>{this.state.view===false ? <SignIn/> :<SignUP/>}</div>);
-    }
+  constructor(props) {
+    super(props);
+    this.state = { view: false };
+    this.handleOnClick = this.handleOnClick.bind(this);
   }
-  export default LogIn;
+
+  handleOnClick() {
+    this.setState({ view: true });
+  }
+  render() {
+    return (
+      <div>
+        {this.state.view === false ? (
+          <SignIn handleOnClick={this.handleOnClick} />
+        ) : (
+          <SignUP />
+        )}
+      </div>
+    );
+  }
+}
+export default LogIn;
