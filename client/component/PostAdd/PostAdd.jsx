@@ -2,8 +2,9 @@ import React from "react";
 import CV from "./CV.jsx";
 import PostJob from "./PostJob.jsx";
 
-class PostAdd extends Component {
-  constructor() {
+class PostAdd extends React.Component {
+  constructor(props) {
+    super(props);
     this.state = { view: "main" };
 
     this.showCVform = this.showCVform.bind(this);
