@@ -16,6 +16,7 @@ this.showTaskform = this.showTaskform.bind(this);
 
    
 showCVform(){
+    console.log(this.state)
     this.setState({view : "C.V"});
 }
 
