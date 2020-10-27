@@ -9,6 +9,7 @@ class PostAdd extends React.Component {
 
     this.showCVform = this.showCVform.bind(this);
     this.showTaskform = this.showTaskform.bind(this);
+    this.click = this.click.bind(this);
   }
 
   showCVform() {
@@ -18,6 +19,9 @@ class PostAdd extends React.Component {
   showTaskform() {
     this.setState({ view: "" });
   }
+click(){
+    this.setState({ view: "main" });
+}
 
   render() {
     if (this.state.view === "main") {
@@ -28,9 +32,9 @@ class PostAdd extends React.Component {
         </div>
       );
     } else if (this.state.view === "C.V") {
-      return <CV />;
+      return <CV click={this.click}/>;
     } else {
-      return <PostJob />;
+      return <PostJob click={this.click}/>;
     }
   }
 }
