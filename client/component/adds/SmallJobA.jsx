@@ -5,12 +5,14 @@ class SmallJobA extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: null,
+      loge: localStorage.get("email"),
     };
   }
 
+  //querry data
+
   render() {
-    return <div></div>;
+    return;
   }
 }
 
