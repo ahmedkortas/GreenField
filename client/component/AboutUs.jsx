@@ -1,7 +1,7 @@
 //this page when you click on the button on the home page "more information it will be render it"
 
 import React from 'react';
-import "./style/Component/Home.css"
+import "./style/Component/About.css"
 
 class AboutUs extends React.Component {
     constructor(props) {
