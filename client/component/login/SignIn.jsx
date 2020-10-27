@@ -24,7 +24,7 @@ class SignIn extends React.Component {
             required
           />
           <br></br>
-          <div className="title">
+          <div className="btn0">
           <span  onClick={this.props.handleOnClick}>
             No Korfi Account/Create Account
           </span></div>
