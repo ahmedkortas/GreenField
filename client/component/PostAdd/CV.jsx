@@ -1,4 +1,7 @@
 import React from "react";
+import axios from 'axios';
+
+
 
 class CV extends React.Component {
   constructor(props) {
@@ -31,6 +34,16 @@ class CV extends React.Component {
   handleDiplome(e) {
     this.setState({ diploma: e.target.value });
   }
+
+  clickHandler() {
+    let obj = {};
+    obj.email = this.state.emailValue;
+    obj.experience = this.state.experience;
+    obj.language = this.state.language;
+    obj.diploma = this.state.diploma;
+    axio.post("/", obj).then((res) => console.log(res.data));
+  }
+
 
   handleSubmit(event) {
     event.preventDefault();

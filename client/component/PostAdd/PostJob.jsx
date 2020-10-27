@@ -37,6 +37,16 @@ class PostJob extends React.Component {
     this.props.click()
   }
 
+
+  clickHandler() {
+    let obj = {};
+    obj.title = this.state.title;
+    obj.description = this.state.Description;
+    obj.genre = this.state.Genre;
+    obj.price = this.state.Price;
+    axio.post("/", obj).then((res) => console.log(res.data));
+  }
+
   render() {
     console.log(this.props)
     return (

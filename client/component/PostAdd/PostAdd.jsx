@@ -16,6 +16,7 @@ class PostAdd extends React.Component {
     this.setState({ view: "C.V" });
   }
 
+
   showTaskform() {
     this.setState({ view: "" });
   }
