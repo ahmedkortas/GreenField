@@ -43,6 +43,7 @@ this.setState({description : e.target.value});
 
 
   handleSubmit(event) {
+      console.log(this.props)
     event.preventDefault();
     let obj = {};
     obj.email = this.state.emailValue;
