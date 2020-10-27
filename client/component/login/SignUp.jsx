@@ -50,8 +50,8 @@ class SignUp extends React.Component {
     <input type="text" name="user" placeholder="userName" required value={this.state.userName} onChange={(e)=>{this.setState({userName:e.target.value})}}/><br></br>
     <input type="email" name="email" placeholder="email" required value={this.state.email} onChange={(e)=>{this.setState({email:e.target.value})}} /><br></br>
     <input type="password" name="password" placeholder="password" required value={this.state.password} onChange={(e)=>{this.setState({password:e.target.value})}}/><br></br>
-    <input type="text" name="name" placeholder="gender" required value={this.state.gender} onChange={(e)=>{this.setState({gender:e.target.value})}} /><br></br>
-    <input type="text" name="name" placeholder="age" required value={this.state.age} onChange={(e)=>{this.setState({age:e.target.value})}} /><br></br> 
+    <input type="text" name="gender" placeholder="gender" required value={this.state.gender} onChange={(e)=>{this.setState({gender:e.target.value})}} /><br></br>
+    <input type="text" name="age" placeholder="age" required value={this.state.age} onChange={(e)=>{this.setState({age:e.target.value})}} /><br></br> 
     <button type="submit"  name="SignIn" >SignUp </button>
     </form>
       </div>
