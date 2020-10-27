@@ -1,25 +1,24 @@
-const mongoose = require('mongoose');
-const uniqueValidator = require('mongoose-unique-validator');
-const Schema = mongoose.Schema;
-mongoose.connect('mongodb://localhost/test');
-const db = mongoose.connection;
-
-db.on('error', function() {
-    console.log('mongoose connection error');
-  });
-  
-  db.once('open', function() {
-    console.log('mongoose connected successfully');
-  });
+const mongoose = require("mongoose");
+const db = require("./dbConfig");
 
 jpSchema = new Schema({
-    description: String,
-    contact: String,
-    address: String,
-    price: Number,
-    providerEmail: {type:String, required:true, unique: true}
+  description: String,
+  contact: String,
+  address: String,
+  price: Number,
+  providerEmail: { type: String, required: true, unique: true },
 });
 
-jpSchema.plugin(uniqueValidator); 
-
-module.exports = mongoose.model('JP', jpSchema);
+module.exports.NewAd = (obj) => {
+  return new Promise((resolve, reject) => {
+    let description = obj.description;
+    User.findOne({ description: description }, (err, user) => {
+      if (err) return reject(err);
+      if (user === null) {
+        resolve(null);
+      } else {
+        resolve(user);
+      }
+    });
+  });
+};

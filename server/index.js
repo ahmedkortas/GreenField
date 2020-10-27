@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/api/Ads", (req, res) => {
-  console.log(req);
+  r;
   res.send(req.body);
 });
 
