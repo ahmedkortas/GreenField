@@ -2,24 +2,17 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const db = require("../db/dbConfig")
 let app = express();
-let PORT = 3000;
-
-
-
+let dataQueue = require("./dataQuerry.js");
 
 app.use(express.static(__dirname + "/../public"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.post('/Task',(req,res)=>{
-  db(req.body).save().then((g)=>res.json(g))
-})
+app.get("/api/Ads", (req, res) => {
+  console.log(req);
+  res.send(req.body);
+});
 
-app.post('/',(req,res)=>{
-  db(req.body).save().then((g)=>res.json(g))
-})
-
-
-app.listen(PORT, () => {
+app.listen(3000, () => {
   console.log("server is connected");
 });
