@@ -1,14 +1,6 @@
 const db = require("./dbConfig");
 const mongoose = require("mongoose");
 
-db.on('error', function() {
-    console.log('mongoose connection error');
-  });
-  
-  db.once('open', function() {
-    console.log('mongoose connected successfully');
-  });
-
 jpSchema = new Schema({
     description: { type: String, required: true },
     contact: { type: String, required: true },
@@ -17,23 +9,27 @@ jpSchema = new Schema({
     providerEmail: {type:String, required:true, unique: true}
 });
 
-jpSchema.plugin(uniqueValidator); 
+let Jp = mongoose.model("Jp", jpSchema);
 
-let Jp = mongoose.model('JP', jpSchema);
-
-module.exports.create = (obj) => {
+module.exports.NewAd = (obj) => {
   return new Promise((resolve, reject) => {
-    let providerEmail = obj.providerEmail;
-    Jp.findOne({ providerEmail: providerEmail }, (err, data) => {
+    let description = obj.description;
+    Jp.findOne({ description: description }, (err, jp) => {
       if (err) return reject(err);
-      if (data === null) {
-        Jp.create(obj, (err, data) => {
-          if (err) return reject(err);
-          resolve(data);
-        });
+      if (jp === null) {
+        resolve(null);
       } else {
-        resolve("exists");
+        resolve(jp);
       }
+    });
+  });
+};
+
+module.exports.findAll = () => {
+  return new Promise((resolve, reject) => {
+    Jp.find({}, (err, data) => {
+      if (err) return reject(err);
+      resolve(data);
     });
   });
 };

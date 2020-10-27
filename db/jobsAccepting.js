@@ -1,13 +1,14 @@
-const db = require('./dbConfig');
 const mongoose = require("mongoose");
+const db = mongoose.connection;
 
-db.on('error', function() {
-    console.log('mongoose connection error');
-  });
-  
-  db.once('open', function() {
-    console.log('mongoose connected successfully');
-  });
+// jaSchema = new mongoose.Schema({
+//   description: String,
+//   contact: String,
+//   address: String,
+//   price: Number,
+//   employeeEmail: String,
+//   providerEmail: String,
+// });
 
 jaSchema = new Schema({
     description: { type: String, required: true },

@@ -1,0 +1,39 @@
+.btn1{
+    padding: 10px 20px;
+    font-family: Century Gothic;
+    font-size: large;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    background: blueviolet;
+    border-radius: 8px;
+    position: center;
+    margin-top: 500px;
+    margin-left: 20px;
+    
+}
+
+.btn1 :hover{
+    background: black;
+    color: rgb(101, 26, 171);
+}
+
+.btn2{
+    padding: 10px 20px;
+    font-family: Century Gothic;
+    font-size: large;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    background: blueviolet;
+    border-radius: 8px;
+    position: center;
+    margin-top: -500px;
+    margin-left: 20px;
+    
+}
+
+.btn2 :hover{
+    background: black;
+    color: rgb(101, 26, 171);
+}
