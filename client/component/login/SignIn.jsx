@@ -36,7 +36,7 @@ class SignIn extends React.Component {
           <span  onClick={this.props.handleOnClick}>
             No Korfi Account/Create Account
           </span></div>
-          <button className="btn" type="submit" name="SignIn">
+          <button className="btnIn" type="submit" name="SignIn">
             SignIn{" "}
           </button>
         </form>

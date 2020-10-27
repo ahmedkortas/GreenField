@@ -14,6 +14,24 @@
   background: #f1f1f1;
 }
 
+.inputFields > label{
+  font-size: 20px;
+  margin-top: 50px;
+}
+.inputFields > input{
+  margin: 20px;
+  background-color: #f1f1f1;
+  width: 50%;
+  padding-top:0.5rem;
+  padding-bottom:0.5rem;
+  margin-top: 50px;
+  
+}
+
+.inputFields > select{
+  font-size: 20px;
+}
+
 .i2{
     position:absolute;
     top:30%;
@@ -76,7 +94,7 @@ padding-bottom:1rem;
   -webkit-transform:translate(-50%,-50%);
           transform:translate(-50%,-50%);
           border-color: black;
-          background: #f1f1f1;
+          background: white;
           width: 700px;
           height: 500px;
 

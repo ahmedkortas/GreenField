@@ -1,4 +1,4 @@
-.btn{
+.btnIn{
     position: flex;
     padding: 10px 20px;
     font-family: Century Gothic;
@@ -14,7 +14,7 @@
     
 }
 
-.btn :hover{
+.btnIn :hover{
     background: black;
     color: rgb(101, 26, 171);
     
