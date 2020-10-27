@@ -1,12 +1,8 @@
-.title{
-    text-align: center;
-    margin-bottom: 20px;
 
-}
 
 .i1{
     position:absolute;
-    top:50%;
+    top:20%;
     left:50%;
     width:50%;
   padding-top:1rem;
@@ -20,7 +16,7 @@
 
 .i2{
     position:absolute;
-    top:60%;
+    top:30%;
     left:50%;
     width:50%;
   padding-top:1rem;
@@ -33,7 +29,7 @@
 
 .i3{
     position:absolute;
-    top:70%;
+    top:40%;
     left:50%;
     width:50%;
   padding-top:1rem;
@@ -46,7 +42,7 @@
 
 .i4{
     position:absolute;
-    top:80%;
+    top:50%;
     left:50%;
     width:50%;
   padding-top:1rem;
@@ -57,7 +53,20 @@
             background: #f1f1f1;
 }
 
-.btn1{
+.i5{
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:50%;
+  padding-top:1rem;
+  padding-bottom:1rem;
+    -webkit-transform:translate(-50%,-50%);
+            transform:translate(-50%,-50%);
+            border-color: black;
+            background: #f1f1f1;
+}
+
+.btn{
     padding: 10px 20px;
     font-family: Century Gothic;
     font-size: large;
@@ -72,7 +81,7 @@
     
 }
 
-.btn1 :hover{
+.btn :hover{
     background: black;
     color: rgb(101, 26, 171);
 }

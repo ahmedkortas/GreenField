@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import "./SignUp.css"
 
 class SignUp extends React.Component {
     constructor(props) {
@@ -47,6 +48,7 @@ class SignUp extends React.Component {
       
       return (<div>
     <form onSubmit={this.addUser}>
+
     <h1>Register</h1>
     <p>Please fill in this form to create an account.</p>
     <label htmlFor="username"><b>UserName</b></label>
@@ -68,6 +70,7 @@ class SignUp extends React.Component {
     <input type="text" name="age" placeholder="Enter your Age" required value={this.state.age} onChange={(e)=>{this.setState({age:e.target.value})}} /><br></br> 
   
     <button type="submit"  name="SignIn" >SignUp </button>
+
     </form>
       </div>
       );
@@ -75,3 +78,4 @@ class SignUp extends React.Component {
   }
   
   export default SignUp;
+
