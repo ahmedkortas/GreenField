@@ -15,7 +15,8 @@ body{
     top: 0;
     width: 100%;
     background-color: rgba(0,0,0,.2);
-    position: fixed;
+    position: flex;
+    display: block;
    
 }
 

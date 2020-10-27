@@ -13,10 +13,10 @@ class SignIn extends React.Component {
   render() {
     return (
       <div>
-        <form>
-          <input type="email" name="email" placeholder="email" required />
+        <form >
+          <input className="i1" type="email" name="email" placeholder="email" required />
           <br></br>
-          <input
+          <input className="i2"
             type="password"
             name="password"
             placeholder="password"
