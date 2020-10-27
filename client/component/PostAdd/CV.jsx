@@ -1,4 +1,5 @@
 import React from "react";
+import axios from 'axios';
 import "./CV.css"
 
 class CV extends React.Component {
@@ -9,11 +10,13 @@ class CV extends React.Component {
       experience: "",
       language: "",
       diploma: "",
+      description : ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handlEmailChange = this.handlEmailChange.bind(this);
     this.handleExperience = this.handleExperience.bind(this);
     this.handleLanguage = this.handleLanguage.bind(this);
+    this.handlDescritpion = this.handlDescritpion.bind(this)
   }
 
   handlEmailChange(e) {
@@ -32,9 +35,22 @@ class CV extends React.Component {
   handleDiplome(e) {
     this.setState({ diploma: e.target.value });
   }
+handlDescritpion(e){
+this.setState({description : e.target.value});
+}
+
+
 
   handleSubmit(event) {
     event.preventDefault();
+    let obj = {};
+    obj.email = this.state.emailValue;
+    obj.description = this.state.description;
+    obj.experience = this.state.experience;
+    obj.language = this.state.language;
+    obj.diploma = this.state.diploma;
+    axios.post("/task", obj).then((res) => console.log(res.data));
+    this.props.click()
   }
 
   render() {
@@ -51,7 +67,7 @@ class CV extends React.Component {
               onChange={this.handleExperience}
               placeholder="experience"
             ></textarea>
-            <button className="btn1" onClick={this.handleSubmit}>Post your resume</button>
+            <button className="btn" onClick={this.handleSubmit}>Post your resume</button>
           </form>
         </div>
       </div>
