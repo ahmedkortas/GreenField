@@ -13,7 +13,6 @@ class SignUp extends React.Component {
           phoneNumber:'',
           gender:'male',
           age:'',
-          check:""
       };
       this.addUser=this.addUser.bind(this);
     }
@@ -28,7 +27,6 @@ class SignUp extends React.Component {
         phone: this.state.phone,
         gender:this.state.gender,
         age:this.state.age,
-
       }
       axios.post("/api/SignUp",newUser)
       .then(res => console.log(res.data));
@@ -39,8 +37,7 @@ class SignUp extends React.Component {
           address:'',
           phone:'',
           gender:'',
-          age:'',
-          check:"SignIn"
+          age:'',        
           })
     }
     render() {
