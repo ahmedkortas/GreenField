@@ -1,51 +1,42 @@
-import React from 'react';
+import React from "react";
+import CV from "./CV.jsx";
+import PostJob from "./PostJob.jsx";
 
+class PostAdd extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { view: "main" };
 
+    this.showCVform = this.showCVform.bind(this);
+    this.showTaskform = this.showTaskform.bind(this);
+    this.click = this.click.bind(this);
+  }
 
+  showCVform() {
+    this.setState({ view: "C.V" });
+  }
 
-class PostAdd extends Component {
-    constructor(){
-        super();
-    this.state = { view : "main"  }
-
-this.showCVform = this.showCVform.bind(this);
-    }
-
-
-
-   
-showCVform(){
-    this.setState({view : "C.V"});
+  showTaskform() {
+    this.setState({ view: "" });
+  }
+click(){
+    this.setState({ view: "main" });
 }
 
-
-    render() {
-        const {view} = this.state;
-        if (view === 'main') {
-            return (
-             <div>
-            <button> Add a task</button>
-            <button>Add your C.V</button>
-            </div>  
-            )                 
-          }
-        else if(view === "C.V"){
-        return (
-             <div >
+  render() {
+    if (this.state.view === "main") {
+      return (
         <div>
-          <form>
-            <input></input>
-            <input></input>
-            <textarea type="description"></textarea>
-            <button>Post job</button>
-          </form>
+          <button onClick={this.showTaskform}> Add a task</button>
+          <button onClick={this.showCVform}>Add your C.V</button>
         </div>
-      </div>
-      
       );
-        }
+    } else if (this.state.view === "C.V") {
+      return <CV click={this.click}/>;
+    } else {
+      return <PostJob click={this.click}/>;
     }
+  }
 }
- 
+
 export default PostAdd;
- 

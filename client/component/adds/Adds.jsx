@@ -1,5 +1,4 @@
 import React from "react";
-import
 
 class Adds extends React.Component {
   constructor(props) {
