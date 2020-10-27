@@ -32,7 +32,7 @@ class SignIn extends React.Component {
             required value={this.state.pasword} onChange={(e)=>{this.setState({pasword:e.target.value})}}
           />
           <br></br>
-          <div className="title">
+          <div className="btn0">
           <span  onClick={this.props.handleOnClick}>
             No Korfi Account/Create Account
           </span></div>
