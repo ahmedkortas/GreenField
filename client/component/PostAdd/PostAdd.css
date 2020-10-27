@@ -1,6 +1,15 @@
-.btn1{
+/* .btn1{
     background : linear-gradient(to right, #0c1700, #81f802, #0c1700);
     color: #000;
     margin-top: 500px;
 
+} */
+
+.btn1{
+    background-color: #ff00e4;
+    color: #58014f;
+    border-radius: 30px;
+    text-align: right;
+    width: 160px;
+    padding-right: 20px;
 }
