@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/api/Ads", (req, res) => {
   console.log(req);
-  res.send("hey");
+  res.send(req.body);
 });
 
 app.listen(PORT, () => {
