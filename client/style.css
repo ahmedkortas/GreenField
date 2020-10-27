@@ -1,12 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
 body{
-    background-image: url('https://static-cse.canva.com/blob/143689/image32.jpg');
+    background-color: white;
     background-size: cover;
     height: 100vh;
 }
 
+
 .header{
+    top: 0;
     width: 100%;
     background-color: rgba(0,0,0,.2);
+    position: flex;
+    display: block;
+   
 }
 
 .header ul{
@@ -35,4 +46,4 @@ body{
 
 .header ul li a:hover{
     background-color: #211b4385;
-}
+} 
