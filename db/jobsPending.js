@@ -9,16 +9,27 @@ jpSchema = new Schema({
   providerEmail: { type: String, required: true, unique: true },
 });
 
+let Jp = mongoose.model("Jp", jpSchema);
+
 module.exports.NewAd = (obj) => {
   return new Promise((resolve, reject) => {
     let description = obj.description;
-    User.findOne({ description: description }, (err, user) => {
+    Jp.findOne({ description: description }, (err, jp) => {
       if (err) return reject(err);
-      if (user === null) {
+      if (jp === null) {
         resolve(null);
       } else {
-        resolve(user);
+        resolve(jp);
       }
+    });
+  });
+};
+
+module.exports.findAll = () => {
+  return new Promise((resolve, reject) => {
+    Jp.find({}, (err, data) => {
+      if (err) return reject(err);
+      resolve(data);
     });
   });
 };
