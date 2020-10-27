@@ -34,11 +34,10 @@ class PostJob extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.props.click()
+    this.props.click();
   }
 
   render() {
-    console.log(this.props)
     return (
       <div>
         <div>

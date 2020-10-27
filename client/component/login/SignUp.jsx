@@ -47,11 +47,18 @@ class SignUp extends React.Component {
       if(this.state.check === ""){
       return (<div>
     <form onSubmit={this.addUser}>
-    <input type="text" name="user" placeholder="userName" required value={this.state.userName} onChange={(e)=>{this.setState({userName:e.target.value})}}/><br></br>
-    <input type="email" name="email" placeholder="email" required value={this.state.email} onChange={(e)=>{this.setState({email:e.target.value})}} /><br></br>
-    <input type="password" name="password" placeholder="password" required value={this.state.password} onChange={(e)=>{this.setState({password:e.target.value})}}/><br></br>
-    <input type="text" name="gender" placeholder="gender" required value={this.state.gender} onChange={(e)=>{this.setState({gender:e.target.value})}} /><br></br>
-    <input type="text" name="age" placeholder="age" required value={this.state.age} onChange={(e)=>{this.setState({age:e.target.value})}} /><br></br> 
+    <h1>Register</h1>
+    <p>Please fill in this form to create an account.</p>
+    <label for="username"><b>UserName</b></label>
+    <input type="text" name="user" placeholder="Enter Your UserName" required value={this.state.userName} onChange={(e)=>{this.setState({userName:e.target.value})}}/><br></br>
+    <label for="email"><b>Email</b></label>
+    <input type="text" name="email" placeholder="Enter Your Email" required value={this.state.email} onChange={(e)=>{this.setState({email:e.target.value})}} /><br></br>
+    <label for="password"><b>Password</b></label>
+    <input type="password" name="psw" placeholder="Enter Your Password" required value={this.state.password} onChange={(e)=>{this.setState({password:e.target.value})}}/><br></br>
+    <label for="gender"><b>Gender</b></label>
+    <input type="text" name="gender" placeholder="Choose your Gender" required value={this.state.gender} onChange={(e)=>{this.setState({gender:e.target.value})}} /><br></br>
+    <label for="age"><b>Age</b></label>
+    <input type="text" name="age" placeholder="Enter your Age" required value={this.state.age} onChange={(e)=>{this.setState({age:e.target.value})}} /><br></br> 
     <button type="submit"  name="SignIn" >SignUp </button>
     </form>
       </div>
