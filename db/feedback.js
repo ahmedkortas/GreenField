@@ -16,7 +16,7 @@ fbSchema = new Schema({
 
 let Fb = mongoose.model('FB', fbSchema);
 
-module.exports.create = () => {
+module.exports.findAll = () => {
   return new Promise((resolve, reject) => {
   Fb.find({}, function(err, data) {
     if (err) return reject(err);

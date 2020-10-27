@@ -20,7 +20,7 @@ jaSchema = new Schema({
 
 let Ja = mongoose.model('JA', jaSchema);
 
-module.exports.create = () => {
+module.exports.findAll = () => {
   return new Promise((resolve, reject) => {
   Ja.find({}, function(err, data) {
     if (err) return reject(err);
