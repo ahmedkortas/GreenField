@@ -1,16 +1,7 @@
+const mongoose = require("mongoose");
 const db = require("./dbConfig");
 
-console.log(db);
-
-db.on("error", function () {
-  console.log("mongoose connection error");
-});
-
-db.once("open", function () {
-  console.log("mongoose connected successfully");
-});
-
-const userSchema = new Schema({
+const userSchema = new mongoose.Schema({
   name: { type: String, required: true },
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
