@@ -49,7 +49,7 @@ this.setState({description : e.target.value});
     obj.experience = this.state.experience;
     obj.language = this.state.language;
     obj.diploma = this.state.diploma;
-    axios.post("/task", obj).then((res) => console.log(res.data));
+    axios.post("/cv", obj).then((res) => console.log(res.data));
     this.props.click()
   }
 

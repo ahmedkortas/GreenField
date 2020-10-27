@@ -27,7 +27,7 @@ class PostJob extends React.Component {
   }
 
   handleDescription(e) {
-    this.setState({ description: e.target.description });
+    this.setState({ description: e.target.value });
   }
 
   handlePrice(e) {
