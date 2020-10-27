@@ -5,11 +5,19 @@ class SignIn extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      users: [],
+      // users: [],
       email: "",
-      password: "",
+      password: ""
     };
   }
+  postUser(e){
+    e.preventDefault()
+    const users = {
+      email:this.state.email,
+      password:this.state.password
+    }
+  }
+
 
   render() {
     return (
@@ -21,10 +29,10 @@ class SignIn extends React.Component {
             type="password"
             name="password"
             placeholder="password"
-            required
+            required value={this.state.pasword} onChange={(e)=>{this.setState({pasword:e.target.value})}}
           />
           <br></br>
-          <div className="title">
+          <div className="btn0">
           <span  onClick={this.props.handleOnClick}>
             No Korfi Account/Create Account
           </span></div>

@@ -1,4 +1,7 @@
 const express = require("express");
+
+let PORT = 3000;
+
 const bodyParser = require("body-parser");
 const Jp = require("../db/jobsPending");
 const CV = require("../db/cv")
@@ -23,7 +26,9 @@ app.post('/cv',(req,res)=>{
   console.log(req.body)
   CV(req.body).save().then((g)=>res.json(g))
 })
-
-app.listen(3000, () => {
-  console.log("server is connected");
+app.listen(PORT, () => {
+  console.log("server is connected and listning ya derwish ");
 });
+
+
+
