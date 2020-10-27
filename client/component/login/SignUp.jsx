@@ -30,18 +30,18 @@ class SignUp extends React.Component {
         age:this.state.age,
 
       }
-      // axios.post('http://localhost:3000/',newUser)
-      // .then(res => console.log(res.data));
-      //     this.setState({
-      //     userName:'',
-      //     email:'',
-      //     password:'',
-      //     adress:'',
-      //     phoneNumber:'',
-      //     gender:'',
-      //     age:'',
-      //     check:"SignIn"
-      //     })
+      axios.post("/api/SignUp",newUser)
+      .then(res => console.log(res.data));
+          this.setState({
+          userName:'',
+          email:'',
+          password:'',
+          adress:'',
+          phoneNumber:'',
+          gender:'',
+          age:'',
+          check:"SignIn"
+          })
     }
     render() {
       if(this.state.check === ""){
