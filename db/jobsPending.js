@@ -7,9 +7,12 @@ jpSchema = new Schema({
     address: { type: String, required: true },
     price: { type: Number, required: true },
     providerEmail: {type:String, required:true, unique: true}
+
 });
 
 let Jp = mongoose.model("Jp", jpSchema);
+
+module.exports = Jp;
 
 module.exports.NewAd = (obj) => {
   return new Promise((resolve, reject) => {
