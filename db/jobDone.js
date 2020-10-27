@@ -10,17 +10,18 @@ db.once("open", function () {
 });
 
 jdSchema = new mongoose.Schema({
-  rating: { type: Number, required: true },
-  feedbackGiverEmail: { type: String, required: true },
-  feedback: { type: String, required: true },
-  employeeEmail: { type: String, required: true },
+  description: { type: String, required: true },
+  contact: { type: String, required: true },
+  address: { type: String, required: true },
+  price: { type: Number, required: true },
+  providerEmail: { type: String, required: true, unique: true },
 });
 
 let Jd = mongoose.model("JD", jdSchema);
 
-module.exports.findAll = () => {
+module.exports.findAll = (email) => {
   return new Promise((resolve, reject) => {
-    Jd.find({}, function (err, data) {
+    Jd.find({employeeEmail:email}, function (err, data) {
       if (err) return reject(err);
       else {
         resolve(data);
