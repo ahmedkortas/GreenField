@@ -1,4 +1,5 @@
 import React from "react";
+import "./PostJob.css"
 
 class PostJob extends React.Component {
   constructor() {
@@ -34,24 +35,23 @@ class PostJob extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.props.click()
+    this.props.click();
   }
 
   render() {
-    console.log(this.props)
     return (
       <div>
         <div>
-          <h2>Post your Task</h2>
+          <h2 className="title">Post your Task</h2>
           <form>
-            <input type="text" onChange={this.handleTitle}></input>
-            <input type="text" onChange={this.handleGenre}></input>
-            <textarea
+            <input className="i1" type="text" onChange={this.handleTitle}></input>
+            <input className="i2" type="text" onChange={this.handleGenre}></input>
+            <textarea className="i3"
               onChange={this.handleDescription}
               placeholder={"your text"}
             ></textarea>
-            <input type="number" onChange={this.handlePrice}></input>
-            <button onClick={this.handleSubmit}>Share Task</button>
+            <input className="i4" type="number" onChange={this.handlePrice}></input>
+            <button className="btn1" onClick={this.handleSubmit}>Share Task</button>
           </form>
         </div>
       </div>
