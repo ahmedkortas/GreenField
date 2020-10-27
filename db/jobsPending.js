@@ -10,6 +10,6 @@ jpSchema = new Schema({
     providerEmail: {type:String, required:true, unique: true}
 });
 
-jpSchema.plugin(uniqueValidator);
+jpSchema.plugin(uniqueValidator); 
 
 module.exports = mongoose.model('JP', jpSchema);
