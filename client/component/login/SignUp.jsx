@@ -70,7 +70,7 @@ class SignUp extends React.Component {
     }else {
       return (
         <div>
-          <button onClick={props.onClick} name="" >Enter </button>
+          <button name="Home" >Enter </button>
         </div>
       )
     }
