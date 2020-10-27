@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+
 import cvpSchema from './cv';
 import userSchema from './user';
 import jaSchema from './jobsAccepting';
