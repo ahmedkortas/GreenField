@@ -1,4 +1,5 @@
 import React from "react";
+import "./SignIn.css"
 
 class SignIn extends React.Component {
   constructor(props) {
@@ -23,10 +24,11 @@ class SignIn extends React.Component {
             required
           />
           <br></br>
-          <span onClick={this.props.handleOnClick}>
+          <div className="title">
+          <span  onClick={this.props.handleOnClick}>
             No Korfi Account/Create Account
-          </span>
-          <button type="submit" name="SignIn">
+          </span></div>
+          <button className="btn" type="submit" name="SignIn">
             SignIn{" "}
           </button>
         </form>

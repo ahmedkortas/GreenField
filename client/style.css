@@ -5,7 +5,7 @@
 
 
 body{
-    background-image: url('https://images.unsplash.com/photo-1589560485882-db59d911fd6e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80');
+    background-color: white;
     background-size: cover;
     height: 100vh;
 }

@@ -7,6 +7,7 @@
   padding-bottom:1rem;
     -webkit-transform:translate(-50%,-50%);
             transform:translate(-50%,-50%);
+            border-color: black;
 }
 
 .in2{
@@ -18,6 +19,7 @@
   padding-bottom:1rem;
     -webkit-transform:translate(-50%,-50%);
             transform:translate(-50%,-50%);
+            border-color: black;
 }
 
 .in3{
@@ -29,6 +31,7 @@
   padding-bottom:1rem;
     -webkit-transform:translate(-50%,-50%);
             transform:translate(-50%,-50%);
+            border-color: black;
 }
 
 .in4{
@@ -40,6 +43,7 @@
   padding-bottom:1rem;
     -webkit-transform:translate(-50%,-50%);
             transform:translate(-50%,-50%);
+            border-color: black;
 }
 
 .btn1{

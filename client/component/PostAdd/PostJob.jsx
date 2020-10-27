@@ -42,7 +42,7 @@ class PostJob extends React.Component {
     return (
       <div>
         <div>
-          <h2>Post your Task</h2>
+          <h2 className="title">Post your Task</h2>
           <form>
             <input className="i1" type="text" onChange={this.handleTitle}></input>
             <input className="i2" type="text" onChange={this.handleGenre}></input>
