@@ -67,7 +67,7 @@ this.setState({description : e.target.value});
               onChange={this.handleExperience}
               placeholder="experience"
             ></textarea>
-            <button className="btn1" onClick={this.handleSubmit}>Post your resume</button>
+            <button className="btn" onClick={this.handleSubmit}>Post your resume</button>
           </form>
         </div>
       </div>

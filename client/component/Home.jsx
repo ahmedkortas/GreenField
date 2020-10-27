@@ -9,8 +9,8 @@ class Home extends React.Component {
     return (
       <div>
      <div className="heading">
-        <h2 className="title">Professionals You Need, From People You Know.</h2><br>
-        </br>
+        <h2 className="title">Professionals You Need, From People You Know.</h2>
+        
         <p className="subheading">From Dog Walkers and Babysitters to Hairstylists and Personal Trainers, to...</p>
       </div>
       <div className="container">
