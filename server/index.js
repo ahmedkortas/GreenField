@@ -14,7 +14,7 @@ app.get("/api/Ads", (req, res) => {
   res.send(req.body);
 });
 app.post("/api/SignUp", function (req, res) {
-  console.log('hello');
+  console.log(req.body);
   res.send('hi');
   // let obj = req.body;
   // SignUp.create(obj).then((data) => {
