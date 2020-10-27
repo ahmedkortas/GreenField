@@ -1,23 +1,33 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
-mongoose.connect('mongodb://localhost/test');
+const mongoose = require("mongoose");
 const db = mongoose.connection;
 
-db.on('error', function() {
-    console.log('mongoose connection error');
-  });
-  
-  db.once('open', function() {
-    console.log('mongoose connected successfully');
-  });
+// jaSchema = new mongoose.Schema({
+//   description: String,
+//   contact: String,
+//   address: String,
+//   price: Number,
+//   employeeEmail: String,
+//   providerEmail: String,
+// });
 
 jaSchema = new Schema({
-    description: String,
-    contact: String,
-    address: String,
-    price: Number,
-    employeeEmail: String,
-    providerEmail: String,
+    description: { type: String, required: true },
+    contact: { type: String, required: true },
+    address: { type: String, required: true },
+    price: { type: Number, required: true },
+    employeeEmail: { type: String, required: true },
+    providerEmail: { type: String, required: true },
 })
 
-module.exports = mongoose.model('JA', jaSchema);
+let Ja = mongoose.model('JA', jaSchema);
+
+module.exports.findAll = () => {
+  return new Promise((resolve, reject) => {
+  Ja.find({}, function(err, data) {
+    if (err) return reject(err);
+    else {
+      resolve(data);
+    }
+  });
+});
+}
