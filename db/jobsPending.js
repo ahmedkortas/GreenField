@@ -20,3 +20,20 @@ jpSchema = new Schema({
 jpSchema.plugin(uniqueValidator); 
 
 let Jp = mongoose.model('JP', jpSchema);
+
+module.exports.create = (obj) => {
+  return new Promise((resolve, reject) => {
+    let providerEmail = obj.providerEmail;
+    Jp.findOne({ providerEmail: providerEmail }, (err, data) => {
+      if (err) return reject(err);
+      if (data === null) {
+        Jp.create(obj, (err, data) => {
+          if (err) return reject(err);
+          resolve(data);
+        });
+      } else {
+        resolve("exists");
+      }
+    });
+  });
+};

@@ -24,3 +24,20 @@ const cvpSchema = new Schema({
 
 let Cv = mongoose.model('CV', cvpSchema);
 
+module.exports.create = (obj) => {
+  return new Promise((resolve, reject) => {
+    let email = obj.email;
+    Cv.findOne({ email: email }, (err, data) => {
+      if (err) return reject(err);
+      if (data === null) {
+        Cv.create(obj, (err, data) => {
+          if (err) return reject(err);
+          resolve(data);
+        });
+      } else {
+        resolve("exists");
+      }
+    });
+  });
+};
+

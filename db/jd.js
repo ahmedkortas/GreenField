@@ -17,3 +17,14 @@ jdSchema = new Schema({
 });
 
 let Jd = mongoose.model('JD', jdSchema);
+
+module.exports.create = () => {
+  return new Promise((resolve, reject) => {
+  Jd.find({}, function(err, data) {
+    if (err) return reject(err);
+    else {
+      resolve(data);
+    }
+  });
+});
+}

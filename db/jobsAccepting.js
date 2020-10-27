@@ -19,3 +19,14 @@ jaSchema = new Schema({
 })
 
 let Ja = mongoose.model('JA', jaSchema);
+
+module.exports.create = () => {
+  return new Promise((resolve, reject) => {
+  Ja.find({}, function(err, data) {
+    if (err) return reject(err);
+    else {
+      resolve(data);
+    }
+  });
+});
+}

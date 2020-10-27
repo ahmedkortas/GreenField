@@ -15,3 +15,14 @@ fbSchema = new Schema({
 });
 
 let Fb = mongoose.model('FB', fbSchema);
+
+module.exports.create = () => {
+  return new Promise((resolve, reject) => {
+  Fb.find({}, function(err, data) {
+    if (err) return reject(err);
+    else {
+      resolve(data);
+    }
+  });
+});
+}
