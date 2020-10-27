@@ -15,6 +15,9 @@ app.post('/Task',(req,res)=>{
   db(req.body).save().then((g)=>res.json(g))
 })
 
+app.post('/',(req,res)=>{
+  db(req.body).save().then((g)=>res.json(g))
+})
 
 
 app.listen(PORT, () => {

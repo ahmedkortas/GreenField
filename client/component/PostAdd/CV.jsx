@@ -40,19 +40,17 @@ handlDescritpion(e){
 this.setState({description : e.target.value});
 }
 
-  clickHandler() {
+
+
+  handleSubmit(event) {
+    event.preventDefault();
     let obj = {};
     obj.email = this.state.emailValue;
     obj.description = this.state.description;
     obj.experience = this.state.experience;
     obj.language = this.state.language;
     obj.diploma = this.state.diploma;
-    axio.post("/task", obj).then((res) => console.log(res.data));
-  }
-
-
-  handleSubmit(event) {
-    event.preventDefault();
+    axios.post("/task", obj).then((res) => console.log(res.data));
     this.props.click()
   }
 

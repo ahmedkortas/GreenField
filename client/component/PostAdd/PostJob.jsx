@@ -1,27 +1,29 @@
 import React from "react";
+import axios from 'axios';
+
 
 class PostJob extends React.Component {
   constructor() {
     super();
     this.state = {
-      title: "",
-      genre: "",
+      adress: "",
+      contact: "",
       description: "",
       price: 0,
     };
     this.handleTitle = this.handleTitle.bind(this);
     this.handleDescription = this.handleDescription.bind(this);
-    this.handleGenre = this.handleGenre.bind(this);
+    this.handleContact = this.handleContact.bind(this);
     this.handlePrice = this.handlePrice.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleTitle(e) {
-    this.setState({ title: e.target.value });
+    this.setState({ adress: e.target.value });
   }
 
-  handleGenre(e) {
-    this.setState({ genre: e.target.value });
+  handleContact(e) {
+    this.setState({ contact: e.target.value });
   }
 
   handleDescription(e) {
@@ -34,18 +36,24 @@ class PostJob extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
+    let obj = {};
+      obj.adress= this.state.adress;
+      obj.description = this.state.description;
+      obj.contact = this.state.contact;
+      obj.price = this.state.price;
+      axios.post("/", obj).then((res) => console.log(res.data));
     this.props.click();
   }
 
 
-  clickHandler() {
-    let obj = {};
-    obj.title = this.state.title;
-    obj.description = this.state.Description;
-    obj.genre = this.state.Genre;
-    obj.price = this.state.Price;
-    axio.post("/", obj).then((res) => console.log(res.data));
-  }
+  // clickHandler() {
+  //   let obj = {};
+  //   obj.adress= this.state.adress;
+  //   obj.description = this.state.description;
+  //   obj.contact = this.state.contact;
+  //   obj.price = this.state.price;
+  //   axio.post("/", obj).then((res) => console.log(res.data));
+  // }
 
   render() {
     return (
@@ -53,8 +61,8 @@ class PostJob extends React.Component {
         <div>
           <h2>Post your Task</h2>
           <form>
-            <input type="text" onChange={this.handleTitle}></input>
-            <input type="text" onChange={this.handleGenre}></input>
+            <input type="text" onChange={this.handleTitle} placeholder="adress"></input>
+            <input type="text" onChange={this.handleContact} placeholder="contact"></input>
             <textarea
               onChange={this.handleDescription}
               placeholder={"your text"}

@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
-
+mongoose.connect('mongodb://localhost/test');
+const db = mongoose.connection;
 import cvpSchema from './cv';
 import userSchema from './user';
 import jaSchema from './jobsAccepting';
