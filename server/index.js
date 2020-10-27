@@ -2,7 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const db = require("../db/dbConfig")
 let app = express();
-let dataQueue = require("./dataQuerry.js");
+let user = require("../db/user.js");
 
 app.use(express.static(__dirname + "/../public"));
 app.use(bodyParser.json());
