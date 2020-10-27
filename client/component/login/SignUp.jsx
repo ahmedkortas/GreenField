@@ -56,9 +56,13 @@ class SignUp extends React.Component {
     <label for="password"><b>Password</b></label>
     <input type="password" name="psw" placeholder="Enter Your Password" required value={this.state.password} onChange={(e)=>{this.setState({password:e.target.value})}}/><br></br>
     <label for="gender"><b>Gender</b></label>
-    <input type="text" name="gender" placeholder="Choose your Gender" required value={this.state.gender} onChange={(e)=>{this.setState({gender:e.target.value})}} /><br></br>
+    <select id="cars">
+  <option value="male">male</option>
+  <option value="femal">femal</option>
+  </select>
     <label for="age"><b>Age</b></label>
     <input type="text" name="age" placeholder="Enter your Age" required value={this.state.age} onChange={(e)=>{this.setState({age:e.target.value})}} /><br></br> 
+  
     <button type="submit"  name="SignIn" >SignUp </button>
     </form>
       </div>
