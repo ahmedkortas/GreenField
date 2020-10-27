@@ -1,4 +1,5 @@
 const db = require('./dbConfig');
+const mongoose = require("mongoose");
 
 db.on('error', function() {
     console.log('mongoose connection error');
@@ -9,17 +10,17 @@ db.on('error', function() {
   });
 
 const cvpSchema = new Schema({
-    name: String,
-    description: String,
-    email: String,
-    age: Number,
-    address: Number,
-    phone: Number,
-    gender: String,
-    languages: String,
-    diploma: String,
-    experience: String
+    name: { type: String, required: true },
+    description: { type: String, required: true },
+    email: { type: String, required: true },
+    age: { type: Number, required: true },
+    address: { type: String, required: true },
+    phone: { type: Number, required: true },
+    gender: { type: String, required: true },
+    languages: { type: String, required: true },
+    diploma: { type: String, required: true },
+    experience: { type: String, required: true }
 });
 
-module.exports = mongoose.model('CV', cvpSchema);
+let Cv = mongoose.model('CV', cvpSchema);
 

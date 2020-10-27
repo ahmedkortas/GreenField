@@ -1,4 +1,5 @@
 const db = require('./dbConfig');
+const mongoose = require("mongoose");
 
 db.on('error', function() {
     console.log('mongoose connection error');
@@ -9,12 +10,12 @@ db.on('error', function() {
   });
 
 jaSchema = new Schema({
-    description: String,
-    contact: String,
-    address: String,
-    price: Number,
-    employeeEmail: String,
-    providerEmail: String,
+    description: { type: String, required: true },
+    contact: { type: String, required: true },
+    address: { type: String, required: true },
+    price: { type: Number, required: true },
+    employeeEmail: { type: String, required: true },
+    providerEmail: { type: String, required: true },
 })
 
-module.exports = mongoose.model('JA', jaSchema);
+let Ja = mongoose.model('JA', jaSchema);

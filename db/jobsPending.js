@@ -1,4 +1,5 @@
 const db = require("./dbConfig");
+const mongoose = require("mongoose");
 
 db.on('error', function() {
     console.log('mongoose connection error');
@@ -9,13 +10,13 @@ db.on('error', function() {
   });
 
 jpSchema = new Schema({
-    description: String,
-    contact: String,
-    address: String,
-    price: Number,
+    description: { type: String, required: true },
+    contact: { type: String, required: true },
+    address: { type: String, required: true },
+    price: { type: Number, required: true },
     providerEmail: {type:String, required:true, unique: true}
 });
 
 jpSchema.plugin(uniqueValidator); 
 
-module.exports = mongoose.model('JP', jpSchema);
+let Jp = mongoose.model('JP', jpSchema);

@@ -1,5 +1,5 @@
 const db = require('./dbConfig');
-
+const mongoose = require("mongoose");
 
 db.on('error', function() {
     console.log('mongoose connection error');
@@ -10,8 +10,8 @@ db.on('error', function() {
   });
 
 fbSchema = new Schema({
-    description: String,
-    employeeEmail: String
+    description: { type: String, required: true },
+    employeeEmail: { type: String, required: true },
 });
 
-module.exports = mongoose.model('FB', fbSchema);
+let Fb = mongoose.model('FB', fbSchema);
