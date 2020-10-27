@@ -1,8 +1,7 @@
-const mongoose = require('mongoose');
+const db = require('./dbConfig');
 const uniqueValidator = require('mongoose-unique-validator');
-const Schema = mongoose.Schema;
-mongoose.connect('mongodb://localhost/test');
-const db = mongoose.connection;
+const mongoose = require('./dbConfig');
+const Schema = require('./dbConfig');
 
 db.on('error', function() {
     console.log('mongoose connection error');

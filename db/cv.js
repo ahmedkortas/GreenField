@@ -1,7 +1,6 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
-mongoose.connect('mongodb://localhost/test');
-const db = mongoose.connection;
+const db = require('./dbConfig');
+const mongoose = require('./dbConfig');
+const Schema = require('./dbConfig');
 
 db.on('error', function() {
     console.log('mongoose connection error');
