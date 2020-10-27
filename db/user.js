@@ -1,53 +1,40 @@
-const db = require('./dbConfig');
-const uniqueValidator = require('mongoose-unique-validator');
-const mongoose = require('./dbConfig');
-const Schema = require('./dbConfig');
+const db = require("./dbConfig");
 
-db.on('error', function() {
-    console.log('mongoose connection error');
-  });
-  
-  db.once('open', function() {
-    console.log('mongoose connected successfully');
-  });
+console.log(db);
 
-const userSchema = new Schema({
-    name: {type:String, required:true},
-    email: {type:String, required:true, unique: true},
-    password: {type:String, required:true},
-    phoneNumber: {type:Number, required:true},
-    address : {type:String, required:true},
-    
-    
+db.on("error", function () {
+  console.log("mongoose connection error");
 });
 
-userSchema.plugin(uniqueValidator);
+db.once("open", function () {
+  console.log("mongoose connected successfully");
+});
 
-module.exports = mongoose.model('User', userSchema);
+const userSchema = new Schema({
+  name: { type: String, required: true },
+  email: { type: String, required: true, unique: true },
+  password: { type: String, required: true },
+  age: { type: Number, required: true },
+  gender: { type: String, required: true },
+  address: { type: String, required: true },
+  phone: { type: Number, required: true },
+});
 
-var selectAll = function(callback) {
-    User.find({}, function(err, users) {
-      if(err) {
-        callback(err, null);
+let User = mongoose.model("User", userSchema);
+
+module.exports.create = (obj) => {
+  return new Promise((resolve, reject) => {
+    let email = obj.email;
+    User.findOne({ email: email }, (err, data) => {
+      if (err) return reject(err);
+      if (data === null) {
+        User.create(obj, (err, data) => {
+          if (err) return reject(err);
+          resolve(data);
+        });
       } else {
-        callback(null, users);
+        resolve("exists");
       }
     });
-  };
-  
-  var addUser= function (user) {
-    User.create(user);
-  }
-  
-  const saveUser = (data) => {
-    return new Promise((resolve,reject) => {
-        var newUser = new User({username:data.username,password:data.password,feedback:""});
-        newUser.save((err,res) => {
-            if(err) {
-                reject(err);
-            } else {
-                resolve(res)
-            }
-        })
-    }) 
-  };
+  });
+};

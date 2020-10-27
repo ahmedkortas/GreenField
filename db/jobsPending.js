@@ -1,7 +1,4 @@
-const db = require('./dbConfig');
-const uniqueValidator = require('mongoose-unique-validator');
-const mongoose = require('./dbConfig');
-const Schema = require('./dbConfig');
+const db = require("./dbConfig");
 
 db.on('error', function() {
     console.log('mongoose connection error');

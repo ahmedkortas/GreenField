@@ -1,6 +1,3 @@
-const mongoose = require('mongoose');
-const mongoUri = 'mongodb://localhost/korfi';
-const db = mongoose.connect(mongoUri);
-module.exports = db;
-
-
+const mongoose = require("mongoose");
+mongoose.connect("mongodb://localhost/Korfi");
+module.exports.db = mongoose.connection;
