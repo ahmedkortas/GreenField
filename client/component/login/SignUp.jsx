@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import "./SignUp.css"
 
 class SignUp extends React.Component {
     constructor(props) {
@@ -47,12 +48,12 @@ class SignUp extends React.Component {
       if(this.state.check === ""){
       return (<div>
     <form onSubmit={this.addUser}>
-    <input type="text" name="user" placeholder="userName" required value={this.state.userName} onChange={(e)=>{this.setState({userName:e.target.value})}}/><br></br>
-    <input type="email" name="email" placeholder="email" required value={this.state.email} onChange={(e)=>{this.setState({email:e.target.value})}} /><br></br>
-    <input type="password" name="password" placeholder="password" required value={this.state.password} onChange={(e)=>{this.setState({password:e.target.value})}}/><br></br>
-    <input type="text" name="name" placeholder="gender" required value={this.state.gender} onChange={(e)=>{this.setState({gender:e.target.value})}} /><br></br>
-    <input type="text" name="name" placeholder="age" required value={this.state.age} onChange={(e)=>{this.setState({age:e.target.value})}} /><br></br> 
-    <button type="submit"  name="SignIn" >SignUp </button>
+    <input className="i1" type="text" name="user" placeholder="userName" required value={this.state.userName} onChange={(e)=>{this.setState({userName:e.target.value})}}/><br></br>
+    <input className="i2" type="email" name="email" placeholder="email" required value={this.state.email} onChange={(e)=>{this.setState({email:e.target.value})}} /><br></br>
+    <input className="i3" type="password" name="password" placeholder="password" required value={this.state.password} onChange={(e)=>{this.setState({password:e.target.value})}}/><br></br>
+    <input  className="i4" type="text" name="name" placeholder="gender" required value={this.state.gender} onChange={(e)=>{this.setState({gender:e.target.value})}} /><br></br>
+    <input className="i5" type="text" name="name" placeholder="age" required value={this.state.age} onChange={(e)=>{this.setState({age:e.target.value})}} /><br></br> 
+    <button className="btn" type="submit"  name="SignIn" >SignUp </button>
     </form>
       </div>
       );
@@ -66,3 +67,4 @@ class SignUp extends React.Component {
   }
   }
   export default SignUp;
+
