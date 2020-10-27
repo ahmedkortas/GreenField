@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const db = require("./dbConfig");
 
-jpSchema = new Schema({
+jpSchema = new mongoose.Schema({
   description: String,
   contact: String,
   address: String,
@@ -10,6 +10,8 @@ jpSchema = new Schema({
 });
 
 let Jp = mongoose.model("Jp", jpSchema);
+
+module.exports = Jp;
 
 module.exports.NewAd = (obj) => {
   return new Promise((resolve, reject) => {

@@ -62,7 +62,7 @@ class PostJob extends React.Component {
           <h2 className="title">Post your Task</h2>
           <form>
             <input className="i1" type="text" onChange={this.handleTitle}></input>
-            <input className="i2" type="text" onChange={this.handleGenre}></input>
+            <input className="i2" type="text" onChange={this.handleContact}></input>
             <textarea className="i3"
               onChange={this.handleDescription}
               placeholder={"your text"}
