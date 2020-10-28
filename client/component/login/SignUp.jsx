@@ -71,7 +71,7 @@ class SignUp extends React.Component {
     <label htmlFor="age"><b>Age</b></label>
     <input type="text" name="age" placeholder="Enter your Age" required value={this.state.age} onChange={(e)=>{this.setState({age:e.target.value})}} /><br></br> 
   </div>
-    <button className="btnUp" type="submit"  name="SignIn" >SignUp </button>
+    <button className="button" type="submit"  name="SignIn" >SignUp </button>
 
     </form>
       </div>

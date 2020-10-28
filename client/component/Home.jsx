@@ -18,6 +18,7 @@ class Home extends React.Component {
       <button className="btn btn4">More Information</button>
     </div>
     </div>
+    
     )
    
     
