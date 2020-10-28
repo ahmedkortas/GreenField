@@ -1,0 +1,144 @@
+
+ 
+.y1 {
+    position: absolute;
+    top: 50%;
+    left: 55%;
+    /* padding-bottom: 2px; */
+    transform: translate(-50, -50);
+   }
+   
+   .y1{
+    background:rgb(34, 34, 218);
+    color: white;
+    width: 300px;
+    height: 80px;
+    border: 1px solid rgb(7, 7, 74);
+    font-size: 18px;
+    border-radius: 4px;
+    transition: .6s;
+    overflow: hidden;
+   }
+   
+   .y1:focus {
+    outline: none;
+   }
+   
+   .y1:before {
+       content: '';
+       display: block;
+       position: absolute;
+       background: rgba(255,255,255,.5);
+       width: 60px;
+       height: 100%;
+       left: 0;
+       top: 0;
+       opacity: .5;
+       filter: blur(30px);
+       transform: translateX(-130px) skewX(-15deg);
+   }
+   
+   .y1:after {
+       content: '';
+       display: block;
+       position: absolute;
+       background: rgba(255,255,255,.2);
+       width: 30px;
+       height: 100%;
+       left: 30px;
+       top: 0;
+       opacity: 0;
+       filter: blur(30px);
+       transform: translateX(-100px) scaleX(-15deg);
+   }
+   
+   .y1:hover {
+      background: rgb(7, 7, 74);
+      cursor: pointer;
+   }
+   
+  .y1:hover:before {
+    transform: translateX(300px) skewX(-15deg);
+    opacity: .6;
+    transition: .7s;
+   }
+   
+   .y1:hover:after {
+    transform: translateX(300px) skewX(-15deg);
+    opacity: 1;
+    transition: .7s;
+   }
+  
+  /******************************************/
+  
+  
+  .y2 {
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    /* padding-bottom: 2px; */
+    transform: translate(-50, -50);
+   }
+   
+   .y2{
+    background:rgba(137, 6, 6, 0.911);
+    color: white;
+    width: 300px;
+    height: 80px;
+    border: 1px solid rgba(137, 6, 6, 0.911);
+    font-size: 18px;
+    border-radius: 4px;
+    transition: .6s;
+    overflow: hidden;
+    font-weight: bold;
+   }
+   
+   .y2:focus {
+    outline: none;
+   }
+   
+   .y2:before {
+       content: '';
+       display: block;
+       position: absolute;
+       background: rgba(255,255,255,.5);
+       width: 60px;
+       height: 100%;
+       left: 0;
+       top: 0;
+       opacity: .5;
+       filter: blur(30px);
+       transform: translateX(-130px) skewX(-15deg);
+   }
+   
+   .y2:after {
+       content: '';
+       display: block;
+       position: absolute;
+       background: rgba(255,255,255,.2);
+       width: 30px;
+       height: 100%;
+       left: 30px;
+       top: 0;
+       opacity: 0;
+       filter: blur(30px);
+       transform: translateX(-100px) scaleX(-15deg);
+   }
+   
+   .y2:hover {
+      background: rgb(57, 4, 4);
+      cursor: pointer;
+   }
+   
+  .y2:hover:before {
+    transform: translateX(300px) skewX(-15deg);
+    opacity: .6;
+    transition: .7s;
+   }
+   
+   .y2:hover:after {
+    transform: translateX(300px) skewX(-15deg);
+    opacity: 1;
+    transition: .7s;
+   }
+  

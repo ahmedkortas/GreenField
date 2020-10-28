@@ -49,7 +49,7 @@ class SignUp extends React.Component {
       return (<div>
     <form className="form" onSubmit={this.addUser}>
 
-    <h1 className="title">Register</h1>
+    <h1 className="title">Register</h1><br></br>
     <p className="sub">Please fill in this form to create an account.</p><br></br><br></br>
     <div className="inputFields">
     <label  htmlFor="username"><b>UserName</b></label>
@@ -62,7 +62,7 @@ class SignUp extends React.Component {
     <input type="text" name="address" placeholder="Enter Your address"  onChange={(e)=>{this.setState({address:e.target.value})}}/><br></br>
     <label htmlFor="phone"><b>Phone</b></label>
     <input type="text" name="phone" placeholder="Enter Your phoneNumber"  onChange={(e)=>{this.setState({phone:e.target.value})}}/><br></br>
-    <label htmlFor="gender"><b>Gender</b></label>
+    <label className="gender" htmlFor="gender"><b className="c">Gender</b></label>
     
     <select  onChange={(e)=>{this.setState({gender:e.target.value})}}><br></br>
   <option value="male">male</option>
