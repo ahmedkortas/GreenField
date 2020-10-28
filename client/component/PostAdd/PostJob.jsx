@@ -1,12 +1,12 @@
 import React from "react";
-import axios from 'axios';
-import "./PostJob.css"
+import axios from "axios";
+import "../style/Component/PostJob.css";
 
 class PostJob extends React.Component {
   constructor() {
     super();
     this.state = {
-      adress: "",
+      title: "",
       contact: "",
       description: "",
       price: 0,
@@ -19,7 +19,7 @@ class PostJob extends React.Component {
   }
 
   handleTitle(e) {
-    this.setState({ adress: e.target.value });
+    this.setState({ title: e.target.value });
   }
 
   handleContact(e) {
@@ -27,7 +27,7 @@ class PostJob extends React.Component {
   }
 
   handleDescription(e) {
-    this.setState({ description: e.target.description });
+    this.setState({ description: e.target.value });
   }
 
   handlePrice(e) {
@@ -37,14 +37,13 @@ class PostJob extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     let obj = {};
-      obj.adress= this.state.adress;
-      obj.description = this.state.description;
-      obj.contact = this.state.contact;
-      obj.price = this.state.price;
-      axios.post("/", obj).then((res) => console.log(res.data));
+    obj.adress = this.state.adress;
+    obj.description = this.state.description;
+    obj.contact = this.state.contact;
+    obj.price = this.state.price;
+    axios.post("/", obj).then((res) => console.log(res.data));
     this.props.click();
   }
-
 
   // clickHandler() {
   //   let obj = {};
@@ -59,18 +58,34 @@ class PostJob extends React.Component {
     return (
       <div>
         <div>
-          <h2 className="title">Post your Task</h2>
+          <h2 className="t">Post your Task</h2>
+          <div className="inputs">
           <form>
-            <input className="i1" type="text" onChange={this.handleTitle}></input>
-            <input className="i2" type="text" onChange={this.handleContact}></input>
-            <textarea className="i3"
+            <input
+              className="i1"
+              type="text"
+              onChange={this.handleTitle}
+            ></input>
+            <input
+              className="i2"
+              type="text"
+              onChange={this.handleContact}
+            ></input>
+            <textarea
+              className="i3"
               onChange={this.handleDescription}
               placeholder={"your text"}
             ></textarea>
-            <input className="i4" type="number" onChange={this.handlePrice}></input>
-            <button className="btn1" onClick={this.handleSubmit}>Share Task</button>
+            <input
+              className="i4"
+              type="number"
+              onChange={this.handlePrice}
+            ></input>
+            <button className="bc" onClick={this.handleSubmit}>
+              Share Task
+            </button>
           </form>
-        </div>
+        </div></div>
       </div>
     );
   }

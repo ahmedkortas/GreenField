@@ -1,11 +1,11 @@
-const mongoose = require("mongoose");
 const db = require("./dbConfig");
+const mongoose = require("mongoose");
 
 jpSchema = new mongoose.Schema({
-  description: String,
-  contact: String,
-  address: String,
-  price: Number,
+  description: { type: String, required: true },
+  contact: { type: String, required: true },
+  address: { type: String, required: true },
+  price: { type: Number, required: true },
   providerEmail: { type: String, required: true, unique: true },
 });
 

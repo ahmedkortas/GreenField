@@ -1,8 +1,7 @@
 const mongoose = require("mongoose");
-const db = require("./dbConfig");
 
 const userSchema = new mongoose.Schema({
-  name: { type: String, required: true },
+  userName: { type: String, required: true },
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
   age: { type: Number, required: true },
@@ -13,7 +12,7 @@ const userSchema = new mongoose.Schema({
 
 let User = mongoose.model("User", userSchema);
 
-module.exports.create = (obj) => {
+module.exports.createUser = (obj) => {
   return new Promise((resolve, reject) => {
     let email = obj.email;
     User.findOne({ email: email }, (err, data) => {
@@ -29,3 +28,13 @@ module.exports.create = (obj) => {
     });
   });
 };
+
+module.exports.findOnebyEmail = (obj) =>{
+ return new Promise((resolve,reject)=>{
+  let email = obj.email;
+User.findOne({email}, (err,user)=>{
+if(err) return reject(err);
+if(user) resolve(user);
+})
+ })
+}
