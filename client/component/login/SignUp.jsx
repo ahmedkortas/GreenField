@@ -49,7 +49,7 @@ class SignUp extends React.Component {
       return (<div>
     <form className="form" onSubmit={this.addUser}>
 
-    <h1 className="title">Register</h1>
+    <h1 className="title">Register</h1><br></br>
     <p className="sub">Please fill in this form to create an account.</p><br></br><br></br>
     <div className="inputFields">
     <label  htmlFor="username"><b>UserName</b></label>
