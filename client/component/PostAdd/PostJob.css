@@ -1,4 +1,4 @@
-.title{
+/* .title{
     text-align: center;
     margin-bottom: 20px;
 
@@ -55,24 +55,7 @@
             transform:translate(-50%,-50%);
             border-color: black;
             background: #f1f1f1;
-}
+} */
 
-.btn1{
-    padding: 10px 20px;
-    font-family: Century Gothic;
-    font-size: large;
-    font-weight: 500;
-    border: none;
-    outline: none;
-    background: blueviolet;
-    border-radius: 8px;
-    position: center;
-    margin-top: 500px;
-    margin-left: 20px;
-    
-}
 
-.btn1 :hover{
-    background: black;
-    color: rgb(101, 26, 171);
-}
+

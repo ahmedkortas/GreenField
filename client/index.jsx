@@ -6,6 +6,7 @@ import Adds from "./component/adds/Adds.jsx";
 import LogIn from "./component/login/Login.jsx";
 import "./style.css";
 
+
 class App extends React.Component {
   constructor(props) {
     super(props);

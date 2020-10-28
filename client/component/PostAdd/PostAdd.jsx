@@ -29,8 +29,8 @@ click(){
     if (this.state.view === "main") {
       return (
         <div>
-          <button className="btn1" onClick={this.showTaskform}> Add a task</button>
-          <button className="btn2" onClick={this.showCVform}>Add your C.V</button>
+          <button className="b1" onClick={this.showTaskform}> Add a task</button>
+          <button className="b2" onClick={this.showCVform}>Add your C.V</button>
         </div>
       );
     } else if (this.state.view === "C.V") {
