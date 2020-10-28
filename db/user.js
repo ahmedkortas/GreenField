@@ -1,8 +1,7 @@
 const mongoose = require("mongoose");
-const db = require("./dbConfig");
 
 const userSchema = new mongoose.Schema({
-  name: { type: String, required: true },
+  userName: { type: String, required: true },
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
   age: { type: Number, required: true },
@@ -11,21 +10,38 @@ const userSchema = new mongoose.Schema({
   phone: { type: Number, required: true },
 });
 
-let User = mongoose.model("User", userSchema);
+const User = mongoose.model("User", userSchema);
 
-module.exports.create = (obj) => {
-  return new Promise((resolve, reject) => {
-    let email = obj.email;
-    User.findOne({ email: email }, (err, data) => {
-      if (err) return reject(err);
-      if (data === null) {
-        User.create(obj, (err, data) => {
-          if (err) return reject(err);
-          resolve(data);
-        });
-      } else {
-        resolve("exists");
-      }
-    });
-  });
-};
+module.exports.create = user => {
+  return User.create(user);
+}
+
+module.exports.findOne = (critira = {} )=> {
+  return User.findOne(critira);
+}
+
+module.exports.findByEmail = email => {
+  return User.find({email});
+}
+
+
+
+
+
+
+// module.exports. = (obj) => {
+//   return new Promise((resolve, reject) => {
+//     let email = obj.email;
+//     User.findOne({ email: email }, (err, data) => {
+//       if (err) return reject(err);
+//       if (data === null) {
+//         User.create(obj, (err, data) => {
+//           if (err) return reject(err);
+//           resolve(data);
+//         });
+//       } else {
+//         resolve("exists");
+//       }
+//     });
+//   });
+// };

@@ -18,7 +18,7 @@ class SignUp extends React.Component {
       this.addUser=this.addUser.bind(this);
     }
     addUser(e){
-      console.log('hey')
+      
       e.preventDefault()
       const newUser = {
         userName:this.state.userName,
@@ -31,15 +31,15 @@ class SignUp extends React.Component {
       }
       axios.post("/api/SignUp",newUser)
       .then(res => console.log(res.data));
-          this.setState({
-          userName:'',
-          email:'',
-          password:'',
-          address:'',
-          phone:'',
-          gender:'',
-          age:'',        
-          })
+          // this.setState({
+          // userName:'',
+          // email:'',
+          // password:'',
+          // address:'',
+          // phone:'',
+          // gender:'',
+          // age:'',        
+          // })
     }
     render() {
       
@@ -57,14 +57,14 @@ class SignUp extends React.Component {
     <label htmlFor="address"><b>Address</b></label>
     <input type="text" name="address" placeholder="Enter Your address"  onChange={(e)=>{this.setState({address:e.target.value})}}/><br></br>
     <label htmlFor="phone"><b>Phone</b></label>
-    <input type="text" name="phone" placeholder="Enter Your phoneNumber"  onChange={(e)=>{this.setState({phone:e.target.value})}}/><br></br>
+    <input type="number" name="phone" placeholder="Enter Your phoneNumber"  onChange={(e)=>{this.setState({phone: Number(e.target.value)})}}/><br></br>
     <label htmlFor="gender"><b>Gender</b></label>
     <select  onChange={(e)=>{this.setState({gender:e.target.value})}}>
   <option value="male">male</option>
   <option value="femal">female</option>
   </select><br></br>
     <label htmlFor="age"><b>Age</b></label>
-    <input type="text" name="age" placeholder="Enter your Age" required value={this.state.age} onChange={(e)=>{this.setState({age:e.target.value})}} /><br></br> 
+    <input type="number" name="age" placeholder="Enter your Age"onChange={(e)=>{this.setState({age: Number(e.target.value)})}} /><br></br> 
   
     <button type="submit"  name="SignIn" >SignUp </button>
 
