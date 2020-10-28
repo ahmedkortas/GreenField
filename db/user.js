@@ -18,6 +18,7 @@ module.exports.createUser = (obj) => {
     User.findOne({ email: email }, (err, data) => {
       if (err) return reject(err);
       if (data === null) {
+        console.log(obj);
         User.create(obj, (err, data) => {
           if (err) return reject(err);
           resolve(data);
@@ -29,12 +30,16 @@ module.exports.createUser = (obj) => {
   });
 };
 
-module.exports.findOnebyEmail = (obj) =>{
- return new Promise((resolve,reject)=>{
-  let email = obj.email;
-User.findOne({email}, (err,user)=>{
-if(err) return reject(err);
-if(user) resolve(user);
-})
- })
-}
+module.exports.findOnebyEmail = (obj) => {
+  return new Promise((resolve, reject) => {
+    let email = obj.email;
+    User.findOne({ email }, (err, user) => {
+      if (err) return reject(err);
+      if (user !== null) {
+        resolve(user);
+      } else {
+        resolve(user);
+      }
+    });
+  });
+};
