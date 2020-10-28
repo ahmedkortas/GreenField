@@ -24,7 +24,7 @@ class MyJobs extends React.Component {
           <div>
             <button onClick={this.onClick}>Applied Job</button>
             <button onClick={this.onClick}>Job In Progress</button>
-            <button onClick={this.props.goBack}> go Back</button>
+            <button onClick={this.props.goBack}> Go Back</button>
           </div>
         ) : this.state.view === "Applied Job" ? (
           <Appliedjob goBack={this.goBack}/>

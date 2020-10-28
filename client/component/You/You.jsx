@@ -8,7 +8,6 @@ class You extends React.Component {
     super(props);
     this.state = { view: "home" };
     this.onClick = this.onClick.bind(this);
-
     this.goBack = this.goBack.bind(this);
   
   }

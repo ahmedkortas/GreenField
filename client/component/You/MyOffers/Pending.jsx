@@ -10,7 +10,7 @@ class PendingJobs extends React.Component {
     return (
       <div>
         <div> My Pending Jobs</div>
-        <button onClick={this.props.goBack}> go Back</button>
+        <button onClick={this.props.goBack}> Go Back</button>
       </div>
     );
   }
