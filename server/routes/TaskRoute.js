@@ -1,12 +1,16 @@
 let route = require("express").Router();
-let {newAd, findAll} = require("../../db/jobsPending.js");
+let {NewAd, findAll} = require("../../db/jobsPending.js");
 
-route.get("/dummy", (req,res)=>{
+route.get("/find", (req,res)=>{
   findAll().then(things => res.send(things))
       .catch(error => res.send({ error }));
   })
 
-  route.post("/dummy", (req,res)=>{
-
-    
+  route.post("/create", (req,res)=>{
+NewAd(req.body).then(things =>{
+res.send(things)
+})
+.catch(err => res.send(err))
   })
+
+  module.exports = route

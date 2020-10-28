@@ -18,7 +18,7 @@ class Adds extends React.Component {
 
 
   querry() {
-    axios.get("/dummy").then((response) => {
+    axios.get("/Task/find").then((response) => {
       if (this.state.data.length !== response.data.length) {
         console.log(response.data[0].title , 'query')
         this.setState({ data: response.data });
@@ -28,11 +28,10 @@ class Adds extends React.Component {
   }
 
   render() {
-    console.log(this.state.data[0].title,'render')
     this.querry();
     return (
 
-    <div>{this.state.data.length === 0 ? <div></div> : (this.state.data.map((dat,i) =><SmallJobs key={i} data={this.state.data}/>))}</div>
+    <div>{this.state.data.length === 0 ? <div></div> : (this.state.data.map((data,i) =><SmallJobs key={i} data={data}/>))}</div>
     )
   }
 }
