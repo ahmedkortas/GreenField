@@ -10,6 +10,7 @@ class PostJob extends React.Component {
       contact: "",
       description: "",
       price: 0,
+      address :""
     };
     this.handleTitle = this.handleTitle.bind(this);
     this.handleDescription = this.handleDescription.bind(this);
@@ -17,7 +18,7 @@ class PostJob extends React.Component {
     this.handlePrice = this.handlePrice.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-
+  
   handleTitle(e) {
     this.setState({ title: e.target.value });
   }
@@ -64,11 +65,13 @@ class PostJob extends React.Component {
             <input
               className="i1"
               type="text"
+              placeholder="task title"
               onChange={this.handleTitle}
             ></input>
             <input
               className="i2"
               type="text"
+              placeholder="contact"
               onChange={this.handleContact}
             ></input>
             <textarea
@@ -79,9 +82,9 @@ class PostJob extends React.Component {
             <input
               className="i4"
               type="number"
+              placeholder="price"
               onChange={this.handlePrice}
             ></input>
-            
           </form>
           <div>
           <button className="bc" onClick={this.handleSubmit}>
