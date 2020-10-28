@@ -1,3 +1,5 @@
+
+
 .btn1{
     padding: 10px 20px;
     font-family: Century Gothic;
@@ -8,8 +10,13 @@
     background: blueviolet;
     border-radius: 8px;
     position: center;
-    margin-top: 500px;
-    margin-left: 20px;
+    margin-top: 300px;
+    margin-left: 520px;
+    width: 200px;
+    height: 100px;
+    text-align: center;
+    
+    
     
 }
 
@@ -30,6 +37,9 @@
     position: center;
     margin-top: -500px;
     margin-left: 20px;
+    width: 200px;
+    height: 100px;
+    text-align: center;
     
 }
 
