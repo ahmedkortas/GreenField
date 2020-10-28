@@ -58,7 +58,8 @@ class PostJob extends React.Component {
     return (
       <div>
         <div>
-          <h2 className="title">Post your Task</h2>
+          <h2 className="t">Post your Task</h2>
+          <div className="inputs">
           <form>
             <input
               className="i1"
@@ -80,11 +81,14 @@ class PostJob extends React.Component {
               type="number"
               onChange={this.handlePrice}
             ></input>
-            <button className="btn1" onClick={this.handleSubmit}>
+            
+          </form>
+          <div>
+          <button className="bc" onClick={this.handleSubmit}>
               Share Task
             </button>
-          </form>
-        </div>
+          </div>
+        </div></div>
       </div>
     );
   }

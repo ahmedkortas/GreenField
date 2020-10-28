@@ -24,7 +24,7 @@ route.post("/SingUp", (req, res) => {
         res.send(data);
       })
       .catch((err) => {
-        res.send("error");
+        res.send(err);
       });
   }
 });
