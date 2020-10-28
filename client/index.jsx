@@ -6,6 +6,7 @@ import Adds from "./component/adds/Adds.jsx";
 import LogIn from "./component/login/Login.jsx";
 import "./style.css";
 import You from "./component/You/You.jsx";
+import items from "./links";
 
 class App extends React.Component {
   constructor(props) {
@@ -91,7 +92,7 @@ class App extends React.Component {
         </div>
         <div>
           {this.state.view === "Home" ? (
-            <Home />
+            <Home items={items}/>
           ) : this.state.view === "PostAdd" ? (
             <PostAdd />
           ) : this.state.view === "Adds" ? (
