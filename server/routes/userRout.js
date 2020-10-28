@@ -29,4 +29,22 @@ route.post("/SingUp", (req, res) => {
   }
 });
 
+route.post("/Login", (req, res) => {
+  let obj = {
+    name: req.body.name,
+    email: req.body.email,
+    gender: req.body.gender,
+    password: req.body.password,
+    address: req.body.address,
+    phone: req.body.phone,
+    age: req.body.age,
+  };
+  if (
+    obj.email === null ||
+    obj.password === null 
+  ) {
+    res.status(301).send();
+  } 
+});
+
 module.exports = route;

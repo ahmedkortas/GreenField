@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const db = mongoose.connection;
 
-jaSchema = new mongoose.Schema({
+jobsApplicationSchema = new mongoose.Schema({
   description: { type: String, required: true },
   contact: { type: String, required: true },
   address: { type: String, required: true },
@@ -10,7 +10,7 @@ jaSchema = new mongoose.Schema({
   providerEmail: { type: String, required: true },
 });
 
-let Ja = mongoose.model("JA", jaSchema);
+let Ja = mongoose.model("JA", jobsApplicationSchema);
 
 module.exports.findAll = (email) => {
   return new Promise((resolve, reject) => {

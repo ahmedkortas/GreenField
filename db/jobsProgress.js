@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const db = mongoose.connection;
 
-jpSchema = new mongoose.Schema({
+jobsProgressSchema = new mongoose.Schema({
   description: { type: String, required: true },
   contact: { type: String, required: true },
   address: { type: String, required: true },
@@ -10,7 +10,7 @@ jpSchema = new mongoose.Schema({
   providerEmail: { type: String, required: true },
 });
 
-let Jp = mongoose.model("JP", jpSchema);
+let Jp = mongoose.model("JP", jobsProgressSchema);
 
 module.exports.findAll = (email) => {
   return new Promise((resolve, reject) => {
