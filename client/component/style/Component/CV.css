@@ -1,5 +1,5 @@
 .in1{
-  position:absolute;
+ 
   top:20%;
   left:50%;
   width:50%;
@@ -8,10 +8,12 @@ padding-bottom:1rem;
   -webkit-transform:translate(-50%,-50%);
           transform:translate(-50%,-50%);
           border-color: black;
+          margin-top: 50px;
+          margin-left: 800px;
 }
 
 .in2{
-  position:absolute;
+  
   top:30%;
   left:50%;
   width:50%;
@@ -20,10 +22,12 @@ padding-bottom:1rem;
   -webkit-transform:translate(-50%,-50%);
           transform:translate(-50%,-50%);
           border-color: black;
+          margin-top: 20px;
+          margin-left: 800px;
 }
 
 .in3{
-  position:absolute;
+  
   top:40%;
   left:50%;
   width:50%;
@@ -32,10 +36,12 @@ padding-bottom:1rem;
   -webkit-transform:translate(-50%,-50%);
           transform:translate(-50%,-50%);
           border-color: black;
+          margin-top: 20px;
+          margin-left: 800px;
 }
 
 .in4{
-  position:absolute;
+ 
   top:50%;
   left:50%;
   width:50%;
@@ -44,15 +50,30 @@ padding-bottom:1rem;
   -webkit-transform:translate(-50%,-50%);
           transform:translate(-50%,-50%);
           border-color: black;
+          margin-top: 20px;
+          margin-left: 800px;
 }
-
+.in5{
+  
+  top:60%;
+  left:50%;
+  width:50%;
+padding-top:1rem;
+padding-bottom:1rem;
+  -webkit-transform:translate(-50%,-50%);
+          transform:translate(-50%,-50%);
+          border-color: black;
+          margin-top: 20px;
+          margin-left: 800px;
+}
  
 .bb {
-  position: absolute;
-  top: 70%;
+  
+  top: 100%;
   left: 42%;
   /* padding-bottom: 2px; */
   transform: translate(-50, -50);
+  margin-left: 650px;
  }
  
  .bb {
@@ -114,6 +135,10 @@ padding-bottom:1rem;
   transform: translateX(300px) skewX(-15deg);
   opacity: 1;
   transition: .7s;
+ }
+
+ form{
+   margin-top: 50px;
  }
 
 

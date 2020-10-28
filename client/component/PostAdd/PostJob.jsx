@@ -81,10 +81,13 @@ class PostJob extends React.Component {
               type="number"
               onChange={this.handlePrice}
             ></input>
-            <button className="bc" onClick={this.handleSubmit}>
+            
+          </form>
+          <div>
+          <button className="bc" onClick={this.handleSubmit}>
               Share Task
             </button>
-          </form>
+          </div>
         </div></div>
       </div>
     );
