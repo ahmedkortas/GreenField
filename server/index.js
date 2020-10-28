@@ -14,12 +14,7 @@ app.use("/user", user);
 app.use("/Cv", cv);
 
 
-app.get("/dummy", (req,res)=>{
-  console.log("here")
-findAll().then(things => res.send(things))
-    .catch(error => res.send({ error }));
 
-})
 
 
 
