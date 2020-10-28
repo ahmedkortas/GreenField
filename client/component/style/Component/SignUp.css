@@ -1,4 +1,4 @@
-.in1 {
+.i1 {
   position: absolute;
   top: 20%;
   left: 50%;
@@ -8,9 +8,11 @@
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   border-color: black;
+
+  background: #f1f1f1;
 }
 
-.in2 {
+.i2 {
   position: absolute;
   top: 30%;
   left: 50%;
@@ -20,9 +22,10 @@
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   border-color: black;
+  background: #f1f1f1;
 }
 
-.in3 {
+.i3 {
   position: absolute;
   top: 40%;
   left: 50%;
@@ -32,11 +35,12 @@
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   border-color: black;
+  background: #f1f1f1;
 }
 
-.in4 {
+.i4 {
   position: absolute;
-  top: 60%;
+  top: 50%;
   left: 50%;
   width: 50%;
   padding-top: 1rem;
@@ -44,11 +48,12 @@
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   border-color: black;
+  background: #f1f1f1;
 }
 
-.in5 {
+.i5 {
   position: absolute;
-  top: 70%;
+  top: 50%;
   left: 50%;
   width: 50%;
   padding-top: 1rem;
@@ -56,6 +61,7 @@
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   border-color: black;
+  background: #f1f1f1;
 }
 
 .btn {
@@ -67,6 +73,9 @@
   outline: none;
   background: blueviolet;
   border-radius: 8px;
+  position: center;
+  margin-top: 500px;
+  margin-left: 20px;
 }
 
 .btn :hover {

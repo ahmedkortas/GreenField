@@ -1,31 +1,19 @@
 const express = require("express");
-
 let PORT = 3000;
-
 const bodyParser = require("body-parser");
-const Jp = require("../db/jobsPending");
-const CV = require("../db/cv")
 let app = express();
-let user = require("../db/user.js");
+const user = require("./routes/userRout.js");
+const cv = require("./routes/CvRoute.js")
 
 app.use(express.static(__dirname + "/../public"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get("/api/Ads", (req, res) => {
-  res.send(req.body);
-});
-
-app.post('/',(req,res)=>{
-  console.log(req.body)
-  Jp(req.body).save().then((g)=>res.json(g))
-})
+app.use("/user", user);
+app.use("/Cv", cv);
 
 
-app.post('/cv',(req,res)=>{
-  console.log(req.body)
-  CV(req.body).save().then((g)=>res.json(g))
-})
+
 app.listen(PORT, () => {
   console.log("server is connected and listning ya derwish ");
 });

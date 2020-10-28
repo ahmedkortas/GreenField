@@ -1,6 +1,11 @@
-.in1 {
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.i1 {
   position: absolute;
-  top: 20%;
+  top: 50%;
   left: 50%;
   width: 50%;
   padding-top: 1rem;
@@ -8,33 +13,11 @@
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   border-color: black;
+
+  background: #f1f1f1;
 }
 
-.in2 {
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  width: 50%;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  border-color: black;
-}
-
-.in3 {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  width: 50%;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  border-color: black;
-}
-
-.in4 {
+.i2 {
   position: absolute;
   top: 60%;
   left: 50%;
@@ -44,9 +27,10 @@
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   border-color: black;
+  background: #f1f1f1;
 }
 
-.in5 {
+.i3 {
   position: absolute;
   top: 70%;
   left: 50%;
@@ -56,9 +40,23 @@
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   border-color: black;
+  background: #f1f1f1;
 }
 
-.btn {
+.i4 {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  width: 50%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border-color: black;
+  background: #f1f1f1;
+}
+
+.btn1 {
   padding: 10px 20px;
   font-family: Century Gothic;
   font-size: large;
@@ -67,9 +65,12 @@
   outline: none;
   background: blueviolet;
   border-radius: 8px;
+  position: center;
+  margin-top: 500px;
+  margin-left: 20px;
 }
 
-.btn :hover {
+.btn1 :hover {
   background: black;
   color: rgb(101, 26, 171);
 }

@@ -36,7 +36,7 @@
 
 .in4 {
   position: absolute;
-  top: 60%;
+  top: 50%;
   left: 50%;
   width: 50%;
   padding-top: 1rem;
@@ -46,19 +46,7 @@
   border-color: black;
 }
 
-.in5 {
-  position: absolute;
-  top: 70%;
-  left: 50%;
-  width: 50%;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  border-color: black;
-}
-
-.btn {
+.btn1 {
   padding: 10px 20px;
   font-family: Century Gothic;
   font-size: large;
@@ -67,9 +55,11 @@
   outline: none;
   background: blueviolet;
   border-radius: 8px;
+  position: center;
+  margin-left: 150px;
 }
 
-.btn :hover {
+.btn1 :hover {
   background: black;
   color: rgb(101, 26, 171);
 }
