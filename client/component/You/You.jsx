@@ -7,6 +7,11 @@ class You extends React.Component {
     super(props);
     this.state = { view: "home" };
     this.onClick = this.onClick.bind(this);
+    this.goBack = this.goBack.bind(this);
+  }
+
+  goBack() {
+    this.setState({ view: "home" });
   }
 
   onClick(e) {
@@ -25,7 +30,7 @@ class You extends React.Component {
         ) : this.state.view === "My Jobs" ? (
           <MyJobs />
         ) : this.state.view === "My offers" ? (
-          <MyOffers />
+          <MyOffers goBack={this.goBack} />
         ) : (
           <div></div>
         )}

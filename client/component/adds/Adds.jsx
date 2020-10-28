@@ -1,5 +1,8 @@
 import React from "react";
 import axios from "axios";
+import Data from "./Dummy_DATA.json"
+
+
 
 class Adds extends React.Component {
   constructor(props) {
@@ -7,6 +10,7 @@ class Adds extends React.Component {
     this.state = {
       data: [],
     };
+    this.querry();
     this.querry = this.querry.bind(this);
   }
 
@@ -20,8 +24,20 @@ class Adds extends React.Component {
   }
 
   render() {
-    this.querry();
-    return <div></div>;
+    
+    return (
+      <div>
+      <ul>
+        <li>
+          <div>Task title.</div>        
+          <span>Task description will be here</span>
+          <span>Poster contact will be here</span>
+          <div><span>Price will be here</span></div>
+          <button>Apply for this!</button>
+        </li>
+        </ul>
+        </div>
+    )
   }
 }
 
