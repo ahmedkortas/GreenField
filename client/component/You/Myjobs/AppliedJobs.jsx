@@ -9,7 +9,7 @@ class AppliedJobs extends React.Component {
         return (
             <div>
             <div> Applied jobs</div>
-            <button onClick={this.props.goBack}> go Back</button>
+            <button onClick={this.props.goBack}> Go Back</button>
        </div> 
        )
     }

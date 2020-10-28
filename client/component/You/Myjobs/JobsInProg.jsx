@@ -9,7 +9,7 @@ class JobsInProg extends React.Component {
         return (
             <div>
             <div>Job in progress</div>
-            <button onClick={this.props.goBack}> go Back</button>
+            <button onClick={this.props.goBack}> Go Back</button>
         </div>
         )
     }
