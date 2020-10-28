@@ -44,12 +44,12 @@ class SignUp extends React.Component {
     render() {
       
       return (<div>
-    <form onSubmit={this.addUser}>
+    <form className="form" onSubmit={this.addUser}>
 
-    <h1>Register</h1>
-    <p>Please fill in this form to create an account.</p>
+    <h1 className="title">Register</h1>
+    <p className="sub">Please fill in this form to create an account.</p><br></br><br></br>
     <label htmlFor="username"><b>UserName</b></label>
-    <input type="text" name="user" placeholder="Enter Your UserName" onChange={(e)=>{this.setState({userName:e.target.value})}}/><br></br>
+    <input  type="text" name="user" placeholder="Enter Your UserName" onChange={(e)=>{this.setState({userName:e.target.value})}}/><br></br>
     <label htmlFor="email"><b>Email</b></label>
     <input type="email" name="email" placeholder="Enter Your Email"  onChange={(e)=>{this.setState({email:e.target.value})}} /><br></br>
     <label htmlFor="password"><b>Password</b></label>
