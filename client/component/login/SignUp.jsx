@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import "./SignUp.css"
+import "../style/Component/SignUp.css"
 
 class SignUp extends React.Component {
     constructor(props) {
@@ -80,4 +80,3 @@ class SignUp extends React.Component {
   }
   
   export default SignUp;
-

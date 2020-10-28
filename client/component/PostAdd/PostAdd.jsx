@@ -1,7 +1,7 @@
 import React from "react";
 import CV from "./CV.jsx";
 import PostJob from "./PostJob.jsx";
-import "./PostAdd.css"
+import "../style/Component/PostAdd.css"
 
 class PostAdd extends React.Component {
   constructor(props) {

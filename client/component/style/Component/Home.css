@@ -1,19 +1,19 @@
-.heading{
-    color: black;
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    text-align: center;
-    font-family: Pacifico, Calibri;
-    font-size: 3em;
+.heading {
+  color: black;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  text-align: center;
+  font-family: Pacifico, Calibri;
+  font-size: 3em;
 }
 
-.title{
-    font-size: 30px ;
+.title {
+  font-size: 30px;
 }
-.subheading{
-    font-size: 20px;
+.subheading {
+  font-size: 20px;
 }
 
 .container{
@@ -41,9 +41,9 @@
     overflow: hidden;
   }
 
-  .btn4{
-    color: #fff;
-  }
+.btn4 {
+  color: #fff;
+}
 
   .btn4:hover{
     color: #3498db;

@@ -25,7 +25,7 @@ class App extends React.Component {
       <div>
         <div className="header">
           <ul>
-          <li className="logo"><img src="korfi.png"/></li>
+         < img className="logo" src="img/korfi.png"/>
             <li>
               <a onClick={this.onClick}>Home</a>
             </li>
