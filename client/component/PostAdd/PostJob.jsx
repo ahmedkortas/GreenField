@@ -6,7 +6,7 @@ class PostJob extends React.Component {
   constructor() {
     super();
     this.state = {
-      adress: "",
+      title: "",
       contact: "",
       description: "",
       price: 0,
@@ -19,7 +19,7 @@ class PostJob extends React.Component {
   }
 
   handleTitle(e) {
-    this.setState({ adress: e.target.value });
+    this.setState({ title: e.target.value });
   }
 
   handleContact(e) {
@@ -27,7 +27,7 @@ class PostJob extends React.Component {
   }
 
   handleDescription(e) {
-    this.setState({ description: e.target.description });
+    this.setState({ description: e.target.value });
   }
 
   handlePrice(e) {

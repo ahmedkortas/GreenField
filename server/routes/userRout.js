@@ -29,4 +29,5 @@ route.post("/SingUp", (req, res) => {
   }
 });
 
+
 module.exports = route;
