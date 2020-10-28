@@ -1,7 +1,7 @@
 import React from "react";
 import CV from "./CV.jsx";
 import PostJob from "./PostJob.jsx";
-import "./PostAdd.css"
+import "../style/Component/PostAdd.css";
 
 class PostAdd extends React.Component {
   constructor(props) {
@@ -20,22 +20,27 @@ class PostAdd extends React.Component {
   showTaskform() {
     this.setState({ view: "" });
   }
-click(){
+  click() {
     this.setState({ view: "main" });
-}
+  }
 
   render() {
     if (this.state.view === "main") {
       return (
         <div>
-          <button className="btn1" onClick={this.showTaskform}> Add a task</button>
-          <button className="btn2" onClick={this.showCVform}>Add your C.V</button>
+          <button className="btn1" onClick={this.showTaskform}>
+            {" "}
+            Add a task
+          </button>
+          <button className="btn2" onClick={this.showCVform}>
+            Add your C.V
+          </button>
         </div>
       );
     } else if (this.state.view === "C.V") {
-      return <CV click={this.click}/>;
+      return <CV click={this.click} />;
     } else {
-      return <PostJob click={this.click}/>;
+      return <PostJob click={this.click} />;
     }
   }
 }
