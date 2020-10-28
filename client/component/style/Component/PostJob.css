@@ -1,10 +1,11 @@
 .t {
   text-align: center;
   margin-bottom: 20px;
+  margin-top: 50px;
 }
 
 .i1 {
-  position: absolute;
+
   top: 50%;
   left: 50%;
   width: 50%;
@@ -13,12 +14,13 @@
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   border-color: black;
-
+  margin-top: 100px;
+  margin-left: 40px;
   background: #f1f1f1;
 }
 
 .i2 {
-  position: absolute;
+
   top: 60%;
   left: 50%;
   width: 50%;
@@ -28,10 +30,12 @@
   transform: translate(-50%, -50%);
   border-color: black;
   background: #f1f1f1;
+  margin-top: 100px;
+          margin-left: 40px;
 }
 
 .i3 {
-  position: absolute;
+
   top: 70%;
   left: 50%;
   width: 50%;
@@ -41,10 +45,13 @@
   transform: translate(-50%, -50%);
   border-color: black;
   background: #f1f1f1;
+  margin-top: 100px;
+          margin-left: 40px;
+
 }
 
 .i4 {
-  position: absolute;
+  
   top: 80%;
   left: 50%;
   width: 50%;
@@ -54,6 +61,8 @@
   transform: translate(-50%, -50%);
   border-color: black;
   background: #f1f1f1;
+  margin-top: 100px;
+          margin-left: 40px;
 }
 .bc {
   position: absolute;
@@ -122,4 +131,8 @@
   transform: translateX(300px) skewX(-15deg);
   opacity: 1;
   transition: .7s;
+ }
+
+ form{
+   margin-top: 50px;
  }
