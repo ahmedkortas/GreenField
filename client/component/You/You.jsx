@@ -8,8 +8,11 @@ class You extends React.Component {
     super(props);
     this.state = { view: "home" };
     this.onClick = this.onClick.bind(this);
-    this.goBack= this.goBack.bind(this);
+
+    this.goBack = this.goBack.bind(this);
+  
   }
+
   goBack() {
     this.setState({ view: "home" });
   }
@@ -29,7 +32,7 @@ class You extends React.Component {
         ) : this.state.view === "My Jobs" ? (
           <MyJobs goBack={this.goBack}/>
         ) : this.state.view === "My offers" ? (
-          <MyOffers />
+          <MyOffers goBack={this.goBack} />
         ) : (
           <div></div>
         )}
