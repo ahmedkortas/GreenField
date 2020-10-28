@@ -19,6 +19,7 @@ app.post("/api/SignUp", function (req, res) {
   console.log(req.body);
   findByEmail(req.body.email)
     .then(data => {
+     
       
       create(req.body).then().catch();
     })
