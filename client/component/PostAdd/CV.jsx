@@ -54,8 +54,8 @@ class CV extends React.Component {
   render() {
     return (
       
-        <div className="container">
-          <div>
+        <div >
+          <div className="con">
           <form>
             <input
               className="in1"
@@ -76,21 +76,23 @@ class CV extends React.Component {
               onChange={this.handleDiplome}
             ></input>
               <input
-              className="in5"
+              className="in4"
               type="text"
               placeholder="Enter your Description"
               onChange={this.handlDescritpion}
             ></input>
             <textarea
-              className="in4"
+              className="in5"
               type="text"
               onChange={this.handleExperience}
             ></textarea>
-            <button className="bb" onClick={this.handleSubmit}>
+            
+          </form>
+
+        </div>
+        <button className="bb" onClick={this.handleSubmit}>
               Post your resume
             </button>
-          </form>
-        </div>
       </div>
     );
   }
