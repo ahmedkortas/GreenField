@@ -26,6 +26,13 @@ label{
 width: 240px;
 display: inline-block;
 }
+.c{
+  margin-left: -23px;
+}
+
+.gender{
+  margin-left: 20px;
+}
 .inputFields > input{
 margin: 20px;
 background-color: #f1f1f1;
@@ -132,6 +139,7 @@ text-align: center;
   position: center;
   margin-top: 500px;
   margin-left: 20px;
+  margin-bottom: -20px;
   
 }
 

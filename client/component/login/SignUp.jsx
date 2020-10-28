@@ -62,7 +62,7 @@ class SignUp extends React.Component {
     <input type="text" name="address" placeholder="Enter Your address"  onChange={(e)=>{this.setState({address:e.target.value})}}/><br></br>
     <label htmlFor="phone"><b>Phone</b></label>
     <input type="text" name="phone" placeholder="Enter Your phoneNumber"  onChange={(e)=>{this.setState({phone:e.target.value})}}/><br></br>
-    <label htmlFor="gender"><b>Gender</b></label>
+    <label className="gender" htmlFor="gender"><b className="c">Gender</b></label>
     
     <select  onChange={(e)=>{this.setState({gender:e.target.value})}}><br></br>
   <option value="male">male</option>
