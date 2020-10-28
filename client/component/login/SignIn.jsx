@@ -47,7 +47,7 @@ class SignIn extends React.Component {
               No Korfi Account/Create Account
             </span>
           </div>
-          <button className="btn" type="submit" name="SignIn">
+          <button className="bl" type="submit" name="SignIn">
             SignIn{" "}
           </button>
         </form>

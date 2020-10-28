@@ -7,6 +7,7 @@ import LogIn from "./component/login/Login.jsx";
 import "./style.css";
 import You from "./component/You/You.jsx";
 
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -25,7 +26,7 @@ class App extends React.Component {
       <div>
         <div className="header">
           <ul>
-            {/* <li className="logo"><img src="korfi.png"/></li> */}
+         < img className="logo" src="img/korfi.png"/>
             <li>
               <a onClick={this.onClick}>Home</a>
             </li>
