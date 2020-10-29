@@ -21,11 +21,10 @@ class SmallJobA extends React.Component {
         <p className="feed-list-item-description">{this.props.data.description}</p> <br></br><br></br>     
         <span  className="feed-list-item-poster">{this.props.data.contact}</span><br></br><br></br>
         <span  className="feed-list-item-price">{this.props.data.price}DT</span><br></br><br></br>
-        <span  className="feed-list-item-poster">{this.props.data.address}</span>
-        
+        <span  className="feed-list-item-poster">{this.props.data.address}</span> <br></br><br></br> 
+        <span><button  type="button" className="btn-primary">Apply here </button></span>
       </li>
-      </ul>
-      <button>Apply for this!</button>
+      </ul>    
       </div>)
   }
 }
