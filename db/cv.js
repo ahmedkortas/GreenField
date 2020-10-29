@@ -15,6 +15,7 @@ const cvpSchema = new mongoose.Schema({
 });
 
 let Cv = mongoose.model("CV", cvpSchema);
+module.exports = Cv;
 
 module.exports.create = (obj) => {
   return new Promise((resolve, reject) => {
@@ -32,3 +33,4 @@ module.exports.create = (obj) => {
     });
   });
 };
+

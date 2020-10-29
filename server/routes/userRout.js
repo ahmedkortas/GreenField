@@ -1,5 +1,5 @@
 let route = require("express").Router();
-let { createUser } = require("../../db/user.js");
+let { createUser, findOnebyEmail } = require("../../db/user.js");
 
 route.post("/SingUp", (req, res) => {
   // console.log("qweqweqwe");
@@ -23,7 +23,7 @@ route.post("/SingUp", (req, res) => {
       .then((data) => {
         res.send(data);
       })
-      .catch((err) => {
+      .catch((err) => { 
         res.send("error");
       });
   }
@@ -40,7 +40,7 @@ route.post("/Login", (req, res) => {
   ) {
     res.status(301).send();
   } else {
-    findUser(obj)
+    findOnebyEmail(obj)
       .then((data) => {
         if(email === data.email && password=== data.password){
         res.send(data);

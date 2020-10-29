@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const db = mongoose.connection;
+const db = require("./dbConfig");
 
 jobsProgressSchema = new mongoose.Schema({
   description: { type: String, required: true },
