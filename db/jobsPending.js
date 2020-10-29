@@ -30,7 +30,7 @@ module.exports.NewAd = (obj) => {
 
 module.exports.findAll = () => {
   return new Promise((resolve, reject) => {
-    Jp.find({}, (err, data) => {
+    Jpending.find({}, (err, data) => {
       if (err) return reject(err);
       resolve(data);
     });

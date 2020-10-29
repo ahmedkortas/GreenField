@@ -25,6 +25,7 @@ route.post("/create", (req, res) => {
 route.post("/aplly", (req, res) => {
   NewAdApplications(req.body)
     .then((things) => {
+      console.log(things);
       res.send(things);
     })
     .catch((err) => res.send(err));

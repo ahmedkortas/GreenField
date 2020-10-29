@@ -7,7 +7,7 @@ jobsApplicationSchema = new mongoose.Schema({
   address: { type: String, required: true },
   price: { type: Number, required: true },
   employeeEmail: { type: String, required: true },
-  providerEmail: { type: String, required: true },
+  providerEmail: { type: String },
 });
 
 let Ja = mongoose.model("JApplication", jobsApplicationSchema);
@@ -22,6 +22,7 @@ module.exports.NewAdApplications = (obj) => {
       console.log(data);
       if (data.length === 0) {
         Ja.create(obj, (err, data) => {
+          console.log("createeeed", data);
           if (err) return reject(err);
           resolve(data);
         });
