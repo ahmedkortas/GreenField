@@ -1,7 +1,7 @@
 const db = require("./dbConfig");
 const mongoose = require("mongoose");
 
-jpSchema = new mongoose.Schema({
+jobsPendingSchema = new mongoose.Schema({
   description: { type: String, required: true },
   contact: { type: String, required: true },
   address: { type: String, required: true },
@@ -9,7 +9,7 @@ jpSchema = new mongoose.Schema({
   providerEmail: { type: String, required: true, unique: true },
 });
 
-let Jp = mongoose.model("Jp", jpSchema);
+let Jp = mongoose.model("Jp", jobsPendingSchema);
 
 module.exports = Jp;
 
