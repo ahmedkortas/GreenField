@@ -16,12 +16,15 @@ module.exports = Jp;
 module.exports.NewAd = (obj) => {
   return new Promise((resolve, reject) => {
     let description = obj.description;
-    Jp.findOne({ description: description }, (err, jp) => {
+    Jp.findOne({ description: description }, (err, data) => {
       if (err) return reject(err);
-      if (jp === null) {
-        resolve(null);
+      if (data === null) {
+        Jp.create(obj, (err, data) => {
+          if (err) return reject(err);
+          resolve(data);
+        });
       } else {
-        resolve(jp);
+        resolve("exists");
       }
     });
   });
