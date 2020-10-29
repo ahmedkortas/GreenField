@@ -14,7 +14,6 @@ class LogIn extends React.Component {
     this.setState({ view: true });
   }
   render() {
-    console.log(this.props, "8==========>");
     return (
       <div>
         {this.state.view === false ? (
