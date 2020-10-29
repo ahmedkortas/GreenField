@@ -23,7 +23,6 @@ class Adds extends React.Component {
         console.log(response.data[0].title , 'query')
         this.setState({ data: response.data });
       }
-      console.log(this.state.data[0].title , "second")
     });
   }
 
