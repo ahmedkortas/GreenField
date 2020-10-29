@@ -16,11 +16,11 @@ class CV extends React.Component {
     this.handlEmailChange = this.handlEmailChange.bind(this);
     this.handleExperience = this.handleExperience.bind(this);
     this.handleLanguage = this.handleLanguage.bind(this);
+  this.handleDiplome = this.handleDiplome.bind(this);
     this.handlDescritpion = this.handlDescritpion.bind(this);
   }
 
   handlEmailChange(e) {
-    console.log(e);
     this.setState({ emailValue: e.target.value });
   }
 
@@ -45,9 +45,9 @@ class CV extends React.Component {
     obj.email = this.state.emailValue;
     obj.description = this.state.description;
     obj.experience = this.state.experience;
-    obj.language = this.state.language;
+    obj.languages = this.state.language;
     obj.diploma = this.state.diploma;
-    axios.post("/task", obj).then((res) => console.log(res.data));
+    axios.post("/Cv", obj).then((res) => console.log(res.data));
     this.props.click();
   }
 
@@ -74,12 +74,16 @@ class CV extends React.Component {
               placeholder="Enter your Diploma"
               onChange={this.handleDiplome}
             ></input>
+              <input
+              className="in5"
+              type="text"
+              placeholder="Enter your Description"
+              onChange={this.handlDescritpion}
+            ></input>
             <textarea
               className="in4"
-              type="description"
-              value="experience"
+              type="text"
               onChange={this.handleExperience}
-              placeholder="experience"
             ></textarea>
             <button className="btn1" onClick={this.handleSubmit}>
               Post your resume

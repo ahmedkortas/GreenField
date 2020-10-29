@@ -5,12 +5,13 @@ import PostAdd from "./component/PostAdd/PostAdd.jsx";
 import Adds from "./component/adds/Adds.jsx";
 import LogIn from "./component/login/Login.jsx";
 import "./style.css";
+import You from "./component/You/You.jsx";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      view: "home",
+      view: "Home",
     };
     this.onClick = this.onClick.bind(this);
   }
@@ -35,7 +36,7 @@ class App extends React.Component {
               <a onClick={this.onClick}>Adds</a>
             </li>
             <li>
-              <a onClick={this.onClick}>Your offers</a>
+              <a onClick={this.onClick}>You</a>
             </li>
             <li>
               <a onClick={this.onClick}>Login</a>
@@ -51,6 +52,8 @@ class App extends React.Component {
             <Adds />
           ) : this.state.view === "Login" ? (
             <LogIn />
+          ) : this.state.view === "You" ? (
+            <You />
           ) : (
             <div></div>
           )}
