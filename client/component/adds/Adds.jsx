@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import Data from "./Dummy_DATA.json";
+
 
 import SmallJobs from './SmallJobA.jsx';
 
@@ -30,7 +30,11 @@ class Adds extends React.Component {
     this.querry();
     return (
 
-    <div>{this.state.data.length === 0 ? <div></div> : (this.state.data.map((data,i) =><SmallJobs key={i} data={data}/>))}</div>
+    <div>
+      {this.state.data.length === 0 ?
+       <div></div> 
+       : (this.state.data.map((data,i) =><SmallJobs key={i} data={data}/>))}
+       </div>
     )
   }
 }
