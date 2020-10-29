@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import Data from "./Dummy_DATA.json";
+
 
 import SmallJobs from './SmallJobA.jsx';
 

@@ -9,6 +9,7 @@
  .bl {
   background:rgb(34, 34, 218);
   color: #ccc;
+  margin-top: -100px;
   width: 270px;
   height: 60px;
   border: 1px solid rgb(7, 7, 74);
@@ -69,7 +70,9 @@
 
 .btn0 {
   margin-top: 230px;
-  margin-left: 670px;
+  margin-left: 585px;
   text-decoration: underline;
   cursor: pointer;
 }
+
+
