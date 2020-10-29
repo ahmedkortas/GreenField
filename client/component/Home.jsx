@@ -1,14 +1,15 @@
-import React from 'react';
-import "./style/Component/Home.css"
+import React from "react";
+import "./style/Component/Home.css";
 
 class Home extends React.Component {
   constructor(props) {
-    super(props); this.state = {
+    super(props);
+    this.state = {
       i: 0,
     };
     this.slide = this.slide.bind(this);
   }
-  
+
   slide() {
     setTimeout(() => {
       if (this.state.i < this.props.items.length - 1) {
@@ -21,20 +22,18 @@ class Home extends React.Component {
 
   render() {
     this.slide();
-    console.log(this.state.i)
+    console.log(this.state.i);
     let item = this.props.items;
     return (
       <div>
-      
-      <div>
+        <div>
           <img
             src={item[this.state.i]}
             style={{
               width: "60%",
-              height: "80%",
+              height: "70%",
               position: "absolute",
               padding: "25px",
-             
               display: "block",
               marginLeft: "auto",
               marginRight: "auto",
@@ -42,7 +41,7 @@ class Home extends React.Component {
             }}
           />
         </div>
-     {/* <div className="heading">
+        {/* <div className="heading">
         <h2 className="title">Professionals You Need, From People You Know.</h2><br></br>
         
         <p className="subheading">From Dog Walkers and Babysitters to Hairstylists and Personal Trainers, to...</p>
@@ -51,11 +50,8 @@ class Home extends React.Component {
       
       <button className="b">More Information</button>
     </div> */}
-    </div>
-    
-    )
-   
-    
+      </div>
+    );
   }
 }
 
