@@ -20,10 +20,9 @@ class Adds extends React.Component {
   querry() {
     axios.get("/Task/find").then((response) => {
       if (this.state.data.length !== response.data.length) {
-        console.log(response.data[0].title , 'query')
         this.setState({ data: response.data });
       }
-      console.log(this.state.data[0].title , "second")
+
     });
   }
 

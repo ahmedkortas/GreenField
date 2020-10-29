@@ -27,7 +27,6 @@ class Home extends React.Component {
       <div>
       <div>  
       <div>
-        <component1>
           <img
             src={item[this.state.i]}
             style={{
@@ -42,10 +41,9 @@ class Home extends React.Component {
               float: "left",
             }}
           />
-          </component1>
         </div>  
     </div>
-    <component2>
+    
      <div style={{  
       
        color: "black",
@@ -63,7 +61,20 @@ float:'right',
      <p className="subheading">From Dog Walkers and Babysitters to Hairstylists and Personal Trainers, to...</p>
   
    </div>
-</component2>
+   <footer style={{  
+transform: "translateX(-50%) translateY(-50%)",
+fontfamily: 'Arial',
+marginLeft:'1700px',
+marginTop: "160px",
+float:'right',
+}}>
+    <a href="https://www.facebook.com/Korfi-109834854250334" target="_blank" class="fa fa-facebook"></a>
+    <a href="https://twitter.com/KorfiTunisia" target="_blank" class="fa fa-twitter"></a>
+    <a href="https://www.instagram.com/korfi.tunisia/" target="_blank" class="fa fa-instagram"></a>
+    <a href="https://www.google.com/" target="_blank" class="fa fa-google"></a>
+    <br></br>
+    <a class="fa fa-envelope"></a>: Korfi.Tunisia@gmail.com
+  </footer>
    </div>
     )
    
