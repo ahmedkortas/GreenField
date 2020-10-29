@@ -1,6 +1,5 @@
 import React from "react";
 import axios from "axios";
-import Data from "./Dummy_DATA.json";
 
 import SmallJobs from "./SmallJobA.jsx";
 
@@ -20,7 +19,6 @@ class Adds extends React.Component {
         console.log(response.data[0].title, "query");
         this.setState({ data: response.data });
       }
-      console.log(this.state.data[0].title, "second");
     });
   }
 

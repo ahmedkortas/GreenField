@@ -2,22 +2,25 @@ const mongoose = require("mongoose");
 const db = require("./dbConfig");
 
 jobsApplicationSchema = new mongoose.Schema({
-  description: { type: String, required: true },
+  description: { type: String, required: true, unique: true },
   contact: { type: String, required: true },
   address: { type: String, required: true },
   price: { type: Number, required: true },
-  employeeEmail: { type: String, required: true, unique: true },
+  employeeEmail: { type: String, required: true },
   providerEmail: { type: String, required: true },
 });
 
-let Ja = mongoose.model("JA", jobsApplicationSchema);
+let Ja = mongoose.model("JApplication", jobsApplicationSchema);
 
-module.exports.NewAd = (obj) => {
+module.exports.NewAdApplications = (obj) => {
   return new Promise((resolve, reject) => {
     let employeeEmail = obj.employeeEmail;
-    Ja.findOne({ employeeEmail }, (err, data) => {
+    let description = obj.description;
+    console.log(obj);
+    Ja.find({ employeeEmail, description }, (err, data) => {
       if (err) return reject(err);
-      if (data === null) {
+      console.log(data);
+      if (data.length === 0) {
         Ja.create(obj, (err, data) => {
           if (err) return reject(err);
           resolve(data);
@@ -29,13 +32,20 @@ module.exports.NewAd = (obj) => {
   });
 };
 
-module.exports.findAll = (email) => {
+module.exports.findAllJa = (employeeEmail) => {
   return new Promise((resolve, reject) => {
-    Ja.find({ employeeEmail: email }, function (err, data) {
+    Ja.find({ employeeEmail }, function (err, data) {
       if (err) return reject(err);
       else {
         resolve(data);
       }
     });
+  });
+};
+
+module.exports.deletAccepted = (object) => {
+  let description = object.description;
+  return Ja.deleteMany({ description }, (err) => {
+    if (err) return reject(err);
   });
 };

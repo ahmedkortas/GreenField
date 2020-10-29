@@ -1,5 +1,12 @@
 let route = require("express").Router();
-let { NewAd, findAll } = require("../../db/jobsPending.js");
+let { NewAd, findAll, deletPending } = require("../../db/jobsPending.js");
+let { findOnebyEmail } = require("../../db/user.js");
+let {
+  NewAdApplications,
+  findAllJa,
+  deletAccepted,
+} = require("../../db/jobsApplication.js");
+let { CreateJobInProgress } = require("../../db/jobsProgress.js");
 
 route.get("/find", (req, res) => {
   findAll()
@@ -15,8 +22,27 @@ route.post("/create", (req, res) => {
     .catch((err) => res.send(err));
 });
 
-route.get("/basou", (req, res) => {
-  res.send("hey");
+route.post("/aplly", (req, res) => {
+  NewAdApplications(req.body)
+    .then((things) => {
+      res.send(things);
+    })
+    .catch((err) => res.send(err));
+});
+
+route.post("/Progress", (req, res) => {
+  let employeeEmail = req.body.employeeEmail;
+  findAllJa(employeeEmail)
+    .then((employees) => {
+      CreateJobInProgress(employees[0])
+        .then((jobInProgress) => {
+          deletAccepted(jobInProgress);
+          deletPending(jobInProgress);
+          res.send(jobInProgress);
+        })
+        .catch((err) => res.send("err"));
+    })
+    .catch((err) => res.send("does"));
 });
 
 module.exports = route;

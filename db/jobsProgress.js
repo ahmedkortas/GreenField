@@ -13,12 +13,38 @@ jobsProgressSchema = new mongoose.Schema({
   providerEmail: { type: String, required: true, unique: true },
 });
 
-let Jp = mongoose.model("JP", jobsProgressSchema);
+let JobInProgress = mongoose.model("JobInProgress", jobsProgressSchema);
 
 module.exports.CreateJobInProgress = (obj) => {
   return new Promise((resolve, reject) => {
+    let NewProgress = {};
     let employeeEmail = obj.employeeEmail;
-    jobsApplication.findAll({ employeeEmail });
+
+    /**
+     * so i added this new progress object to filter out the extra
+     * stuff that exists in the object itself
+     */
+    NewProgress.employeeEmail = obj.employeeEmail;
+    NewProgress.providerEmail = obj.providerEmail;
+    NewProgress.price = obj.price;
+    NewProgress.description = obj.description;
+    NewProgress.contact = obj.contact;
+    NewProgress.address = obj.address;
+    /**
+     * trying to find one to make extrat layer of protection
+     */
+    JobInProgress.findOne({ employeeEmail }, (err, data) => {
+      if (err) return reject(err);
+      if (data === null) {
+        //if no data found create a new one
+        JobInProgress.create(NewProgress, (err, result) => {
+          if (err) return reject(err);
+          resolve(result);
+        });
+      } else {
+        resolve("exists");
+      }
+    });
   });
 };
 

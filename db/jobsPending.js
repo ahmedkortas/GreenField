@@ -9,17 +9,15 @@ jobsPendingSchema = new mongoose.Schema({
   providerEmail: { type: String, required: true },
 });
 
-let Jp = mongoose.model("Jp", jobsPendingSchema);
-
-module.exports = Jp;
+let Jpending = mongoose.model("Jpending", jobsPendingSchema);
 
 module.exports.NewAd = (obj) => {
   return new Promise((resolve, reject) => {
     let description = obj.description;
-    Jp.findOne({ description: description }, (err, data) => {
+    Jpending.findOne({ description: description }, (err, data) => {
       if (err) return reject(err);
       if (data === null) {
-        Jp.create(obj, (err, data) => {
+        Jpending.create(obj, (err, data) => {
           if (err) return reject(err);
           resolve(data);
         });
@@ -36,5 +34,11 @@ module.exports.findAll = () => {
       if (err) return reject(err);
       resolve(data);
     });
+  });
+};
+module.exports.deletPending = (object) => {
+  let description = object.description;
+  return Jpending.deleteMany({ description }, (err) => {
+    if (err) return reject(err);
   });
 };
