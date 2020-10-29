@@ -2,11 +2,11 @@ const db = require("./dbConfig");
 const mongoose = require("mongoose");
 
 jobsPendingSchema = new mongoose.Schema({
-  description: { type: String, required: true },
+  description: { type: String, required: true, unique: true },
   contact: { type: String, required: true },
   address: { type: String, required: true },
   price: { type: Number, required: true },
-  providerEmail: { type: String, required: true, unique: true },
+  providerEmail: { type: String, required: true },
 });
 
 let Jp = mongoose.model("Jp", jobsPendingSchema);
