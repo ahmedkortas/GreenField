@@ -1,10 +1,7 @@
 import React from "react";
 import axios from "axios";
-<<<<<<< HEAD
-=======
 
-import SmallJobs from './SmallJobA.jsx';
->>>>>>> b4498418017850f8a450512492c6e667737225d7
+import SmallJobs from "./SmallJobA.jsx";
 
 import SmallJobs from "./SmallJobA.jsx";
 
