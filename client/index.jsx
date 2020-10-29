@@ -92,7 +92,7 @@ class App extends React.Component {
         </div>
         <div>
           {this.state.view === "Home" ? (
-            <Home items={items}/>
+            <Home items={items} />
           ) : this.state.view === "PostAdd" ? (
             <PostAdd />
           ) : this.state.view === "Adds" ? (
