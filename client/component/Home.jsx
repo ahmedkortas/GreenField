@@ -73,7 +73,7 @@ float:'right',
     <a href="https://www.instagram.com/korfi.tunisia/" target="_blank" class="fa fa-instagram"></a>
     <a href="https://www.google.com/" target="_blank" class="fa fa-google"></a>
     <br></br>
-    <a class="fa fa-envelope"></a>: Korfi.Tunisia@gmail.com
+    <a class="fa fa-envelope"></a>:Korfi.Tunisia@gmail.com
   </footer>
    </div>
     )
