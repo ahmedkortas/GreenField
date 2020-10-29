@@ -25,8 +25,9 @@ class Home extends React.Component {
     let item = this.props.items;
     return (
       <div>
-      
+      <div>  
       <div>
+        <component1>
           <img
             src={item[this.state.i]}
             style={{
@@ -41,18 +42,29 @@ class Home extends React.Component {
               float: "left",
             }}
           />
-        </div>
-     {/* <div className="heading">
-        <h2 className="title">Professionals You Need, From People You Know.</h2><br></br>
-        
-        <p className="subheading">From Dog Walkers and Babysitters to Hairstylists and Personal Trainers, to...</p>
-      </div>
-      <div className="container">
-      
-      <button className="b">More Information</button>
-    </div> */}
+          </component1>
+        </div>  
     </div>
-    
+    <component2>
+     <div style={{  
+      
+       color: "black",
+ left: "50%",
+ top: "50%",
+ transform: "translateX(-50%) translateY(-50%)",
+ textAlign: 'center',
+ fontfamily: 'Arial',
+ fontSize: '3em',
+ marginLeft:'1850px',
+ marginTop: "450px",
+float:'right',
+}}>
+     <h2 className="title" >Professionals You Need, From People You Know.</h2><br></br>   
+     <p className="subheading">From Dog Walkers and Babysitters to Hairstylists and Personal Trainers, to...</p>
+  
+   </div>
+</component2>
+   </div>
     )
    
     

@@ -1,12 +1,14 @@
 .heading {
   color: black;
-  position: fixed;
+ 
   left: 50%;
   top: 50%;
   transform: translateX(-50%) translateY(-50%);
   text-align: center;
   font-family: Pacifico, Calibri;
   font-size: 3em;
+  margin-left:1850px;
+  /* margin-top: 70px; */
 }
 
 .title {
