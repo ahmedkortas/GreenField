@@ -79,25 +79,25 @@ class Home extends React.Component {
           <a
             href="https://www.facebook.com/Korfi-109834854250334"
             target="_blank"
-            class="fa fa-facebook"
+            className="fa fa-facebook"
           ></a>
           <a
             href="https://twitter.com/KorfiTunisia"
             target="_blank"
-            class="fa fa-twitter"
+            className="fa fa-twitter"
           ></a>
           <a
             href="https://www.instagram.com/korfi.tunisia/"
             target="_blank"
-            class="fa fa-instagram"
+            className="fa fa-instagram"
           ></a>
           <a
             href="https://www.google.com/"
             target="_blank"
-            class="fa fa-google"
+            className="fa fa-google"
           ></a>
           <br></br>
-          <a class="fa fa-envelope"></a>:Korfi.Tunisia@gmail.com
+          <a className="fa fa-envelope"></a>:Korfi.Tunisia@gmail.com
         </footer>
       </div>
     );
