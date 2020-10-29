@@ -28,7 +28,7 @@ class MyOffers extends React.Component {
           <div>
             <button onClick={this.onClick}>Pending Jobs</button>
             <button onClick={this.onClick}>Done</button>
-            <button onClick={this.props.goBack}> go Back</button>
+            <button onClick={this.props.goBack}> Go Back</button>
           </div>
         ) : this.state.view === "Pending Jobs" ? (
           <PendingJobs goBack={this.goBack} />

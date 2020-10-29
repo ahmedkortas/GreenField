@@ -1,23 +1,27 @@
-const db = require("./dbConfig");
 const mongoose = require("mongoose");
+const db = require("./dbConfig");
 
-jobsPendingSchema = new mongoose.Schema({
+jobsApplicationSchema = new mongoose.Schema({
   description: { type: String, required: true, unique: true },
   contact: { type: String, required: true },
   address: { type: String, required: true },
   price: { type: Number, required: true },
+  employeeEmail: { type: String, required: true },
   providerEmail: { type: String, required: true },
 });
 
-let Jpending = mongoose.model("Jpending", jobsPendingSchema);
+let Ja = mongoose.model("JApplication", jobsApplicationSchema);
 
-module.exports.NewAd = (obj) => {
+module.exports.NewAdApplications = (obj) => {
   return new Promise((resolve, reject) => {
+    let employeeEmail = obj.employeeEmail;
     let description = obj.description;
-    Jpending.findOne({ description: description }, (err, data) => {
+    console.log(obj);
+    Ja.find({ employeeEmail, description }, (err, data) => {
       if (err) return reject(err);
-      if (data === null) {
-        Jpending.create(obj, (err, data) => {
+      console.log(data);
+      if (data.length === 0) {
+        Ja.create(obj, (err, data) => {
           if (err) return reject(err);
           resolve(data);
         });
@@ -28,17 +32,20 @@ module.exports.NewAd = (obj) => {
   });
 };
 
-module.exports.findAll = () => {
+module.exports.findAllJa = (employeeEmail) => {
   return new Promise((resolve, reject) => {
-    Jp.find({}, (err, data) => {
+    Ja.find({ employeeEmail }, function (err, data) {
       if (err) return reject(err);
-      resolve(data);
+      else {
+        resolve(data);
+      }
     });
   });
 };
-module.exports.deletPending = (object) => {
+
+module.exports.deletAccepted = (object) => {
   let description = object.description;
-  return Jpending.deleteMany({ description }, (err) => {
+  return Ja.deleteMany({ description }, (err) => {
     if (err) return reject(err);
   });
 };

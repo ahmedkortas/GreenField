@@ -1,8 +1,7 @@
 import React from "react";
 import SignIn from "./SignIn.jsx";
 import SignUP from "./SignUp.jsx";
-import "../style/Component/LogIn.css"
-
+import "../style/Component/LogIn.css";
 
 class LogIn extends React.Component {
   constructor(props) {
@@ -18,9 +17,9 @@ class LogIn extends React.Component {
     return (
       <div>
         {this.state.view === false ? (
-          <SignIn handleOnClick={this.handleOnClick} />
+          <SignIn handleOnClick={this.handleOnClick} login={this.props.login} />
         ) : (
-          <SignUP />
+          <SignUP login={this.props.login} />
         )}
       </div>
     );

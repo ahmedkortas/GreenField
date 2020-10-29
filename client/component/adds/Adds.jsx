@@ -1,9 +1,9 @@
 import React from "react";
 import axios from "axios";
-import Data from "./Dummy_DATA.json";
-import "../style/Component/Adds.css"
 
+import SmallJobs from "./SmallJobA.jsx";
 
+import SmallJobs from "./SmallJobA.jsx";
 
 class Adds extends React.Component {
   constructor(props) {
@@ -11,35 +11,29 @@ class Adds extends React.Component {
     this.state = {
       data: [],
     };
-    this.querry();
+
     this.querry = this.querry.bind(this);
   }
 
   querry() {
-    axios.get("/api/Ads").then((response) => {
-      if (this.state.data.length !== response.length) {
-        console.log(response);
-        // this.setState({ data: response });
+    axios.get("/Task/find").then((response) => {
+      if (this.state.data.length !== response.data.length) {
+        this.setState({ data: response.data });
       }
     });
   }
 
   render() {
-    
+    this.querry();
     return (
-      <div className="feed">
-      <ul>
-        <li className="feed-list-item">
-          <div className="feed-list-item-title">Task title.</div><br></br>        
-          <span className="feed-list-item-description">Task description will be here</span>
-          <span  className="feed-list-item-poster">Poster contact will be here</span><br></br><br></br>
-          <div ><span  className="feed-list-item-price">Price will be here</span></div><br></br>
-         <div className="c">
-          <button className="apply">Apply for this!</button></div>
-        </li>
-        </ul>
-        </div>
-    )
+      <div>
+        {this.state.data.length === 0 ? (
+          <div></div>
+        ) : (
+          this.state.data.map((data, i) => <SmallJobs key={i} data={data} />)
+        )}
+      </div>
+    );
   }
 }
 

@@ -1,107 +1,133 @@
 body {
-    font-family: 'PT Serif', sans-serif;
-    margin: 0px;
-    color: #2C3E50;
-    background-color: #ECF0F1;
-    font-size: 1.1em;
-  }
+  font-family: "PT Serif", sans-serif;
+  margin: 0px;
+  color: #2c3e50;
+  background-color: #ecf0f1;
+  font-size: 1.1em;
+}
 
 .feed-list-item {
-    min-height: 350px;
-    margin: 40px;
-    list-style: none;
-    border: 1px solid #c9c8c869;
-    background-color: #fdfdfd;
-    border-radius: 4px;
-    padding: 30px 50px 0px 50px;
-    box-shadow: 0 0 1em #80808066;
-    color: #585858;
-    width: 700px;
-    margin-left: 400px;
-  }
+  min-height: 350px;
+  margin: 40px;
+  list-style: none;
+  border: 1px solid black;
+  background-color: #fdfdfd;
+  border-radius: 8px;
+  padding: 30px 50px 0px 50px;
+  box-shadow: 10px 10px 5px #aaaaaa;
+  color: #585858;
+  width: 700px;
+  margin-left: 400px;
+}
 
-  .feed-list-item-title {
-    font-size: 1.8em;   
-    font-family: 'Francois One';
-    margin-bottom: 10px;
-    color: black;
-  }
+.feed-list-item-description {
+  /* margin-top: 15px; */
+  font-family: Times New Roman;
+  font-weight: bold;
+}
 
-  
+.feed-list-item-address {
+  font-family: Copperplate;
+}
+.feed-list-item-title {
+  font-size: 1.8em;
+  font-family: Dishonorable Mention (Comic Sans);
+  margin-bottom: 10px;
+  margin-left: 60px;
+  color: black;
+}
+
 .apply {
-    position: absolute;
-    top: 63%;
-    left: 60%;
-    /* padding-bottom: 2px; */
-    transform: translate(-50, -50);
-   }
-   
-   .apply {
-    background:rgb(34, 34, 218);
-    color: #ccc;
-    width: 270px;
-    height: 60px;
-    border: 1px solid rgb(7, 7, 74);
-    font-size: 18px;
-    border-radius: 4px;
-    transition: .6s;
-    overflow: hidden;
-   }
+  position: absolute;
+  top: 63%;
+  left: 60%;
+  /* padding-bottom: 2px; */
+  transform: translate(-50, -50);
+}
 
- 
-   
-   .apply:focus {
-    outline: none;
-   }
-   
-   .apply:before {
-       content: '';
-       display: block;
-       position: absolute;
-       background: rgba(255,255,255,.5);
-       width: 60px;
-       height: 100%;
-       left: 0;
-       top: 0;
-       opacity: .5;
-       filter: blur(30px);
-       transform: translateX(-130px) skewX(-15deg);
-   }
-   
-   .apply:after {
-       content: '';
-       display: block;
-       position: absolute;
-       background: rgba(255,255,255,.2);
-       width: 30px;
-       height: 100%;
-       left: 30px;
-       top: 0;
-       opacity: 0;
-       filter: blur(30px);
-       transform: translateX(-100px) scaleX(-15deg);
-   }
-   
-   .apply:hover {
-      background: rgb(7, 7, 74);
-      cursor: pointer;
-   }
-   
-  .apply:hover:before {
-    transform: translateX(300px) skewX(-15deg);
-    opacity: .6;
-    transition: .7s;
-   }
-   
-   .apply:hover:after {
-    transform: translateX(300px) skewX(-15deg);
-    opacity: 1;
-    transition: .7s;
-   }
+.apply {
+  background: rgb(34, 34, 218);
+  color: #ccc;
+  width: 270px;
+  height: 60px;
+  border: 1px solid rgb(7, 7, 74);
+  font-size: 18px;
+  border-radius: 4px;
+  transition: 0.6s;
+  overflow: hidden;
+}
 
-  
-  
-    /* .c{
+.apply:focus {
+  outline: none;
+}
+
+.apply:before {
+  content: "";
+  display: block;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.5);
+  width: 60px;
+  height: 100%;
+  left: 0;
+  top: 0;
+  opacity: 0.5;
+  filter: blur(30px);
+  transform: translateX(-130px) skewX(-15deg);
+}
+
+.apply:after {
+  content: "";
+  display: block;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.2);
+  width: 30px;
+  height: 100%;
+  left: 30px;
+  top: 0;
+  opacity: 0;
+  filter: blur(30px);
+  transform: translateX(-100px) scaleX(-15deg);
+}
+
+.apply:hover {
+  background: rgb(7, 7, 74);
+  cursor: pointer;
+}
+
+.apply:hover:before {
+  transform: translateX(300px) skewX(-15deg);
+  opacity: 0.6;
+  transition: 0.7s;
+}
+
+.apply:hover:after {
+  transform: translateX(300px) skewX(-15deg);
+  opacity: 1;
+  transition: 0.7s;
+}
+
+.btn-primary {
+  width: 120px;
+  height: 160%;
+  position: center;
+  margin-bottom: 25px;
+  margin-left: 400px;
+  border-radius: 4px;
+  /* margin-bottom: 60; */
+}
+
+.btn-primary:hover {
+  background: rgba(173, 6, 6, 0.74);
+  cursor: pointer;
+}
+
+.btn-primary:hover:before {
+  transform: translateX(300px) skewX(-15deg);
+  opacity: 0.6;
+  transition: 0.7s;
+}
+
+/* .c{
     text-align: center;
     margin-top: 360px;
 }  
