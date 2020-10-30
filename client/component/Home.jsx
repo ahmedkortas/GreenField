@@ -25,7 +25,7 @@ class Home extends React.Component {
     console.log(this.state.i);
     let item = this.props.items;
     return (
-      <div>
+      <div >
       <div>  
       <div>
           <img
@@ -58,30 +58,27 @@ class Home extends React.Component {
  marginTop: "390px",
 float:'right',
 }}>
-     <h2 className="title" >KORFI</h2><br></br>   
-     <p className="subheading">we all suffer from it, every and each one of us has to do some daily boring routine that we hate, gardening, dog walking, fixing the doors and many many more other tasks. Not any more, we present to you our solution for your problems, we provide a platform that you can use to delegate the small daily tasks that we call Korfi. no more cleaning the garage or painting the house, a simple click and you're done.
+     {/* <h2 className="title" >KORFI</h2> */}
+     {/* <br></br>
+     <br></br>
+     <br></br> */}
+     <p className="subheading"><strong>KORFI : </strong> we all suffer from it, every and each one of us has to do some daily boring routine that we hate, gardening, dog walking, fixing the doors and many many more other tasks. Not any more, we present to you our solution for your problems, we provide a platform that you can use to delegate the small daily tasks that we call Korfi. no more cleaning the garage or painting the house, a simple click and you're done.
 and for those who just are looking for some opportunities, go hunt on our Ads page and let the MONEY flow.
 We provide to you the work, do not hesitate our solution for a better and stressless life</p>
   
    </div>
-   <div style={{  
-transform: "translateX(-50%) translateY(-50%)",
-fontfamily: 'Dishonorable Mention (Comic Sans)',
-marginLeft:'1600px',
-marginTop: "130px",
-float:'right',
-}}>
-    <a href="https://www.facebook.com/Korfi-109834854250334" target="_blank" class="fa fa-facebook"></a>
-    <a href="https://twitter.com/KorfiTunisia" target="_blank" class="fa fa-twitter"></a>
-    <a href="https://www.instagram.com/korfi.tunisia/" target="_blank" class="fa fa-instagram"></a>
-    <a href="https://www.google.com/" target="_blank" class="fa fa-google"></a>
-    <br></br>
-    <a class="fa fa-envelope"></a>:Korfi.Tunisia@gmail.com
-  </div>
+   <div  style={{float:'left'}}>
+    <ul class="social-icons" >
+        <li><a href="https://www.facebook.com/Korfi-109834854250334" class="social-icon" target="_blank"> <i class="fa fa-facebook"></i></a></li>
+        <li><a href="https://twitter.com/KorfiTunisia" class="social-icon"> <i class="fa fa-twitter" target="_blank"></i></a></li>
+        <li><a href="https://www.instagram.com/korfi.tunisia/" class="social-icon" target="_blank"> <i class="fa fa-instagram"></i></a></li>
+        <li><a href="https://www.google.com/" class="social-icon" target="_blank"> <i class="fa fa-google"></i></a></li>
+        <li><a  class="social-icon"> <i class="fa fa-envelope"></i></a></li><span style={{color:'black' ,fontSize: '25px'}}> :<strong> Korfi.Tunisia@gmail.com</strong></span> 
+      
+    </ul>
+</div>
    </div>
-    )
-   
-    
+    )   
   }
 }
 

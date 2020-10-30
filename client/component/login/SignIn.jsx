@@ -38,6 +38,7 @@ class SignIn extends React.Component {
     console.log(this.props);
     return (
       <div>
+        <i id="icon1" className="material-icons prefix">mail</i>
         <input
           className="i1"
           type="email"
@@ -47,6 +48,7 @@ class SignIn extends React.Component {
           onChange={this.handleChange}
         ></input>
         <br></br>
+        <i id="icon2" className="material-icons prefix">vpn_key</i>
         <input
           className="i2"
           type="password"
@@ -61,7 +63,7 @@ class SignIn extends React.Component {
             No Korfi Account/Create Account
           </span>
         </div>
-        <button className="bl" onClick={this.postUser}>
+        <button id="sign" className="bl" onClick={this.postUser}>
           SignIn{" "}
         </button>
       </div>
