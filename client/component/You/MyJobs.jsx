@@ -1,5 +1,5 @@
 import React from "react";
-import Appliedjob from "./Myjobs/AppliedJobs.jsx";
+import AppliedJob from "./Myjobs/AppliedJob.jsx";
 import JobInProgress from "./Myjobs/JobsInProg.jsx";
 
 class MyJobs extends React.Component {
@@ -27,7 +27,7 @@ class MyJobs extends React.Component {
             <button onClick={this.props.goBack}> Go Back</button>
           </div>
         ) : this.state.view === "Applied Job" ? (
-          <Appliedjob goBack={this.goBack}/>
+          <AppliedJob  goBack={this.goBack}/>
         ) : this.state.view === "Job In Progress" ? (
           <JobInProgress goBack={this.goBack}/>
         ) : (
