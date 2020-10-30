@@ -25,13 +25,17 @@ route.post("/SingUp", (req, res) => {
       .then((data) => {
         res.send(data);
       })
+
       .catch((err) => {
         res.send(err);
+
       });
   }
 });
 
+
 route.post("/SignIn", (req, res) => {
+  console.log(req.body)
   let obj = {
     email: req.body.email,
     password: req.body.password,
@@ -43,6 +47,7 @@ route.post("/SignIn", (req, res) => {
     .catch((err) => {
       res.send("does not exists");
     });
+
 });
 
 module.exports = route;
