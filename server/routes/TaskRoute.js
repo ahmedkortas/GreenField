@@ -15,9 +15,16 @@ route.get("/find", (req, res) => {
 });
 
 route.post("/create", (req, res) => {
-  NewAd(req.body)
-    .then((things) => {
-      res.send(things);
+  console.log(req.body);
+  findOnebyEmail(req.body)
+    .then((data) => {
+      let obj = req.body;
+      obj.address = data.address;
+      NewAd(obj)
+        .then((things) => {
+          res.send(things);
+        })
+        .catch((err) => res.send(err));
     })
     .catch((err) => res.send(err));
 });
