@@ -32,7 +32,7 @@ module.exports.createUser = (obj) => {
 
 module.exports.findOnebyEmail = (obj) => {
   return new Promise((resolve, reject) => {
-    let email = obj.email;
+    let email = obj.providerEmail;
     User.findOne({ email }, (err, user) => {
       if (err) return reject(err);
       if (user !== null) {
