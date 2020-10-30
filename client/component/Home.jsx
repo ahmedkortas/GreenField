@@ -31,10 +31,10 @@ class Home extends React.Component {
             src={item[this.state.i]}
             style={{
               width: "60%",
-              height: "80%",
+              height: "90%",
               position: "absolute",
               padding: "25px",
-             
+              borderRadius: "8px",
               display: "block",
               marginLeft: "auto",
               marginRight: "auto",
@@ -54,18 +54,18 @@ class Home extends React.Component {
  fontfamily: 'Arial',
  fontSize: '3em',
  marginLeft:'1850px',
- marginTop: "450px",
+ marginTop: "390px",
 float:'right',
 }}>
      <h2 className="title" >Professionals You Need, From People You Know.</h2><br></br>   
      <p className="subheading">From Dog Walkers and Babysitters to Hairstylists and Personal Trainers, to...</p>
   
    </div>
-   <footer style={{  
+   <div style={{  
 transform: "translateX(-50%) translateY(-50%)",
-fontfamily: 'Arial',
-marginLeft:'1700px',
-marginTop: "160px",
+fontfamily: 'Dishonorable Mention (Comic Sans)',
+marginLeft:'1600px',
+marginTop: "130px",
 float:'right',
 }}>
     <a href="https://www.facebook.com/Korfi-109834854250334" target="_blank" class="fa fa-facebook"></a>
@@ -74,7 +74,7 @@ float:'right',
     <a href="https://www.google.com/" target="_blank" class="fa fa-google"></a>
     <br></br>
     <a class="fa fa-envelope"></a>:Korfi.Tunisia@gmail.com
-  </footer>
+  </div>
    </div>
     )
    
