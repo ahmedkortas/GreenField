@@ -56,52 +56,46 @@ class PostJob extends React.Component {
   render() {
     return (
       <div>
+
+        
+
         <form>
           <h2 className="t">Post your Task</h2>
-
-          <i id="icon1" className="material-icons prefix">
-            mail
-          </i>
-
-          <input
-            className="is1"
-            type="text"
-            placeholder="task title"
-            onChange={this.handleTitle}
-          ></input>
-          <i id="icon2" className="material-icons prefix">
-            contact
-          </i>
-          <input
-            className="is2"
-            type="text"
-            placeholder="contact"
-            onChange={this.handleContact}
-          ></input>
-          <i id="icon3" className="material-icons prefix">
-            text
-          </i>
-          <textarea
-            className="is3"
-            onChange={this.handleDescription}
-            placeholder={"your text"}
-          ></textarea>
-          <i id="icon4" className="material-icons prefix">
-            attach_money
-          </i>
-          <input
-            className="is4"
-            type="number"
-            placeholder="price"
-            onChange={this.handlePrice}
-          ></input>
-        </form>
-        <div>
-          <button className="bc" onClick={this.handleSubmit}>
-            Share Task
-          </button>
-        </div>
-      </div>
+    
+              <input
+                className="is1"
+                type="text"
+                placeholder="task title"
+                onChange={this.handleTitle}
+              ></input>
+            
+              <input
+                className="is2"
+                type="text"
+                placeholder="contact"
+                onChange={this.handleContact}
+              ></input>
+              <textarea
+                className="is3"
+                onChange={this.handleDescription}
+                placeholder={"your text"}
+              ></textarea>
+              <input
+                className="is4"
+                type="number"
+                placeholder="price"
+                onChange={this.handlePrice}
+              ></input>
+            </form>
+            <div>
+              <button className="bc" onClick={this.handleSubmit}>
+                Share Task
+              </button>
+            </div>
+          </div>
+          
+     
+   
     );
   }
 }
