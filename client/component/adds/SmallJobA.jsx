@@ -29,7 +29,7 @@ class SmallJobA extends React.Component {
     <div className="feed">
     <ul>
       <li className="feed-list-item">
-        <span className="feed-list-item-title">Title : {this.props.data.title}</span><br></br><br></br>         
+        <span className="feed-list-item-title">{this.props.data.title}</span><br></br><br></br>         
         <p className="feed-list-item-description">Description : {this.props.data.description}</p> <br></br>     
         <span  className="feed-list-item-poster">Contact : {this.props.data.contact}</span><br></br><br></br>
         <span  className="feed-list-item-price"><strong> Earning  : </strong></span> <span style={{color : '#00e600', fontSize : "20px", fontWeight :'bold' }}>{this.props.data.price}DT</span>  <br></br><br></br>
