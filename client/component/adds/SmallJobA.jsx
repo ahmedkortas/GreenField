@@ -21,7 +21,6 @@ class SmallJobA extends React.Component {
       providerEmail: this.props.data.providerEmail,
       employeeEmail: localStorage.getItem("currentUser"),
     };
-    console.log(obj);
     axios.post("/Task/aplly", obj).then((res) => console.log(res));
   }
   //querry data
@@ -36,10 +35,10 @@ class SmallJobA extends React.Component {
         <span  className="feed-list-item-poster">{this.props.data.contact}</span><br></br><br></br>
         <span  className="feed-list-item-price"><strong> Earning  : </strong></span> <span style={{color : '#00e600', fontSize : "20px", fontWeight :'bold' }}>{this.props.data.price}DT</span>  <br></br><br></br>
         <span  className="feed-list-item-address"><strong>  Location :  {this.props.data.address}  </strong></span> <br></br><br></br> 
-        <span><button  type="button" className="btn-primary">Apply here </button></span>
+        <span><button  type="button" className="btn-primary" onClick={this.clickHandler}>Apply here </button></span>
       </li>
       </ul>    
-      </div>)
+      </div>) 
   }
 }
 

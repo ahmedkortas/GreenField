@@ -10,44 +10,39 @@ class  JobPend extends React.Component {
 
 
     render() { 
-        console.log(this.props , "JobPend")
-        return (   
+      console.log(this.props.data)
+        return (        
         <div className="feed">
         <ul>
           <li className="feed-list-item">
             <span className="feed-list-item-title">
-              {/* {this.props.data.title} */}
+              {this.props.data[0].title} 
             </span>
             <br></br>
             <br></br>
             <p className="feed-list-item-description">
-              {/* {this.props.data.description} */}
+              {this.props.data[0].description} 
             </p>{" "}
             <br></br>
             <span className="feed-list-item-poster">
-              {/* {this.props.data.contact} */}
+              {this.props.data[0].contact}
             </span>
             <br></br>
             <br></br>
             <span className="feed-list-item-price">
               <strong> Earning: </strong>
-              {/* {this.props.data.price}DT */}
+             {this.props.data[0].price}DT
             </span>
             <br></br>
             <br></br>
+             
             <span className="feed-list-item-address">
-              {/* <strong> Location : </strong> {this.props.data.address} */}
+            <strong> Location : </strong> {this.props.data[0].address}
             </span>{" "}
             <br></br>
             <br></br>
-            <span>
-              <button
-                type="button"
-                className="btn-primary"
-                onClick={this.props.clickHandler}
-              >
-                Apply here{" "}
-              </button>
+            <span className="feed-list-item-poster">
+             <strong>Task applicant : </strong> {this.props.data[0].employeeEmail}
             </span>
           </li>
         </ul>
