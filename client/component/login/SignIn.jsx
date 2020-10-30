@@ -64,7 +64,7 @@ class SignIn extends React.Component {
             No Korfi Account/Create Account
           </span>
         </div>
-        <button id="sign" className="bl" onClick={this.postUser}> */}
+        <button id="sign" className="bl" onClick={this.postUser}> 
            SignIn{" "}
         </button>
       </div>
