@@ -36,6 +36,7 @@ module.exports.findAll = () => {
     });
   });
 };
+
 module.exports.deletPending = (object) => {
   let description = object.description;
   return Jpending.deleteMany({ description }, (err) => {
