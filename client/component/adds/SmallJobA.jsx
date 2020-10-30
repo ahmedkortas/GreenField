@@ -5,9 +5,7 @@ import "../style/Component/Adds.css";
 class SmallJobA extends React.Component {
   constructor(props) {
     super(props);
-    // this.state = {
-    //   loge: localStorage.get("email"),
-    // };
+    
     this.clickHandler = this.clickHandler.bind(this);
   }
 
