@@ -52,6 +52,7 @@ class MyJobs extends React.Component {
             })}
           </div>
         </div>
+        <button onClick={this.props.goBack}> Go Back</button>
       </div>
     );
   }
