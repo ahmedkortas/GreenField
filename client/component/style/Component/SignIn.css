@@ -75,4 +75,26 @@
   cursor: pointer;
 }
 
+#icon2{
+  margin-top: 90px;
+  margin-left: 320px;
+}
 
+#icon1{
+  margin-top: 40px;
+  margin-left: 320px;
+}
+
+.i2{
+  margin-top: 110px;
+}
+
+.i1{
+  margin-top: 60px;
+}
+
+#sign{
+  width: 180px;
+height: 40px;
+margin-left: 40px;
+}
