@@ -24,6 +24,7 @@ class SignIn extends React.Component {
       if (res.data === "does not exists") {
         alert("this user does not exist");
       } else {
+        console.log(res.data)
         if (res.data.password !== this.state.password) {
           alert("wrong password");
         } else {
@@ -63,8 +64,8 @@ class SignIn extends React.Component {
             No Korfi Account/Create Account
           </span>
         </div>
-        <button id="sign" className="bl" onClick={this.postUser}>
-          SignIn{" "}
+        <button id="sign" className="bl" onClick={this.postUser}> 
+           SignIn{" "}
         </button>
       </div>
     );

@@ -14,11 +14,10 @@ let User = mongoose.model("User", userSchema);
 
 module.exports.createUser = (obj) => {
   return new Promise((resolve, reject) => {
-    let email = obj.email;
-    User.findOne({ email: email }, (err, data) => {
+    let email = obj.providerEmail;
+    User.findOne({ email }, (err, data) => {
       if (err) return reject(err);
       if (data === null) {
-        console.log(obj);
         User.create(obj, (err, data) => {
           if (err) return reject(err);
           resolve(data);
@@ -33,6 +32,9 @@ module.exports.createUser = (obj) => {
 module.exports.findOnebyEmail = (obj) => {
   return new Promise((resolve, reject) => {
     let email = obj.providerEmail;
+    if (email === undefined) {
+      email = obj.email;
+    }
     User.findOne({ email }, (err, user) => {
       if (err) return reject(err);
       if (user !== null) {

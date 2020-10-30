@@ -35,6 +35,7 @@ route.post("/SingUp", (req, res) => {
 
 
 route.post("/SignIn", (req, res) => {
+  console.log(req.body)
   let obj = {
     email: req.body.email,
     password: req.body.password,
