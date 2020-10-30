@@ -1,28 +1,12 @@
 import React from "react";
-import axios from "axios";
-// import "../style/Component/Adds.css";
 
 class JobsInProg extends React.Component {
   constructor(props) {
     super(props);
-    this.clickHandler = this.clickHandler.bind(this);
   }
-
-  clickHandler() {
-    let obj = { description: this.props.data.description };
-    console.log(obj);
-    axios
-      .post("/Task/done", obj)
-      .then((res) => {
-        alert("thanks for completing the job");
-        location.reload();
-      })
-      .catch((err) => console.log(err));
-  }
-
-  //querry data
 
   render() {
+    console.log(this.props.data);
     return (
       <div className="feed">
         <ul>
@@ -53,7 +37,6 @@ class JobsInProg extends React.Component {
             <br></br>
             <span className="feed-list-item-poster">
               <strong>Task applicant : </strong> {this.props.data.employeeEmail}
-              <button onClick={this.clickHandler}>Done</button>
             </span>
           </li>
         </ul>

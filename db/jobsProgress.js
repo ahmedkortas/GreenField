@@ -67,13 +67,39 @@ module.exports.CreateJobInProgress = (obj) => {
 //   });
 // };
 
-module.exports.findAllJobinProg = (employeeEmail) => {
+module.exports.findAllJobinProg = (obj) => {
+  if (obj.employeeEmail !== undefined) {
+    let employeeEmail = obj.employeeEmail;
+    return new Promise((resolve, reject) => {
+      JobInProgress.find({ employeeEmail }, (err, data) => {
+        if (err) return reject(err);
+        else {
+          resolve(data);
+        }
+      });
+    });
+  } else {
+    return new Promise((resolve, reject) => {
+      let providerEmail = obj.providerEmail;
+      JobInProgress.find({ providerEmail }, (err, data) => {
+        if (err) return reject(err);
+        else {
+          resolve(data);
+        }
+      });
+    });
+  }
+};
+
+module.exports.findToDone = (description) => {
   return new Promise((resolve, reject) => {
-    JobInProgress.find({ employeeEmail }, function (err, data) {
+    JobInProgress.findOne({ description }, (err, data) => {
       if (err) return reject(err);
-      else {
-        resolve(data);
-      }
+      resolve(data);
     });
   });
+};
+
+module.exports.deletProg = (description) => {
+  return JobInProgress.deleteOne({ description });
 };
