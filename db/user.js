@@ -15,7 +15,6 @@ let User = mongoose.model("User", userSchema);
 module.exports.createUser = (obj) => {
   return new Promise((resolve, reject) => {
     let email = obj.providerEmail;
-    console.log(email)
     User.findOne({ email }, (err, data) => {
       if (err) return reject(err);
       if (data === null) {
