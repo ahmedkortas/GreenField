@@ -56,19 +56,8 @@ class PostJob extends React.Component {
   render() {
     return (
       <div>
-
         <form>
           <h2 className="t">Post your Task</h2>
-          
-          
-
-        <div>
-          <div className='tit'><h2 className="t">Post your Task</h2></div>
-          <br></br>
-          <div className="inputs">
-            <form>
-              <i id="icon1" className="material-icons prefix">mail</i>
-
               <input
                 className="is1"
                 type="text"
@@ -101,9 +90,7 @@ class PostJob extends React.Component {
                 Share Task
               </button>
             </div>
-          </div>
-     
-     
+          </div>         
     );
   }
 }
