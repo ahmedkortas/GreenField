@@ -14,11 +14,13 @@ let Jpending = mongoose.model("Jpending", jobsPendingSchema);
 module.exports.NewAd = (obj) => {
   return new Promise((resolve, reject) => {
     let description = obj.description;
+console.log(obj)
     Jpending.findOne({ description: description }, (err, data) => {
       if (err) return reject(err);
       if (data === null) {
         Jpending.create(obj, (err, data) => {
           if (err) return reject(err);
+          console.log(data,'db')
           resolve(data);
         });
       } else {
