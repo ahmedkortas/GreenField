@@ -1,5 +1,4 @@
 .in1{
- 
   top:20%;
   left:50%;
   width:50%;
@@ -63,9 +62,11 @@ padding-bottom:1rem;
   -webkit-transform:translate(-50%,-50%);
           transform:translate(-50%,-50%);
           border-color: black;
-          margin-top: 20px;
+          margin-top: 30px;
           margin-left: 800px;
 }
+
+
  
 .bb {
   
@@ -73,7 +74,7 @@ padding-bottom:1rem;
   left: 42%;
   /* padding-bottom: 2px; */
   transform: translate(-50, -50);
-  margin-left: 650px;
+  margin-left: 700px;
  }
  
  .bb {
@@ -143,8 +144,9 @@ padding-bottom:1rem;
  }
 
 #icone1{
-  margin-top: 100px;
-  margin-right: 100px;
+  margin-top: 50px;
+  margin-left: 800px;
+  
 }
 #icone2{
   margin-top: 130px;
@@ -162,5 +164,7 @@ padding-bottom:1rem;
   margin-top: 100px;
   margin-right: -500px;
 }
+
+
 
 
