@@ -33,9 +33,13 @@ module.exports.NewAdApplications = (obj) => {
   });
 };
 
-module.exports.findAllJa = (employeeEmail) => {
+module.exports.findAllJa = (obj) => {
+  console.log(obj)
+  let employeeEmail=obj.employeeEmail
   return new Promise((resolve, reject) => {
-    Ja.find({ employeeEmail }, function (err, data) {
+    Ja.find({ employeeEmail }, (err, data)=> {
+      console.log(data)
+      console.log(err)
       if (err) return reject(err);
       else {
         resolve(data);

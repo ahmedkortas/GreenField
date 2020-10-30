@@ -25,6 +25,7 @@ margin-top: 50px;
 label{
 width: 240px;
 display: inline-block;
+color: black;
 }
 .c{
   margin-left: -23px;
@@ -45,7 +46,7 @@ display: inline-block;
 
 .inputFields > select{
 font-size: 20px;
-width: 240px;
+width: 350px;
 }
 
 
@@ -120,10 +121,13 @@ padding-bottom:0.5rem;
 
 .title{
 text-align: center;
+color: black;
+font-weight: bold;
 }
 
 .sub{
 text-align: center;
+color: black;
 }
 
 
@@ -158,9 +162,10 @@ transform: translate(-50, -50);
 
 .button {
 background:rgb(34, 34, 218);
+margin-top: 350px;
 color: #ccc;
-width: 140px;
-height: 30px;
+width: 180px;
+height: 40px;
 border: 1px solid rgb(7, 7, 74);
 font-size: 18px;
 border-radius: 4px;
@@ -215,4 +220,32 @@ transition: .7s;
 transform: translateX(300px) skewX(-15deg);
 opacity: 1;
 transition: .7s;
+}
+
+#ic1{
+  color: black;
+}
+
+#ic2{
+  color: black;
+}
+
+#ic3{
+  color: black;
+}
+
+#ic4{
+  color: black;
+}
+
+#ic5{
+  color: black;
+}
+
+#ic6{
+  color: black;
+}
+
+#ic7{
+  color: black;
 }

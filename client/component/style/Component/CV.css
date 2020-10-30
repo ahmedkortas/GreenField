@@ -1,5 +1,4 @@
 .in1{
- 
   top:20%;
   left:50%;
   width:50%;
@@ -63,9 +62,11 @@ padding-bottom:1rem;
   -webkit-transform:translate(-50%,-50%);
           transform:translate(-50%,-50%);
           border-color: black;
-          margin-top: 20px;
+          margin-top: 30px;
           margin-left: 800px;
 }
+
+
  
 .bb {
   
@@ -73,19 +74,20 @@ padding-bottom:1rem;
   left: 42%;
   /* padding-bottom: 2px; */
   transform: translate(-50, -50);
-  margin-left: 650px;
+  margin-left: 700px;
  }
  
  .bb {
   background:rgb(34, 34, 218);
   color: #ccc;
-  width: 270px;
-  height: 60px;
+  width: 180px;
+  height: 40px;
   border: 1px solid rgb(7, 7, 74);
   font-size: 18px;
   border-radius: 4px;
   transition: .6s;
   overflow: hidden;
+  margin-right: -350px;
  }
  
  .bb:focus {
@@ -140,6 +142,29 @@ padding-bottom:1rem;
  form{
    margin-top: 50px;
  }
+
+#icone1{
+  margin-top: 50px;
+  margin-left: 800px;
+  
+}
+#icone2{
+  margin-top: 130px;
+  margin-right: -100px;
+}
+#icone3{
+  margin-top: 100px;
+  margin-right: -500px;
+}
+#icone4{
+  margin-top: 100px;
+  margin-right: -500px;
+}
+#icone5{
+  margin-top: 100px;
+  margin-right: -500px;
+}
+
 
 
 

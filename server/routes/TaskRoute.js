@@ -6,7 +6,10 @@ let {
   findAllJa,
   deletAccepted,
 } = require("../../db/jobsApplication.js");
-let { CreateJobInProgress, findAllJobinProg } = require("../../db/jobsProgress.js");
+let {
+  CreateJobInProgress,
+  findAllJobinProg,
+} = require("../../db/jobsProgress.js");
 
 route.get("/find", (req, res) => {
   findAll()
@@ -14,17 +17,22 @@ route.get("/find", (req, res) => {
     .catch((error) => res.send({ error }));
 });
 
-
-
 //create pending job
 route.post("/create", (req, res) => {
-  NewAd(req.body)
-    .then((things) => {
-      res.send(things);
+  var obj = req.body;
+  findOnebyEmail(obj)
+    .then((data) => {
+      obj.address = data.address;
+      NewAd(obj);
+      console
+        .log(obj, "here")
+        .then((things) => {
+          res.send(things);
+        })
+        .catch((err) => res.send(err));
     })
     .catch((err) => res.send(err));
 });
-
 
 //create new appplication
 route.post("/aplly", (req, res) => {
@@ -36,24 +44,23 @@ route.post("/aplly", (req, res) => {
     .catch((err) => res.send(err));
 });
 
+//finds all the jobs that i applied for
+route.post("/jobApplication/employee", (req, res) => {
+  findAllJa(req.body)
+    .then((data) => {
+      res.send(data);
+    })
+    .catch((err) => res.send(err));
+});
+
 //finding job in prog
-route.get("/findProg", (req,res)=>{
-  findAllJobinProg(req.body.employeeEmail)
-  .then((data)=>{
-console.log(data)
-  res.send(data); 
-  })
-
-})
-
-route.get("/jobApplication/employee",(req,res)=>{
-  findAllJa(req.body.employeeEmail)
-  .then((data)=>{
-    console.log(data)
-  res.send(data); 
-  })
-})
-
+route.post("/findProg", (req, res) => {
+  console.log(req.body.employeeEmail);
+  findAllJobinProg(req.body.employeeEmail).then((data) => {
+    console.log(data);
+    res.send(data);
+  });
+});
 
 //creat job in prog and change other fields
 route.post("/Progress", (req, res) => {

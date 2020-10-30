@@ -107,8 +107,10 @@ body {
 }
 
 .btn-primary {
+    padding: 2%;
+margin: 2%;
   width: 120px;
-  height: 160%;
+  height: 60%;
   position: center;
   margin-bottom: 25px;
   margin-left: 400px;
