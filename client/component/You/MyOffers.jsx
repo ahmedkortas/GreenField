@@ -1,42 +1,79 @@
 import React from "react";
 import Done from "./MyOffers/Done.jsx";
-import PendingJobs from "./MyOffers/Pending.jsx";
+import Pending from "./MyOffers/Pending.jsx";
+import JobsInProg from "./MyOffers/JobInProg.jsx";
+import axios from "axios";
 
 class MyOffers extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       view: "home",
+      dataPending: [],
+      dataDone: [],
+      dataInProgress: [],
     };
-    this.onClick = this.onClick.bind(this);
+    this.getJobiProg = this.getJobiProg.bind(this);
     this.goBack = this.goBack.bind(this);
-  }
-
-  onClick(e) {
-    this.setState({ view: e.target.innerHTML });
   }
 
   goBack() {
     this.setState({ view: "home" });
   }
 
+  getJobiProg() {
+    let obj = {
+      providerEmail: localStorage.getItem("currentUser"),
+    };
+    axios.post("/Task/findProg", obj).then((response) => {
+      if (this.state.dataInProgress.length !== response.data.length) {
+        console.log(response.data);
+        this.setState({ dataInProgress: response.data });
+      }
+    });
+  }
+
+  queryPending() {
+    let obj = { providerEmail: localStorage.getItem("currentUser") };
+    console.log(obj);
+    axios.post("/", obj).then((response) => {
+      if (this.state.dataInProgress.length !== response.data.length) {
+        this.setState({ dataPending: response.data });
+      }
+      return;
+    });
+  }
+
+  queryDone() {
+    let obj = { providerEmail: localStorage.getItem("currentUser") };
+    console.log(obj);
+    axios.post("/", obj).then((response) => {
+      if (this.state.data.length !== response.data.length) {
+        this.setState({ dataDone: response.data });
+      }
+      return;
+    });
+  }
+
   render() {
-    console.log(this.state.view);
+    this.getJobiProg();
+    console.log(this.state.dataInProgress);
     return (
       <div>
-        {this.state.view === "home" ? (
-          <div>
-            <button onClick={this.onClick}>Pending Jobs</button>
-            <button onClick={this.onClick}>Done</button>
-            <button onClick={this.props.goBack}> Go Back</button>
-          </div>
-        ) : this.state.view === "Pending Jobs" ? (
-          <PendingJobs goBack={this.goBack} />
-        ) : this.state.view === "Done" ? (
-          <Done goBack={this.goBack} />
-        ) : (
-          <div></div>
-        )}
+        <button onClick={this.props.goBack}> Go Back</button>
+        <div>
+          {this.state.dataDone.map((data, index) => (
+            <Done data={data} key={index} />
+          ))}
+        </div>
+        <div>
+          {this.state.dataPending.map((data, index) => (
+            <Pending data={data} key={index} />
+          ))}
+          {this.state.dataInProgress.map((data, index) => (
+            <JobsInProg data={data} key={index} />
+          ))}
+        </div>
       </div>
     );
   }

@@ -9,7 +9,11 @@ let {
 let {
   CreateJobInProgress,
   findAllJobinProg,
+  findToDone,
+  deletProg,
 } = require("../../db/jobsProgress.js");
+
+let { createDone } = require("../../db/jobDone.js");
 
 route.get("/find", (req, res) => {
   findAll()
@@ -23,9 +27,7 @@ route.post("/create", (req, res) => {
   findOnebyEmail(obj)
     .then((data) => {
       obj.address = data.address;
-      NewAd(obj);
-      console
-        .log(obj, "here")
+      NewAd(obj)
         .then((things) => {
           res.send(things);
         })
@@ -38,11 +40,12 @@ route.post("/create", (req, res) => {
 route.post("/aplly", (req, res) => {
   NewAdApplications(req.body)
     .then((things) => {
-      console.log(things);
       res.send(things);
     })
     .catch((err) => res.send(err));
 });
+
+//find pending for provider
 
 //finds all the jobs that i applied for
 route.post("/jobApplication/employee", (req, res) => {
@@ -55,9 +58,7 @@ route.post("/jobApplication/employee", (req, res) => {
 
 //finding job in prog
 route.post("/findProg", (req, res) => {
-  console.log(req.body.employeeEmail);
-  findAllJobinProg(req.body.employeeEmail).then((data) => {
-    console.log(data);
+  findAllJobinProg(req.body).then((data) => {
     res.send(data);
   });
 });
@@ -76,6 +77,27 @@ route.post("/Progress", (req, res) => {
         .catch((err) => res.send("err"));
     })
     .catch((err) => res.send("does"));
+});
+
+route.post("/done", (req, res) => {
+  let description = req.body.description;
+  findToDone(description).then((done) => {
+    console.log(done);
+    if (done !== null) {
+      let NewProgress = {};
+      NewProgress.employeeEmail = done.employeeEmail;
+      NewProgress.providerEmail = done.providerEmail;
+      NewProgress.price = done.price;
+      NewProgress.description = done.description;
+      NewProgress.contact = done.contact;
+      NewProgress.address = done.address;
+      createDone(NewProgress).then((data) => {
+        deletProg(data.description).then((done) => {
+          res.send("ok");
+        });
+      });
+    }
+  });
 });
 
 module.exports = route;
