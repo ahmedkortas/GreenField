@@ -1,6 +1,7 @@
 .t {
   text-align: center;
 
+
   margin-top: 30px;
   color: black;
   font-weight: bold;
@@ -59,7 +60,9 @@ padding-bottom:1rem;
           border-color: black;
           margin-top: 20px;
           margin-left: 800px;
+
 }
+
 .is5{
   
   top:60%;
@@ -90,7 +93,9 @@ padding-bottom:1rem;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   border-color: black;
+
   margin-top: 180px;
+
   margin-left: 40px;
   background: #f1f1f1;
 
