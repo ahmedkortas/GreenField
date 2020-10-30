@@ -91,7 +91,7 @@ class SignUp extends React.Component {
             <label htmlFor="address">
               <b>Address</b>
             </label>
-            <i className="material-icons prefix">place</i>
+            <i className="material-icons prefix">home</i>
             <input
               type="text"
               name="address"
