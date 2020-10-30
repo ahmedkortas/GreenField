@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 
 jobsPendingSchema = new mongoose.Schema({
   description: { type: String, required: true, unique: true },
+  title : { type: String, required: true},
   contact: { type: String, required: true },
   address: { type: String, required: true },
   price: { type: Number, required: true },
@@ -19,6 +20,7 @@ module.exports.NewAd = (obj) => {
       if (data === null) {
         Jpending.create(obj, (err, data) => {
           if (err) return reject(err);
+          console.log(data,'db')
           resolve(data);
         });
       } else {
@@ -36,6 +38,7 @@ module.exports.findAll = () => {
     });
   });
 };
+
 module.exports.deletPending = (object) => {
   let description = object.description;
   return Jpending.deleteMany({ description }, (err) => {

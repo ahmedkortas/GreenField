@@ -70,7 +70,7 @@
 
 .btn0 {
   margin-top: 100px;
-  margin-left: 655px;
+  margin-left: 615px;
   text-decoration: underline;
   cursor: pointer;
   color: black;
@@ -100,5 +100,5 @@
 #sign{
   width: 200px;
 height: 60px;
-margin-left: 60px;
+margin-left: 10px;
 }

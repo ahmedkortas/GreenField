@@ -48,38 +48,37 @@ class PostJob extends React.Component {
     obj.description = this.state.description;
     obj.contact = this.state.contact;
     obj.price = this.state.price;
-
     axios.post("/Task/create", obj).then((res) => console.log(res.data));
     this.props.click();
-    console.log(obj);
+    console.log(obj, 'here client');
   }
 
   render() {
     return (
       <div>
-        <div>
+        <form>
           <h2 className="t">Post your Task</h2>
-          <div className="inputs">
-            <form>
+          
+          
               <input
-                className="i1"
+                className="is1"
                 type="text"
                 placeholder="task title"
                 onChange={this.handleTitle}
               ></input>
               <input
-                className="i2"
+                className="is2"
                 type="text"
                 placeholder="contact"
                 onChange={this.handleContact}
               ></input>
               <textarea
-                className="i3"
+                className="is3"
                 onChange={this.handleDescription}
                 placeholder={"your text"}
               ></textarea>
               <input
-                className="i4"
+                className="is4"
                 type="number"
                 placeholder="price"
                 onChange={this.handlePrice}
@@ -91,8 +90,8 @@ class PostJob extends React.Component {
               </button>
             </div>
           </div>
-        </div>
-      </div>
+     
+     
     );
   }
 }
