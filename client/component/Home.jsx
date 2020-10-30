@@ -64,20 +64,25 @@ and for those who just are looking for some opportunities, go hunt on our Ads pa
 We provide to you the work, do not hesitate our solution for a better and stressless life</p>
   
    </div>
-   <div style={{  
-// transform: "translateX(-50%) translateY(-50%)",
-fontfamily: 'Dishonorable Mention (Comic Sans)',
-marginLeft:'1600px',
-marginTop: "130px",
+   {/* <div style={{  
+      
+      color: "black",
+left: "50%",
+top: "50%",
+transform: "translateX(-50%) translateY(-50%)",
+textAlign: 'center',
+fontfamily: 'Arial',
+fontSize: '3em',
+marginLeft:'1400px',
+marginTop: "250px",
 float:'right',
 }}>
-    <a href="https://www.facebook.com/Korfi-109834854250334" target="_blank" class="fa fa-facebook"></a>
-    <a href="https://twitter.com/KorfiTunisia" target="_blank" class="fa fa-twitter"></a>
-    <a href="https://www.instagram.com/korfi.tunisia/" target="_blank" class="fa fa-instagram"></a>
-    <a href="https://www.google.com/" target="_blank" class="fa fa-google"></a>
-    <br></br>
-    <a class="fa fa-envelope"></a>:Korfi.Tunisia@gmail.com
-  </div>
+   <a href="#" class="fa fa-facebook"></a>
+<a href="#" class="fa fa-twitter"></a>
+<a href="#" class="fa fa-google"></a>
+<a href="#" class="fa fa-instagram"></a>
+  <a class="fa fa-envelope"></a>:<h2 style={{color:'black'}}>Korfi.Tunisia@gmail.com</h2>
+  </div> */}
    </div>
     )
    
