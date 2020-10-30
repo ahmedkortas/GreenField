@@ -50,7 +50,7 @@ class PostJob extends React.Component {
     obj.price = this.state.price;
     axios.post("/Task/create", obj).then((res) => console.log(res.data));
     this.props.click();
-    console.log(obj);
+    console.log(obj, 'here client');
   }
 
   render() {
