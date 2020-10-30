@@ -1,6 +1,7 @@
 import React from "react";
 import Done from "./MyOffers/Done.jsx";
 import PendingJobs from "./MyOffers/Pending.jsx";
+import "../style/Component/MyOffers.css"
 
 class MyOffers extends React.Component {
   constructor(props) {
@@ -26,16 +27,18 @@ class MyOffers extends React.Component {
       <div>
         {this.state.view === "home" ? (
           <div>
-            <button onClick={this.onClick}>Pending Jobs</button>
-            <button onClick={this.onClick}>Done</button>
-            <button onClick={this.props.goBack}> Go Back</button>
+            {/* <button onClick={this.onClick}>Pending Jobs</button>
+            <button onClick={this.onClick}>Done</button> */}
+            <button className="k"  onClick={this.props.goBack}> Go Back</button>
           </div>
         ) : this.state.view === "Pending Jobs" ? (
           <PendingJobs goBack={this.goBack} />
         ) : this.state.view === "Done" ? (
           <Done goBack={this.goBack} />
         ) : (
-          <div></div>
+          <div>
+            <button className="j" onClick={this.props.goBack}> Go Back</button>
+          </div>
         )}
       </div>
     );

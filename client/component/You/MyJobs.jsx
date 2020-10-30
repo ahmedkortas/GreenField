@@ -2,6 +2,7 @@ import React from "react";
 import AppliedJob from "./Myjobs/AppliedJob.jsx";
 import JobInProgress from "./Myjobs/JobsInProg.jsx";
 import axios from "axios";
+import "../style/Component/MyJobs.css"
 
 class MyJobs extends React.Component {
   constructor(props) {
@@ -37,7 +38,7 @@ class MyJobs extends React.Component {
     console.log(this.state.view);
     return (
       <div>
-        <button onClick={this.props.goBack}> Go Back</button>
+        <button className="m" onClick={this.props.goBack}> Go Back</button>
         <div>
           <AppliedJob goBack={this.goBack} />
           <div>
@@ -52,7 +53,7 @@ class MyJobs extends React.Component {
             })}
           </div>
         </div>
-        <button onClick={this.props.goBack}> Go Back</button>
+        <button className="l" onClick={this.props.goBack}> Go Back</button>
       </div>
     );
   }
