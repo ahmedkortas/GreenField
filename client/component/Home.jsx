@@ -58,8 +58,11 @@ class Home extends React.Component {
  marginTop: "390px",
 float:'right',
 }}>
-     <h2 className="title" >KORFI</h2><br></br>   
-     <p className="subheading">we all suffer from it, every and each one of us has to do some daily boring routine that we hate, gardening, dog walking, fixing the doors and many many more other tasks. Not any more, we present to you our solution for your problems, we provide a platform that you can use to delegate the small daily tasks that we call Korfi. no more cleaning the garage or painting the house, a simple click and you're done.
+     {/* <h2 className="title" >KORFI</h2> */}
+     {/* <br></br>
+     <br></br>
+     <br></br> */}
+     <p className="subheading"><strong>KORFI : </strong> we all suffer from it, every and each one of us has to do some daily boring routine that we hate, gardening, dog walking, fixing the doors and many many more other tasks. Not any more, we present to you our solution for your problems, we provide a platform that you can use to delegate the small daily tasks that we call Korfi. no more cleaning the garage or painting the house, a simple click and you're done.
 and for those who just are looking for some opportunities, go hunt on our Ads page and let the MONEY flow.
 We provide to you the work, do not hesitate our solution for a better and stressless life</p>
   
