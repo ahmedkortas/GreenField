@@ -24,7 +24,6 @@ class SmallJobA extends React.Component {
   //querry data
 
   render() {
-    console.log(this.props.data)
     return( 
     <div className="feed">
     <ul>

@@ -6,14 +6,20 @@ Greenfield project for RBK:Korfi
 
 we create a full-stack application that implements several features for a usefull webpage. our app will eventually display seven views or more in the future with improving feature :
 
-1. a **Home** view for .
-2. a **LogIn** view for .
-3. a **SignIn** view for sign in the page.
-4. a **SignUp** view for .
-5. an **PostAdd** view for. 
-6. an **CV** view for.
-7. an **7** view for.
-8. an **8** view for.
+1. a **Home** component for presenting our website  .
+2. a **LogIn** component for changement from signIn to signUp .
+3. a **SignIn** component for sign in the page.
+4. a **SignUp** component for registration .
+5. an **PostAdd** component whith two buttons :add a task/add your cv . 
+6. an **CV** component : a formular for cv to fill .
+7. an **postJob** component: we have to fill a formular to add a task.
+8. an **you** component whith two buttons:MyJobs and MyOffers.
+9. an **pending** component for rendering the added jobs.
+10. an **8** component for.
+11. an **8** component for.
+12. an **8** component for.
+13. an **8** component for.
+14. an **8** component for.
 
 ### our Tech Stack
 - Client: our choice [ReactJs]
