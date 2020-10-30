@@ -19,12 +19,9 @@ route.get("/find", (req, res) => {
 //create pending job
 route.post("/create", (req, res) => {
   var obj = req.body;
-  console.log(obj,"ready")
   findOnebyEmail(obj).then((data) => {
-      console.log(data)
+
       obj.address = data.address;
-      console.log(obj)
-      console.log(obj,"ready")
       NewAd(obj)
       console.log(obj , 'here')
         .then((things) => {

@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 
 jobsPendingSchema = new mongoose.Schema({
   description: { type: String, required: true, unique: true },
+  title : { type: String, required: true},
   contact: { type: String, required: true },
   address: { type: String, required: true },
   price: { type: Number, required: true },
@@ -14,7 +15,6 @@ let Jpending = mongoose.model("Jpending", jobsPendingSchema);
 module.exports.NewAd = (obj) => {
   return new Promise((resolve, reject) => {
     let description = obj.description;
-console.log(obj)
     Jpending.findOne({ description: description }, (err, data) => {
       if (err) return reject(err);
       if (data === null) {
