@@ -3,7 +3,6 @@ import axios from "axios";
 
 import SmallJobs from "./SmallJobA.jsx";
 
-import SmallJobs from "./SmallJobA.jsx";
 
 class Adds extends React.Component {
   constructor(props) {
@@ -11,7 +10,6 @@ class Adds extends React.Component {
     this.state = {
       data: [],
     };
-
     this.querry = this.querry.bind(this);
   }
 
@@ -20,15 +18,17 @@ class Adds extends React.Component {
       if (this.state.data.length !== response.data.length) {
         this.setState({ data: response.data });
       }
+      return;
     });
   }
 
   render() {
     this.querry();
+    console.log(this.state.data);
     return (
       <div>
         {this.state.data.length === 0 ? (
-          <div></div>
+          <div>{console.log(this.state.data)}</div>
         ) : (
           this.state.data.map((data, i) => <SmallJobs key={i} data={data} />)
         )}

@@ -9,7 +9,7 @@ class PostJob extends React.Component {
       title: "",
       contact: "",
       description: "",
-      price: 0
+      price: 0,
     };
     this.handleTitle = this.handleTitle.bind(this);
     this.handleDescription = this.handleDescription.bind(this);
@@ -17,7 +17,7 @@ class PostJob extends React.Component {
     this.handlePrice = this.handlePrice.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-  
+
   handleTitle(e) {
     this.setState({ title: e.target.value });
   }
@@ -36,33 +36,22 @@ class PostJob extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    let userEmail=localStorage.getItem("currentUser")
-    if(userEmail===undefined || userEmail===null){
-      alert("must login to be able to post thanks ")
-      location.reload()
-      return
+    let userEmail = localStorage.getItem("currentUser");
+    if (userEmail === undefined || userEmail === null) {
+      alert("must login to be able to post thanks ");
+      location.reload();
+      return;
     }
     let obj = {};
-    obj.title = this.state.title
-    obj.providerEmail = userEmail
+    obj.title = this.state.title;
+    obj.providerEmail = userEmail;
     obj.description = this.state.description;
     obj.contact = this.state.contact;
     obj.price = this.state.price;
-
-    axios.post("/", obj).then((res) => console.log(res.data));
+    axios.post("/Task/create", obj).then((res) => console.log(res.data));
     this.props.click();
-    console.log(obj)
-
+    console.log(obj, 'here client');
   }
-
-  // clickHandler() {
-  //   let obj = {};
-  //   obj.adress= this.state.adress;
-  //   obj.description = this.state.description;
-  //   obj.contact = this.state.contact;
-  //   obj.price = this.state.price;
-  //   axio.post("/", obj).then((res) => console.log(res.data));
-  // }
 
   render() {
     return (
@@ -70,37 +59,38 @@ class PostJob extends React.Component {
         <div>
           <h2 className="t">Post your Task</h2>
           <div className="inputs">
-          <form>
-            <input
-              className="i1"
-              type="text"
-              placeholder="task title"
-              onChange={this.handleTitle}
-            ></input>
-            <input
-              className="i2"
-              type="text"
-              placeholder="contact"
-              onChange={this.handleContact}
-            ></input>
-            <textarea
-              className="i3"
-              onChange={this.handleDescription}
-              placeholder={"your text"}
-            ></textarea>
-            <input
-              className="i4"
-              type="number"
-              placeholder="price"
-              onChange={this.handlePrice}
-            ></input>
-          </form>
-          <div>
-          <button className="bc" onClick={this.handleSubmit}>
-              Share Task
-            </button>
+            <form>
+              <input
+                className="i1"
+                type="text"
+                placeholder="task title"
+                onChange={this.handleTitle}
+              ></input>
+              <input
+                className="i2"
+                type="text"
+                placeholder="contact"
+                onChange={this.handleContact}
+              ></input>
+              <textarea
+                className="i3"
+                onChange={this.handleDescription}
+                placeholder={"your text"}
+              ></textarea>
+              <input
+                className="i4"
+                type="number"
+                placeholder="price"
+                onChange={this.handlePrice}
+              ></input>
+            </form>
+            <div>
+              <button className="bc" onClick={this.handleSubmit}>
+                Share Task
+              </button>
+            </div>
           </div>
-        </div></div>
+        </div>
       </div>
     );
   }
