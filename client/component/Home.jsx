@@ -67,6 +67,7 @@ and for those who just are looking for some opportunities, go hunt on our Ads pa
 We provide to you the work, do not hesitate our solution for a better and stressless life</p>
   
    </div>
+
    <div  style={{float:'left'}}>
     <ul class="social-icons" >
         <li><a href="https://www.facebook.com/Korfi-109834854250334" class="social-icon" target="_blank"> <i class="fa fa-facebook"></i></a></li>
@@ -76,7 +77,7 @@ We provide to you the work, do not hesitate our solution for a better and stress
         <li><a  class="social-icon"> <i class="fa fa-envelope"></i></a></li><span style={{color:'black' ,fontSize: '25px'}}> :<strong> Korfi.Tunisia@gmail.com</strong></span> 
       
     </ul>
-</div>
+
    </div>
     )   
   }
