@@ -22,7 +22,6 @@ class Home extends React.Component {
 
   render() {
     this.slide();
-    console.log(this.state.i);
     let item = this.props.items;
     return (
       <div>
@@ -78,47 +77,50 @@ class Home extends React.Component {
         </div>
 
         <div style={{ float: "left" }}>
-          <ul class="social-icons">
+          <ul className="social-icons">
             <li>
               <a
                 href="https://www.facebook.com/Korfi-109834854250334"
-                class="social-icon"
+                className="social-icon"
                 target="_blank"
               >
                 {" "}
-                <i class="fa fa-facebook"></i>
+                <i className="fa fa-facebook"></i>
               </a>
             </li>
             <li>
-              <a href="https://twitter.com/KorfiTunisia" class="social-icon">
+              <a
+                href="https://twitter.com/KorfiTunisia"
+                className="social-icon"
+              >
                 {" "}
-                <i class="fa fa-twitter" target="_blank"></i>
+                <i className="fa fa-twitter" target="_blank"></i>
               </a>
             </li>
             <li>
               <a
                 href="https://www.instagram.com/korfi.tunisia/"
-                class="social-icon"
+                className="social-icon"
                 target="_blank"
               >
                 {" "}
-                <i class="fa fa-instagram"></i>
+                <i className="fa fa-instagram"></i>
               </a>
             </li>
             <li>
               <a
                 href="https://www.google.com/"
-                class="social-icon"
+                className="social-icon"
                 target="_blank"
               >
                 {" "}
-                <i class="fa fa-google"></i>
+                <i className="fa fa-google"></i>
               </a>
             </li>
             <li>
-              <a class="social-icon">
+              <a className="social-icon">
                 {" "}
-                <i class="fa fa-envelope"></i>
+                <i className="fa fa-envelope"></i>
               </a>
             </li>
             <span style={{ color: "black", fontSize: "25px" }}>

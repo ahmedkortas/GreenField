@@ -1,38 +1,50 @@
-
-
 import React from "react";
 import axios from "axios";
-import Progress from "./Progress.jsx"
 // import "../style/Component/Adds.css";
 
 class JobsInProg extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-     data : []
-    };
-    this.getJobiProg = this.getJobiProg.bind(this)
-    // this.clickHandler = this.clickHandler.bind(this);
   }
-
 
   //querry data
 
-  getJobiProg(){
-    axios.get("/Task/findProg").then((response) => {
-      if (this.state.data.length !== response.data.length) {
-        this.setState({ data: response.data });
-      }
-      return;
-    });
-  }
-
   render() {
-    this.getJobiProg();
+    console.log("saye gata3thelou", this.props.data);
     return (
-      <div>
-   {this.state.data.map((dat,i) => <Progress dat={this.state.data} />)} 
-    </div>
+      <div className="feed">
+        <ul>
+          <li className="feed-list-item">
+            <br></br>
+            <p className="feed-list-item-description">
+              {this.props.data.description}{" "}
+            </p>
+            <br></br>
+            <span className="feed-list-item-poster"></span>
+            {this.props.data.contact}
+            <br></br>
+            <br></br>
+            <span className="feed-list-item-price">
+              <strong> Earning : </strong>
+            </span>{" "}
+            <span
+              style={{ color: "#00e600", fontSize: "20px", fontWeight: "bold" }}
+            >
+              {this.props.data.price}DT
+            </span>{" "}
+            <br></br>
+            <br></br>
+            <span className="feed-list-item-address">
+              <strong> Location : {this.props.data.address} </strong>
+            </span>{" "}
+            <br></br>
+            <br></br>
+            <span className="feed-list-item-poster">
+              <strong>Task applicant : </strong> {this.props.data.employeeEmail}
+            </span>
+          </li>
+        </ul>
+      </div>
     );
   }
 }
