@@ -123,9 +123,9 @@ class Home extends React.Component {
                 <i className="fa fa-envelope"></i>
               </a>
             </li>
-            <span style={{ color: "black", fontSize: "25px" }}>
+            <span  style={{ color: "black", fontSize: "20px" }}>
               {" "}
-              :<strong> Korfi.Tunisia@gmail.com</strong>
+              : Korfi.Tunisia@gmail.com
             </span>
           </ul>
         </div>
