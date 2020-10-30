@@ -25,11 +25,14 @@ route.post("/SingUp", (req, res) => {
       .then((data) => {
         res.send(data);
       })
+
       .catch((err) => {
         res.send(err);
+
       });
   }
 });
+
 
 route.post("/SignIn", (req, res) => {
   let obj = {
@@ -43,6 +46,7 @@ route.post("/SignIn", (req, res) => {
     .catch((err) => {
       res.send("does not exists");
     });
+
 });
 
 module.exports = route;
