@@ -57,7 +57,8 @@ class PostJob extends React.Component {
     return (
       <div>
         <div>
-          <h2 className="t">Post your Task</h2>
+          <div className='tit'><h2 className="t">Post your Task</h2></div>
+          <br></br>
           <div className="inputs">
             <form>
               <input

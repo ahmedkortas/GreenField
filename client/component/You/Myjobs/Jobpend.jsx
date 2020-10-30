@@ -16,16 +16,16 @@ class  JobPend extends React.Component {
         <ul>
           <li className="feed-list-item">
             <span className="feed-list-item-title">
-              {this.props.data[0].title} 
+            <strong> Title : </strong> {this.props.data[0].title} 
             </span>
             <br></br>
             <br></br>
             <p className="feed-list-item-description">
-              {this.props.data[0].description} 
+            <strong> Description : </strong> {this.props.data[0].description} 
             </p>{" "}
             <br></br>
             <span className="feed-list-item-poster">
-              {this.props.data[0].contact}
+            <strong> Contact : </strong> {this.props.data[0].contact}
             </span>
             <br></br>
             <br></br>
