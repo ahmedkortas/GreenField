@@ -18,7 +18,6 @@ route.get("/find", (req, res) => {
 
 //create pending job
 route.post("/create", (req, res) => {
-  console.log(req.body);
   findOnebyEmail(req.body)
     .then((data) => {
       let obj = req.body;
@@ -47,18 +46,16 @@ route.post("/aplly", (req, res) => {
 route.get("/findProg", (req,res)=>{
   findAllJobinProg(req.body.employeeEmail)
   .then((data)=>{
-console.log(data)
   res.send(data); 
   })
 
 })
 
-route.get("/jobApplication/employee",(req,res)=>{
-  findAllJa(req.body.employeeEmail)
+route.post("/jobApplication/employee",(req,res)=>{
+  findAllJa(req.body)
   .then((data)=>{
-    console.log(data)
   res.send(data); 
-  })
+  }).catch(err => res.send(err))
 })
 
 
