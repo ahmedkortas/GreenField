@@ -38,6 +38,7 @@ class SignIn extends React.Component {
     console.log(this.props);
     return (
       <div>
+        <i className="material-icons prefix">mail</i>
         <input
           className="i1"
           type="email"
@@ -47,6 +48,7 @@ class SignIn extends React.Component {
           onChange={this.handleChange}
         ></input>
         <br></br>
+        <i className="material-icons prefix">vpn_key</i>
         <input
           className="i2"
           type="password"
