@@ -77,7 +77,7 @@ We provide to you the work, do not hesitate our solution for a better and stress
         <li><a  class="social-icon"> <i class="fa fa-envelope"></i></a></li><span style={{color:'black' ,fontSize: '25px'}}> :<strong> Korfi.Tunisia@gmail.com</strong></span> 
       
     </ul>
-
+    </div>
    </div>
     )   
   }
