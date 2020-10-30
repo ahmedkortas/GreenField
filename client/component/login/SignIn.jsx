@@ -39,7 +39,7 @@ class SignIn extends React.Component {
     console.log(this.props);
     return (
       <div>
-        <i id="icon1" className="material-icons prefix">mail</i>
+        <i id="icon1" className="material-icons prefix" style={{color:'black'}}> email</i>
         <input
           className="i1"
           type="email"
@@ -49,7 +49,7 @@ class SignIn extends React.Component {
           onChange={this.handleChange}
         ></input>
         <br></br>
-        <i id="icon2" className="material-icons prefix">vpn_key</i>
+        <i id="icon2" className="material-icons prefix" style={{color:'black'}} >vpn_key</i>
         <input
           className="i2"
           type="password"
@@ -60,7 +60,7 @@ class SignIn extends React.Component {
         />
         <br></br>
         <div className="btn0">
-          <span onClick={this.props.handleOnClick}>
+          <span onClick={this.props.handleOnClick} style={{color:'black'}}>
             No Korfi Account/Create Account
           </span>
         </div>

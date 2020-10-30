@@ -48,17 +48,17 @@ class PostJob extends React.Component {
     obj.description = this.state.description;
     obj.contact = this.state.contact;
     obj.price = this.state.price;
-
     axios.post("/Task/create", obj).then((res) => console.log(res.data));
     this.props.click();
-    console.log(obj);
+    console.log(obj, 'here client');
   }
 
   render() {
     return (
       <div>
         <div>
-          <h2 className="t">Post your Task</h2>
+          <div className='tit'><h2 className="t">Post your Task</h2></div>
+          <br></br>
           <div className="inputs">
             <form>
               <input
