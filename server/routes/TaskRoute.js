@@ -15,7 +15,6 @@ route.get("/find", (req, res) => {
 });
 
 route.post("/create", (req, res) => {
-  console.log(req.body);
   findOnebyEmail(req.body)
     .then((data) => {
       let obj = req.body;
