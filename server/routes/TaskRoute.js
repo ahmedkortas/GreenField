@@ -5,6 +5,8 @@ let {
   NewAdApplications,
   findAllJa,
   deletAccepted,
+  findAllJaApToProg,
+  findAllJaByDisc,
 } = require("../../db/jobsApplication.js");
 let {
   CreateJobInProgress,
@@ -13,7 +15,7 @@ let {
   deletProg,
 } = require("../../db/jobsProgress.js");
 
-let { createDone } = require("../../db/jobDone.js");
+let { createDone, findDoneByEmail } = require("../../db/jobDone.js");
 
 route.get("/find", (req, res) => {
   findAll()
@@ -45,7 +47,23 @@ route.post("/aplly", (req, res) => {
     .catch((err) => res.send(err));
 });
 
+route.post("/applicant", (req, res) => {
+  findAllJaByDisc(req.body)
+    .then((result) => {
+      res.send(result);
+    })
+    .catch((err) => res.send(err));
+});
+
 //find pending for provider
+
+route.post("/jobApplication/giver", (req, res) => {
+  findAllJa(req.body)
+    .then((data) => {
+      res.send(data);
+    })
+    .catch((err) => res.send(err));
+});
 
 //finds all the jobs that i applied for
 route.post("/jobApplication/employee", (req, res) => {
@@ -66,23 +84,24 @@ route.post("/findProg", (req, res) => {
 //creat job in prog and change other fields
 route.post("/Progress", (req, res) => {
   let employeeEmail = req.body.employeeEmail;
-  findAllJa(employeeEmail)
+  let description = req.body.description;
+  findAllJaApToProg({ employeeEmail, description })
     .then((employees) => {
-      CreateJobInProgress(employees[0])
+      CreateJobInProgress(employees)
         .then((jobInProgress) => {
           deletAccepted(jobInProgress);
           deletPending(jobInProgress);
           res.send(jobInProgress);
         })
-        .catch((err) => res.send("err"));
+        .catch((err) => res.send(err));
     })
     .catch((err) => res.send("does"));
 });
 
+//make post status done
 route.post("/done", (req, res) => {
   let description = req.body.description;
   findToDone(description).then((done) => {
-    console.log(done);
     if (done !== null) {
       let NewProgress = {};
       NewProgress.employeeEmail = done.employeeEmail;
@@ -97,6 +116,14 @@ route.post("/done", (req, res) => {
         });
       });
     }
+  });
+});
+
+route.post("/ratingProcess", (req, res) => {
+  console.log("hey", req.body.providerEmail);
+  findDoneByEmail(req.body.providerEmail).then((description) => {
+    console.log(description);
+    res.send(description);
   });
 });
 

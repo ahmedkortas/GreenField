@@ -10,7 +10,7 @@ jobsDoneSchema = new mongoose.Schema({
   providerEmail: { type: String, required: true },
 });
 
-let Jd = mongoose.model("JD", jobsDoneSchema);
+let Jd = mongoose.model("jobsdone", jobsDoneSchema);
 
 module.exports.findAll = (email) => {
   return new Promise((resolve, reject) => {
@@ -36,6 +36,15 @@ module.exports.createDone = (obj) => {
       } else {
         resolve("exists");
       }
+    });
+  });
+};
+
+module.exports.findDoneByEmail = (providerEmail) => {
+  return new Promise((resolve, reject) => {
+    Jd.findOne({ providerEmail }, (err, data) => {
+      if (err) return reject(err);
+      resolve(data);
     });
   });
 };
