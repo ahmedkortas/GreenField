@@ -19,6 +19,7 @@ class AppliedJob extends React.Component {
     console.log(obj);
     axios.post("/Task/jobApplication/employee", obj).then((response) => {
       if (this.state.data.length !== response.data.length) {
+        console.log(response, "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
         this.setState({ data: response.data });
       }
       return;

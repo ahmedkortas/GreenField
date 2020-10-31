@@ -30,11 +30,12 @@ module.exports.CreateJobInProgress = (obj) => {
     NewProgress.description = obj.description;
     NewProgress.contact = obj.contact;
     NewProgress.address = obj.address;
-    let des = NewProgress.description;
+    let description = NewProgress.description;
     /**
      * trying to find one to make extrat layer of protection
      */
-    JobInProgress.find({ employeeEmail, des }, (err, data) => {
+    console.log(NewProgress, "its me");
+    JobInProgress.find({ employeeEmail, description }, (err, data) => {
       if (err) return reject(err);
       if (data.length === 0) {
         //if no data found create a new one
@@ -93,7 +94,7 @@ module.exports.findAllJobinProg = (obj) => {
 
 module.exports.findToDone = (description) => {
   return new Promise((resolve, reject) => {
-    JobInProgress.findOne({ description }, (err, data) => {
+    JobInProgress.findOne({ description: description }, (err, data) => {
       if (err) return reject(err);
       resolve(data);
     });

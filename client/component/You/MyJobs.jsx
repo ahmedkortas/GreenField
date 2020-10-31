@@ -12,9 +12,11 @@ class MyJobs extends React.Component {
     this.getJobiProg = this.getJobiProg.bind(this);
   }
   onClick(e) {
+    e.preventDefault();
     this.setState({ view: e.target.innerHTML });
   }
-  goBack() {
+  goBack(e) {
+    e.preventDefault();
     this.setState({ view: "home" });
   }
 
@@ -24,7 +26,6 @@ class MyJobs extends React.Component {
     };
 
     axios.post("/Task/findProg", obj).then((response) => {
-      console.log(response);
       if (this.state.data.length !== response.data.length) {
         this.setState({ data: response.data });
       }
@@ -33,8 +34,6 @@ class MyJobs extends React.Component {
 
   render() {
     this.getJobiProg();
-    console.log("gata3helou", this.state.data);
-    console.log(this.state.view);
     return (
       <div>
         <button onClick={this.props.goBack}> Go Back</button>

@@ -14,6 +14,8 @@ class MyOffers extends React.Component {
       dataInProgress: [],
     };
     this.getJobiProg = this.getJobiProg.bind(this);
+    this.queryPending = this.queryPending.bind(this);
+    this.queryDone = this.queryDone.bind(this);
     this.goBack = this.goBack.bind(this);
   }
 
@@ -27,7 +29,6 @@ class MyOffers extends React.Component {
     };
     axios.post("/Task/findProg", obj).then((response) => {
       if (this.state.dataInProgress.length !== response.data.length) {
-        console.log(response.data);
         this.setState({ dataInProgress: response.data });
       }
     });
@@ -35,9 +36,8 @@ class MyOffers extends React.Component {
 
   queryPending() {
     let obj = { providerEmail: localStorage.getItem("currentUser") };
-    console.log(obj);
-    axios.post("/", obj).then((response) => {
-      if (this.state.dataInProgress.length !== response.data.length) {
+    axios.post("/Task/jobApplication/giver", obj).then((response) => {
+      if (this.state.dataPending.length !== response.data.length) {
         this.setState({ dataPending: response.data });
       }
       return;
@@ -46,26 +46,28 @@ class MyOffers extends React.Component {
 
   queryDone() {
     let obj = { providerEmail: localStorage.getItem("currentUser") };
-    console.log(obj);
-    axios.post("/", obj).then((response) => {
-      if (this.state.data.length !== response.data.length) {
+    axios.post("/Task/ratingProcess", obj).then((response) => {
+      console.log(response.data, "rani pending ya haj");
+      if (this.state.dataDone.length !== response.data.length) {
         this.setState({ dataDone: response.data });
       }
       return;
     });
   }
 
+  clickHandler() {
+    this.setState({ view: !this.state.view });
+  }
+
   render() {
+    this.queryDone();
     this.getJobiProg();
-    console.log(this.state.dataInProgress);
+
+    this.queryPending();
+    console.log(this.state.dataDone, "the data ");
     return (
       <div>
         <button onClick={this.props.goBack}> Go Back</button>
-        <div>
-          {this.state.dataDone.map((data, index) => (
-            <Done data={data} key={index} />
-          ))}
-        </div>
         <div>
           {this.state.dataPending.map((data, index) => (
             <Pending data={data} key={index} />
@@ -73,6 +75,9 @@ class MyOffers extends React.Component {
           {this.state.dataInProgress.map((data, index) => (
             <JobsInProg data={data} key={index} />
           ))}
+        </div>
+        <div>
+          <Done data={this.state.dataDone} />;
         </div>
       </div>
     );
