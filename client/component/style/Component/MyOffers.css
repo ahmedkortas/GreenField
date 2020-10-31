@@ -1,13 +1,13 @@
 
-.m {
+.k {
     position: absolute;
     top: 70%;
     left: 42%;
     /* padding-bottom: 2px; */
     transform: translate(-50, -50);
   }
-
-  .m {
+  
+  .k {
     background: rgb(14, 193, 100);
     color: white;
     width: 130px;
@@ -20,11 +20,12 @@
     margin-top: -400px;
     margin-left: -630px;
   }
-  .m:focus {
+  
+  .k:focus {
     outline: none;
   }
-
-  .m:before {
+  
+  .k:before {
     content: "";
     display: block;
     position: absolute;
@@ -37,8 +38,8 @@
     filter: blur(30px);
     transform: translateX(-130px) skewX(-15deg);
   }
-
-  .m:after {
+  
+  .k:after {
     content: "";
     display: block;
     position: absolute;
@@ -51,33 +52,37 @@
     filter: blur(30px);
     transform: translateX(-100px) scaleX(-15deg);
   }
-
-  .m:hover {
+  
+  .k:hover {
     background: rgb(10, 96, 37);
     cursor: pointer;
   }
-
-  .m:hover:before {
+  
+  .k:hover:before {
     transform: translateX(300px) skewX(-15deg);
     opacity: 0.6;
     transition: 0.7s;
   }
-
-  .m:hover:after {
+  
+  .k:hover:after {
     transform: translateX(300px) skewX(-15deg);
     opacity: 1;
     transition: 0.7s;
   }
+  
+  
+  
+  
 
-.l {
+.j {
     position: absolute;
     top: 70%;
     left: 42%;
     /* padding-bottom: 2px; */
     transform: translate(-50, -50);
   }
-
-  .l {
+  
+  .j {
     background: rgb(14, 193, 100);
     color:white;
     width: 130px;
@@ -90,11 +95,12 @@
     margin-top: 170px;
     margin-left: 735px;
   }
-  .l:focus {
+  
+  .j:focus {
     outline: none;
   }
-
-  .l:before {
+  
+  .j:before {
     content: "";
     display: block;
     position: absolute;
@@ -107,8 +113,8 @@
     filter: blur(30px);
     transform: translateX(-130px) skewX(-15deg);
   }
-
-  .l:after {
+  
+  .j:after {
     content: "";
     display: block;
     position: absolute;
@@ -121,20 +127,21 @@
     filter: blur(30px);
     transform: translateX(-100px) scaleX(-15deg);
   }
-  .l:hover {
+  
+  .j:hover {
     background: rgb(10, 96, 37);
     cursor: pointer;
   }
-
-  .l:hover:before {
+  
+  .j:hover:before {
     transform: translateX(300px) skewX(-15deg);
     opacity: 0.6;
     transition: 0.7s;
   }
-
-  .l:hover:after {
+  
+  .j:hover:after {
     transform: translateX(300px) skewX(-15deg);
     opacity: 1;
     transition: 0.7s;
   }
-
+  

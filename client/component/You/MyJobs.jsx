@@ -3,6 +3,7 @@ import AppliedJob from "./Myjobs/AppliedJob.jsx";
 import JobInProgress from "./Myjobs/JobsInProg.jsx";
 import axios from "axios";
 import "../style/Component/MyJobs.css"
+
 class MyJobs extends React.Component {
   constructor(props) {
     super(props);

@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import JobPend from "./Jobpend.jsx";
-// import "../style/Component/Adds.css";
+
 
 class AppliedJob extends React.Component {
   constructor(props) {

@@ -1,5 +1,6 @@
 import React from "react";
 import "../../style/Component/Jobpend.css"
+
 class JobPend extends React.Component {
   constructor(props) {
     super(props);

@@ -3,6 +3,7 @@ import Done from "./MyOffers/Done.jsx";
 import Pending from "./MyOffers/Pending.jsx";
 import JobsInProg from "./MyOffers/JobInProg.jsx";
 import axios from "axios";
+import "../style/Component/MyOffers.css"
 
 class MyOffers extends React.Component {
   constructor(props) {
@@ -47,7 +48,6 @@ class MyOffers extends React.Component {
   queryDone() {
     let obj = { providerEmail: localStorage.getItem("currentUser") };
     axios.post("/Task/ratingProcess", obj).then((response) => {
-      console.log(response.data, "rani pending ya haj");
       if (this.state.dataDone.length !== response.data.length) {
         this.setState({ dataDone: response.data });
       }
@@ -64,10 +64,13 @@ class MyOffers extends React.Component {
     this.getJobiProg();
 
     this.queryPending();
-    console.log(this.state.dataDone, "the data ");
     return (
       <div>
-        <button onClick={this.props.goBack}> Go Back</button>
+<button className="k"  onClick={this.props.goBack}> Go Back</button> <div>
+          {this.state.dataDone.map((data, index) => (
+            <Done data={data} key={index} />
+          ))}
+        </div>
         <div>
           {this.state.dataPending.map((data, index) => (
             <Pending data={data} key={index} />
@@ -75,9 +78,16 @@ class MyOffers extends React.Component {
           {this.state.dataInProgress.map((data, index) => (
             <JobsInProg data={data} key={index} />
           ))}
+          <div>
+            <button className="j" onClick={this.props.goBack}> Go Back</button>
+          </div>
         </div>
         <div>
-          <Done data={this.state.dataDone} />;
+          {this.state.dataDone.length > 0 ? (
+            <Done data={this.state.dataDone} />
+          ) : (
+            <div></div>
+          )}
         </div>
       </div>
     );
