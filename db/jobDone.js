@@ -14,10 +14,27 @@ let Jd = mongoose.model("JD", jobsDoneSchema);
 
 module.exports.findAll = (email) => {
   return new Promise((resolve, reject) => {
-    Jd.find({ employeeEmail: email }, function (err, data) {
+    Jd.find({ providerEmail: email }, function (err, data) {
       if (err) return reject(err);
       else {
         resolve(data);
+      }
+    });
+  });
+};
+
+module.exports.createDone = (obj) => {
+  return new Promise((resolve, reject) => {
+    let description = obj.description;
+    Jd.findOne({ description }, (err, data) => {
+      if (err) return reject(err);
+      if (data === null) {
+        Jd.create(obj, (err, data) => {
+          if (err) return reject(err);
+          resolve(data);
+        });
+      } else {
+        resolve("exists");
       }
     });
   });

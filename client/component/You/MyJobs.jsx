@@ -7,7 +7,7 @@ import "../style/Component/MyJobs.css"
 class MyJobs extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { view: "home", data: [] };
+    this.state = { data: [] };
     this.onClick = this.onClick.bind(this);
     this.goBack = this.goBack.bind(this);
     this.getJobiProg = this.getJobiProg.bind(this);
@@ -20,13 +20,13 @@ class MyJobs extends React.Component {
   }
 
   getJobiProg() {
-    console.log("hey");
     let obj = {
       employeeEmail: localStorage.getItem("currentUser"),
     };
+
     axios.post("/Task/findProg", obj).then((response) => {
+      console.log(response);
       if (this.state.data.length !== response.data.length) {
-        console.log(response.data);
         this.setState({ data: response.data });
       }
     });

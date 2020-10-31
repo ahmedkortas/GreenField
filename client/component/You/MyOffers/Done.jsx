@@ -9,8 +9,7 @@ class Done extends React.Component {
     console.log("hey");
     return (
       <div>
-        <div>ALL the done job</div>
-        <button onClick={this.props.goBack}> Go Back</button>
+        <div>{console.log(this.props.data)}done</div>
       </div>
     );
   }
