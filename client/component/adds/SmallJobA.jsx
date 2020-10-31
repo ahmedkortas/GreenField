@@ -5,7 +5,7 @@ import "../style/Component/Adds.css";
 class SmallJobA extends React.Component {
   constructor(props) {
     super(props);
-    
+
     this.clickHandler = this.clickHandler.bind(this);
   }
 
@@ -19,24 +19,62 @@ class SmallJobA extends React.Component {
       providerEmail: this.props.data.providerEmail,
       employeeEmail: localStorage.getItem("currentUser"),
     };
+    if (obj.providerEmail === obj.employeeEmail) {
+      alert("you can not aplly for your job");
+      return;
+    }
     axios.post("/Task/aplly", obj).then((res) => console.log(res));
   }
   //querry data
 
   render() {
-    return( 
-    <div className="feed">
-    <ul>
-      <li className="feed-list-item">
-        <span className="feed-list-item-title">{this.props.data.title}</span><br></br><br></br>         
-        <p className="feed-list-item-description">Description : {this.props.data.description}</p> <br></br>     
-        <span  className="feed-list-item-poster">Contact : {this.props.data.contact}</span><br></br><br></br>
-        <span  className="feed-list-item-price"><strong> Earning  : </strong></span> <span style={{color : '#00e600', fontSize : "20px", fontWeight :'bold' }}>{this.props.data.price}DT</span>  <br></br><br></br>
-        <span  className="feed-list-item-address"><strong>  Location :  {this.props.data.address}  </strong></span> <br></br><br></br> 
-        <span><button  type="button" className="btn-primary" onClick={this.clickHandler}>Apply here </button></span>
-      </li>
-      </ul>    
-      </div>) 
+    console.log(this.props.data);
+    return (
+      <div className="feed">
+        <ul>
+          <li className="feed-list-item">
+            <span className="feed-list-item-title">
+              {this.props.data.title}
+            </span>
+            <br></br>
+            <br></br>
+            <p className="feed-list-item-description">
+              Description : {this.props.data.description}
+            </p>{" "}
+            <br></br>
+            <span className="feed-list-item-poster">
+              Contact : {this.props.data.contact}
+            </span>
+            <br></br>
+            <br></br>
+            <span className="feed-list-item-price">
+              <strong> Earning : </strong>
+            </span>{" "}
+            <span
+              style={{ color: "#00e600", fontSize: "20px", fontWeight: "bold" }}
+            >
+              {this.props.data.price}DT
+            </span>{" "}
+            <br></br>
+            <br></br>
+            <span className="feed-list-item-address">
+              <strong> Location : {this.props.data.address} </strong>
+            </span>{" "}
+            <br></br>
+            <br></br>
+            <span>
+              <button
+                type="button"
+                className="btn-primary"
+                onClick={this.clickHandler}
+              >
+                Apply here{" "}
+              </button>
+            </span>
+          </li>
+        </ul>
+      </div>
+    );
   }
 }
 

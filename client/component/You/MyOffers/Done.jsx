@@ -1,4 +1,5 @@
 import React from "react";
+import "../../style/Component/Done.css"
 
 class Done extends React.Component {
   constructor(props) {
@@ -9,8 +10,7 @@ class Done extends React.Component {
     console.log("hey");
     return (
       <div>
-        <div>ALL the done job</div>
-        <button onClick={this.props.goBack}> Go Back</button>
+        <div>{console.log(this.props.data)}done</div>
       </div>
     );
   }
