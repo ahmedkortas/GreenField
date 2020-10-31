@@ -47,7 +47,6 @@ class MyOffers extends React.Component {
   queryDone() {
     let obj = { providerEmail: localStorage.getItem("currentUser") };
     axios.post("/Task/ratingProcess", obj).then((response) => {
-      console.log(response.data, "rani pending ya haj");
       if (this.state.dataDone.length !== response.data.length) {
         this.setState({ dataDone: response.data });
       }
@@ -64,7 +63,6 @@ class MyOffers extends React.Component {
     this.getJobiProg();
 
     this.queryPending();
-    console.log(this.state.dataDone, "the data ");
     return (
       <div>
         <button onClick={this.props.goBack}> Go Back</button>
@@ -77,7 +75,11 @@ class MyOffers extends React.Component {
           ))}
         </div>
         <div>
-          <Done data={this.state.dataDone} />;
+          {this.state.dataDone.length > 0 ? (
+            <Done data={this.state.dataDone} />
+          ) : (
+            <div></div>
+          )}
         </div>
       </div>
     );

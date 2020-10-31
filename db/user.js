@@ -8,7 +8,7 @@ const userSchema = new mongoose.Schema({
   gender: { type: String, required: true },
   address: { type: String, required: true },
   phone: { type: Number, required: true },
-  rating: { type: Number, default: 5 },
+  rating: { type: Number },
 });
 
 let User = mongoose.model("User", userSchema);
@@ -45,4 +45,11 @@ module.exports.findOnebyEmail = (obj) => {
       }
     });
   });
+};
+
+module.exports.rate = (obj) => {
+  let employeeEmail = obj.employeeEmail;
+  let rating = obj.rating;
+  console.log(obj, "update");
+  return User.updateOne({ employeeEmail }, { rating });
 };

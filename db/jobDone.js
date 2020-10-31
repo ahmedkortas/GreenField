@@ -40,6 +40,10 @@ module.exports.createDone = (obj) => {
   });
 };
 
+module.exports.rated = (description) => {
+  return Jd.deleteOne({ description });
+};
+
 module.exports.findDoneByEmail = (providerEmail) => {
   return new Promise((resolve, reject) => {
     Jd.findOne({ providerEmail }, (err, data) => {
