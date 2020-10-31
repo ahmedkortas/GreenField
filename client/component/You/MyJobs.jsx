@@ -2,7 +2,7 @@ import React from "react";
 import AppliedJob from "./Myjobs/AppliedJob.jsx";
 import JobInProgress from "./Myjobs/JobsInProg.jsx";
 import axios from "axios";
-
+import "../style/Component/MyJobs.css"
 class MyJobs extends React.Component {
   constructor(props) {
     super(props);
@@ -19,24 +19,21 @@ class MyJobs extends React.Component {
     e.preventDefault();
     this.setState({ view: "home" });
   }
-
   getJobiProg() {
     let obj = {
       employeeEmail: localStorage.getItem("currentUser"),
     };
-
     axios.post("/Task/findProg", obj).then((response) => {
       if (this.state.data.length !== response.data.length) {
         this.setState({ data: response.data });
       }
     });
   }
-
   render() {
     this.getJobiProg();
     return (
       <div>
-        <button onClick={this.props.goBack}> Go Back</button>
+        <button className="m" onClick={this.props.goBack}> Go Back</button>
         <div>
           <AppliedJob goBack={this.goBack} />
           <div>
@@ -51,10 +48,9 @@ class MyJobs extends React.Component {
             })}
           </div>
         </div>
-        <button onClick={this.props.goBack}> Go Back</button>
+        <button className="l" onClick={this.props.goBack}> Go Back</button>
       </div>
     );
   }
 }
-
 export default MyJobs;
