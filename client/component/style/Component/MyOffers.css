@@ -1,0 +1,147 @@
+
+.k {
+    position: absolute;
+    top: 70%;
+    left: 42%;
+    /* padding-bottom: 2px; */
+    transform: translate(-50, -50);
+  }
+  
+  .k {
+    background: rgb(14, 193, 100);
+    color: white;
+    width: 130px;
+    height: 40px;
+    border: 1px solid rgb(34, 218, 123);
+    font-size: 18px;
+    border-radius: 4px;
+    transition: 0.6s;
+    overflow: hidden;
+    margin-top: -400px;
+    margin-left: -630px;
+  }
+  
+  .k:focus {
+    outline: none;
+  }
+  
+  .k:before {
+    content: "";
+    display: block;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.5);
+    width: 60px;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0.5;
+    filter: blur(30px);
+    transform: translateX(-130px) skewX(-15deg);
+  }
+  
+  .k:after {
+    content: "";
+    display: block;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.2);
+    width: 30px;
+    height: 100%;
+    left: 30px;
+    top: 0;
+    opacity: 0;
+    filter: blur(30px);
+    transform: translateX(-100px) scaleX(-15deg);
+  }
+  
+  .k:hover {
+    background: rgb(10, 96, 37);
+    cursor: pointer;
+  }
+  
+  .k:hover:before {
+    transform: translateX(300px) skewX(-15deg);
+    opacity: 0.6;
+    transition: 0.7s;
+  }
+  
+  .k:hover:after {
+    transform: translateX(300px) skewX(-15deg);
+    opacity: 1;
+    transition: 0.7s;
+  }
+  
+  
+  
+  
+
+.j {
+    position: absolute;
+    top: 70%;
+    left: 42%;
+    /* padding-bottom: 2px; */
+    transform: translate(-50, -50);
+  }
+  
+  .j {
+    background: rgb(14, 193, 100);
+    color:white;
+    width: 130px;
+    height: 40px;
+    border: 1px solid rgb(14, 193, 100);
+    font-size: 18px;
+    border-radius: 4px;
+    transition: 0.6s;
+    overflow: hidden;
+    margin-top: 170px;
+    margin-left: 735px;
+  }
+  
+  .j:focus {
+    outline: none;
+  }
+  
+  .j:before {
+    content: "";
+    display: block;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.5);
+    width: 60px;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0.5;
+    filter: blur(30px);
+    transform: translateX(-130px) skewX(-15deg);
+  }
+  
+  .j:after {
+    content: "";
+    display: block;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.2);
+    width: 30px;
+    height: 100%;
+    left: 30px;
+    top: 0;
+    opacity: 0;
+    filter: blur(30px);
+    transform: translateX(-100px) scaleX(-15deg);
+  }
+  
+  .j:hover {
+    background: rgb(10, 96, 37);
+    cursor: pointer;
+  }
+  
+  .j:hover:before {
+    transform: translateX(300px) skewX(-15deg);
+    opacity: 0.6;
+    transition: 0.7s;
+  }
+  
+  .j:hover:after {
+    transform: translateX(300px) skewX(-15deg);
+    opacity: 1;
+    transition: 0.7s;
+  }
+  

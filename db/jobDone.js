@@ -10,15 +10,41 @@ jobsDoneSchema = new mongoose.Schema({
   providerEmail: { type: String, required: true },
 });
 
-let Jd = mongoose.model("JD", jobsDoneSchema);
+let Jd = mongoose.model("jobsdone", jobsDoneSchema);
 
 module.exports.findAll = (email) => {
   return new Promise((resolve, reject) => {
-    Jd.find({ employeeEmail: email }, function (err, data) {
+    Jd.find({ providerEmail: email }, function (err, data) {
       if (err) return reject(err);
       else {
         resolve(data);
       }
+    });
+  });
+};
+
+module.exports.createDone = (obj) => {
+  return new Promise((resolve, reject) => {
+    let description = obj.description;
+    Jd.findOne({ description }, (err, data) => {
+      if (err) return reject(err);
+      if (data === null) {
+        Jd.create(obj, (err, data) => {
+          if (err) return reject(err);
+          resolve(data);
+        });
+      } else {
+        resolve("exists");
+      }
+    });
+  });
+};
+
+module.exports.findDoneByEmail = (providerEmail) => {
+  return new Promise((resolve, reject) => {
+    Jd.findOne({ providerEmail }, (err, data) => {
+      if (err) return reject(err);
+      resolve(data);
     });
   });
 };
