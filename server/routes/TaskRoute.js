@@ -5,11 +5,17 @@ let {
   NewAdApplications,
   findAllJa,
   deletAccepted,
+  findAllJaApToProg,
+  findAllJaByDisc,
 } = require("../../db/jobsApplication.js");
 let {
   CreateJobInProgress,
   findAllJobinProg,
+  findToDone,
+  deletProg,
 } = require("../../db/jobsProgress.js");
+
+let { createDone, findDoneByEmail } = require("../../db/jobDone.js");
 
 route.get("/find", (req, res) => {
   findAll()
@@ -23,9 +29,7 @@ route.post("/create", (req, res) => {
   findOnebyEmail(obj)
     .then((data) => {
       obj.address = data.address;
-      NewAd(obj);
-      console
-        .log(obj, "here")
+      NewAd(obj)
         .then((things) => {
           res.send(things);
         })
@@ -38,8 +42,25 @@ route.post("/create", (req, res) => {
 route.post("/aplly", (req, res) => {
   NewAdApplications(req.body)
     .then((things) => {
-      console.log(things);
       res.send(things);
+    })
+    .catch((err) => res.send(err));
+});
+
+route.post("/applicant", (req, res) => {
+  findAllJaByDisc(req.body)
+    .then((result) => {
+      res.send(result);
+    })
+    .catch((err) => res.send(err));
+});
+
+//find pending for provider
+
+route.post("/jobApplication/giver", (req, res) => {
+  findAllJa(req.body)
+    .then((data) => {
+      res.send(data);
     })
     .catch((err) => res.send(err));
 });
@@ -55,9 +76,7 @@ route.post("/jobApplication/employee", (req, res) => {
 
 //finding job in prog
 route.post("/findProg", (req, res) => {
-  console.log(req.body.employeeEmail);
-  findAllJobinProg(req.body.employeeEmail).then((data) => {
-    console.log(data);
+  findAllJobinProg(req.body).then((data) => {
     res.send(data);
   });
 });
@@ -65,17 +84,47 @@ route.post("/findProg", (req, res) => {
 //creat job in prog and change other fields
 route.post("/Progress", (req, res) => {
   let employeeEmail = req.body.employeeEmail;
-  findAllJa(employeeEmail)
+  let description = req.body.description;
+  findAllJaApToProg({ employeeEmail, description })
     .then((employees) => {
-      CreateJobInProgress(employees[0])
+      CreateJobInProgress(employees)
         .then((jobInProgress) => {
           deletAccepted(jobInProgress);
           deletPending(jobInProgress);
           res.send(jobInProgress);
         })
-        .catch((err) => res.send("err"));
+        .catch((err) => res.send(err));
     })
     .catch((err) => res.send("does"));
+});
+
+//make post status done
+route.post("/done", (req, res) => {
+  let description = req.body.description;
+  findToDone(description).then((done) => {
+    if (done !== null) {
+      let NewProgress = {};
+      NewProgress.employeeEmail = done.employeeEmail;
+      NewProgress.providerEmail = done.providerEmail;
+      NewProgress.price = done.price;
+      NewProgress.description = done.description;
+      NewProgress.contact = done.contact;
+      NewProgress.address = done.address;
+      createDone(NewProgress).then((data) => {
+        deletProg(data.description).then((done) => {
+          res.send("ok");
+        });
+      });
+    }
+  });
+});
+
+route.post("/ratingProcess", (req, res) => {
+  console.log("hey", req.body.providerEmail);
+  findDoneByEmail(req.body.providerEmail).then((description) => {
+    console.log(description);
+    res.send(description);
+  });
 });
 
 module.exports = route;

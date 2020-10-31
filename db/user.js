@@ -8,6 +8,7 @@ const userSchema = new mongoose.Schema({
   gender: { type: String, required: true },
   address: { type: String, required: true },
   phone: { type: Number, required: true },
+  rating: { type: Number, default: 5 },
 });
 
 let User = mongoose.model("User", userSchema);
