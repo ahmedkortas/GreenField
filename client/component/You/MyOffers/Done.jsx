@@ -1,8 +1,26 @@
 import React from "react";
+import axios from "axios";
 
 class Done extends React.Component {
   constructor(props) {
     super(props);
+    this.state = { rating: 5 };
+    this.Submit = this.Submit.bind(this);
+    this.changeRating = this.changeRating.bind(this);
+  }
+
+  changeRating(e) {
+    this.setState({ rating: e.target.value });
+  }
+
+  Submit(e) {
+    e.preventDefault();
+    let obj = {
+      rating: this.state.rating,
+      description: this.props.data.description,
+      employeeEmail: this.props.data.employeeEmail,
+    };
+    axios.put("/user/update", obj).then((response) => location.reload());
   }
 
   render() {
@@ -38,8 +56,14 @@ class Done extends React.Component {
             <span className="feed-list-item-poster">
               <strong>Task applicant : </strong> {this.props.data.employeeEmail}
             </span>
-            <input type="number" max="10" min="0" style={{ width: "20%" }} />
-            <button>submit rating</button>
+            <input
+              type="number"
+              max="10"
+              min="0"
+              style={{ width: "20%" }}
+              onChange={this.changeRating}
+            />
+            <button onClick={this.Submit}>submit rating</button>
           </li>
         </ul>
       </div>
