@@ -57,7 +57,7 @@ class CV extends React.Component {
         <div >
           <div className="con">
           <form>
-          {/* <i id="icon1" className="material-icons prefix">mail</i> */}
+       
           
             <input
               className="in1"
