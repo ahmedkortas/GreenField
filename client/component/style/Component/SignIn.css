@@ -9,7 +9,7 @@
  .bl {
   background:rgb(34, 34, 218);
   color: #ccc;
-  margin-top: -100px;
+  margin-top: -30px;
   width: 270px;
   height: 60px;
   border: 1px solid rgb(7, 7, 74);
@@ -69,20 +69,25 @@
  }
 
 .btn0 {
-  margin-top: 230px;
-  margin-left: 585px;
+  margin-top: 100px;
+  margin-left: 615px;
+
   text-decoration: underline;
   cursor: pointer;
+  color: black;
+  font-weight: bold;
 }
 
 #icon2{
   margin-top: 90px;
   margin-left: 320px;
+  
 }
 
 #icon1{
   margin-top: 40px;
   margin-left: 320px;
+  
 }
 
 .i2{
@@ -94,7 +99,7 @@
 }
 
 #sign{
-  width: 180px;
-height: 40px;
-margin-left: 40px;
+  width: 200px;
+height: 60px;
+margin-left: 10px;
 }

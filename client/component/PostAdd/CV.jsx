@@ -57,35 +57,36 @@ class CV extends React.Component {
         <div >
           <div className="con">
           <form>
-          <i id="icon1" className="material-icons prefix">mail</i>
+          {/* <i id="icon1" className="material-icons prefix">mail</i> */}
+          
             <input
               className="in1"
               type="email"
               placeholder="Enter Email"
               onChange={this.handlEmailChange}
             ></input>
-            <i id="icon2" className="material-icons prefix">language</i>
+            {/* <i id="icon2" className="material-icons prefix">language</i> */}
             <input            
               className="in2"
               type="languages"
               placeholder="Enter languages"
               onChange={this.handleLanguage}
             ></input>
-            <i id="icon3" className="material-icons prefix">school</i>
+            {/* <i id="icon3" className="material-icons prefix">school</i> */}
             <input
               className="in3"
               type="text"
               placeholder="Enter your Diploma"
               onChange={this.handleDiplome}
             ></input>
-            <i id="icon4" className="material-icons prefix">message</i>
+            {/* <i id="icon4" className="material-icons prefix">message</i> */}
               <input
               className="in4"
               type="text"
               placeholder="Enter your Description"
               onChange={this.handlDescritpion}
             ></input>
-            <i id="icon5" className="material-icons prefix">work</i>
+            {/* <i id="icon5" className="material-icons prefix">work</i> */}
             <textarea
               className="in5"
               type="text"

@@ -2,7 +2,6 @@ let route = require("express").Router();
 let { createUser, findOnebyEmail } = require("../../db/user.js");
 
 route.post("/SingUp", (req, res) => {
-  // console.log("qweqweqwe");
   let obj = {
     userName: req.body.userName,
     email: req.body.email,
@@ -12,7 +11,7 @@ route.post("/SingUp", (req, res) => {
     phone: req.body.phone,
     age: req.body.age,
   };
-  console.log(obj);
+
   if (
     obj.email === undefined ||
     obj.password === undefined ||
@@ -20,7 +19,6 @@ route.post("/SingUp", (req, res) => {
   ) {
     res.status(301).send();
   } else {
-    console.log(obj);
     createUser(obj)
       .then((data) => {
         res.send(data);
@@ -28,14 +26,17 @@ route.post("/SingUp", (req, res) => {
 
       .catch((err) => {
         res.send(err);
-
       });
   }
 });
 
+route.post("/info", (req, res) => {
+  findOnebyEmail(req.body).then((emai) => {
+    res.send(emai);
+  });
+});
 
 route.post("/SignIn", (req, res) => {
-  console.log(req.body)
   let obj = {
     email: req.body.email,
     password: req.body.password,
@@ -47,7 +48,6 @@ route.post("/SignIn", (req, res) => {
     .catch((err) => {
       res.send("does not exists");
     });
-
 });
 
 module.exports = route;

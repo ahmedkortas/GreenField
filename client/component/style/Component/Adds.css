@@ -19,6 +19,10 @@ body {
   width: 700px;
   margin-left: 400px;
 }
+.feed-list-item-poster{
+  font-family: Times New Roman;
+    font-weight: bold;
+}
 
 .feed-list-item-description {
   /* margin-top: 15px; */
@@ -27,7 +31,8 @@ body {
 }
 
 .feed-list-item-address {
-  font-family: Copperplate;
+  font-family: Times New Roman;
+  font-weight: bold;
 }
 .feed-list-item-title {
   font-size: 1.8em;

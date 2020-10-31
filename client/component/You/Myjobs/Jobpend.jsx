@@ -1,54 +1,50 @@
-import React from 'react'
+import React from "react";
 
-
-class  JobPend extends React.Component {
-    constructor(props){
-        super(props)
+class JobPend extends React.Component {
+  constructor(props) {
+    super(props);
     // state = {  }
+  }
 
-    }
-
-
-    render() { 
-      console.log(this.props.data)
-        return (        
-        <div className="feed">
+  render() {
+    console.log(this.props.data);
+    return (
+      <div className="feed">
         <ul>
           <li className="feed-list-item">
             <span className="feed-list-item-title">
-              {this.props.data[0].title} 
+              <strong> Title : </strong> {this.props.data.title}
             </span>
             <br></br>
             <br></br>
             <p className="feed-list-item-description">
-              {this.props.data[0].description} 
+              <strong> Description : </strong> {this.props.data.description}
             </p>{" "}
             <br></br>
             <span className="feed-list-item-poster">
-              {this.props.data[0].contact}
+              <strong> Contact : </strong> {this.props.data.contact}
             </span>
             <br></br>
             <br></br>
             <span className="feed-list-item-price">
               <strong> Earning: </strong>
-             {this.props.data[0].price}DT
+              {this.props.data.price}DT
             </span>
             <br></br>
             <br></br>
-             
             <span className="feed-list-item-address">
-            <strong> Location : </strong> {this.props.data[0].address}
+              <strong> Location : </strong> {this.props.data.address}
             </span>{" "}
             <br></br>
             <br></br>
             <span className="feed-list-item-poster">
-             <strong>Task applicant : </strong> {this.props.data[0].employeeEmail}
+              <strong>Task applicant : </strong> {this.props.data.employeeEmail}
             </span>
           </li>
         </ul>
       </div>
-      );
-    }
+    );
+  }
 }
- 
-export  default JobPend ;
+
+export default JobPend;

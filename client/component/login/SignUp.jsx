@@ -52,7 +52,7 @@ class SignUp extends React.Component {
             <label htmlFor="username">
               <b>UserName</b>
             </label>
-            <i className="material-icons prefix">person</i>
+            <i id="ic1" className="material-icons prefix">person</i>
             <input
               type="text"
               name="user"
@@ -65,7 +65,7 @@ class SignUp extends React.Component {
             <label htmlFor="email">
               <b>Email</b>
             </label>
-            <i className="material-icons prefix">mail</i>          
+            <i id="ic2" className="material-icons prefix">mail</i>          
             <input
               type="email"
               name="email"
@@ -78,7 +78,7 @@ class SignUp extends React.Component {
             <label htmlFor="password">
               <b>Password</b>
             </label>
-            <i className="material-icons prefix">vpn_key</i>
+            <i id="ic3" className="material-icons prefix">vpn_key</i>
             <input
               type="password"
               name="psw"
@@ -91,7 +91,7 @@ class SignUp extends React.Component {
             <label htmlFor="address">
               <b>Address</b>
             </label>
-            <i className="material-icons prefix">home</i>
+            <i id="ic4" className="material-icons prefix">home</i>
             <input
               type="text"
               name="address"
@@ -104,7 +104,7 @@ class SignUp extends React.Component {
             <label htmlFor="phone">
               <b>Phone</b>
             </label>
-            <i className="material-icons prefix">phone_iphone</i>
+            <i id="ic5" className="material-icons prefix">phone_iphone</i>
             <input
               type="text"
               name="phone"
@@ -117,7 +117,7 @@ class SignUp extends React.Component {
             <label className="gender" htmlFor="gender">
               <b className="c">Gender</b>
             </label>
-            <i className="material-icons prefix">accessibility</i>
+            <i id="ic6" className="material-icons prefix">accessibility</i>
             <select
               onChange={(e) => {
                 this.setState({ gender: e.target.value });
@@ -130,7 +130,7 @@ class SignUp extends React.Component {
             <label htmlFor="age">
               <b>Age</b>
             </label>
-            <i className="material-icons prefix">cake</i>
+            <i  id="ic7" className="material-icons prefix">cake</i>
             <input
               type="text"
               name="age"

@@ -30,11 +30,12 @@ module.exports.CreateJobInProgress = (obj) => {
     NewProgress.description = obj.description;
     NewProgress.contact = obj.contact;
     NewProgress.address = obj.address;
-    let des = NewProgress.description;
+    let description = NewProgress.description;
     /**
      * trying to find one to make extrat layer of protection
      */
-    JobInProgress.find({ employeeEmail, des }, (err, data) => {
+    console.log(NewProgress, "its me");
+    JobInProgress.find({ employeeEmail, description }, (err, data) => {
       if (err) return reject(err);
       if (data.length === 0) {
         //if no data found create a new one
@@ -67,13 +68,39 @@ module.exports.CreateJobInProgress = (obj) => {
 //   });
 // };
 
-module.exports.findAllJobinProg = (employeeEmail) => {
+module.exports.findAllJobinProg = (obj) => {
+  if (obj.employeeEmail !== undefined) {
+    let employeeEmail = obj.employeeEmail;
+    return new Promise((resolve, reject) => {
+      JobInProgress.find({ employeeEmail }, (err, data) => {
+        if (err) return reject(err);
+        else {
+          resolve(data);
+        }
+      });
+    });
+  } else {
+    return new Promise((resolve, reject) => {
+      let providerEmail = obj.providerEmail;
+      JobInProgress.find({ providerEmail }, (err, data) => {
+        if (err) return reject(err);
+        else {
+          resolve(data);
+        }
+      });
+    });
+  }
+};
+
+module.exports.findToDone = (description) => {
   return new Promise((resolve, reject) => {
-    JobInProgress.find({ employeeEmail }, function (err, data) {
+    JobInProgress.findOne({ description: description }, (err, data) => {
       if (err) return reject(err);
-      else {
-        resolve(data);
-      }
+      resolve(data);
     });
   });
+};
+
+module.exports.deletProg = (description) => {
+  return JobInProgress.deleteOne({ description });
 };
