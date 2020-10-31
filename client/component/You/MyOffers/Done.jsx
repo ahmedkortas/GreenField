@@ -1,5 +1,9 @@
 import React from "react";
+
+import "../../style/Component/Done.css"
+
 import axios from "axios";
+
 
 class Done extends React.Component {
   constructor(props) {
@@ -28,17 +32,17 @@ class Done extends React.Component {
     return (
       <div className="feed">
         <ul>
-          <li className="feed-list-item">
+          <li className="feed3-list-item">
             <br></br>
             <p className="feed-list-item-description">
               {this.props.data.description}{" "}
             </p>
             <br></br>
-            <span className="feed-list-item-poster"></span>
+            <span className="feed3-list-item-poster"></span>
             {this.props.data.contact}
             <br></br>
             <br></br>
-            <span className="feed-list-item-price">
+            <span className="feed3-list-item-price">
               <strong> Earning : </strong>
             </span>{" "}
             <span
@@ -48,12 +52,12 @@ class Done extends React.Component {
             </span>{" "}
             <br></br>
             <br></br>
-            <span className="feed-list-item-address">
+            <span className="feed3-list-item-address">
               <strong> Location : {this.props.data.address} </strong>
             </span>{" "}
             <br></br>
             <br></br>
-            <span className="feed-list-item-poster">
+            <span className="feed3-list-item-poster">
               <strong>Task applicant : </strong> {this.props.data.employeeEmail}
             </span>
             <input

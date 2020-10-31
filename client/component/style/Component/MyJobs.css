@@ -6,7 +6,7 @@
     /* padding-bottom: 2px; */
     transform: translate(-50, -50);
   }
-  
+
   .m {
     background: rgb(14, 193, 100);
     color: white;
@@ -20,11 +20,10 @@
     margin-top: -400px;
     margin-left: -630px;
   }
-  
   .m:focus {
     outline: none;
   }
-  
+
   .m:before {
     content: "";
     display: block;
@@ -38,7 +37,7 @@
     filter: blur(30px);
     transform: translateX(-130px) skewX(-15deg);
   }
-  
+
   .m:after {
     content: "";
     display: block;
@@ -52,27 +51,23 @@
     filter: blur(30px);
     transform: translateX(-100px) scaleX(-15deg);
   }
-  
+
   .m:hover {
     background: rgb(10, 96, 37);
     cursor: pointer;
   }
-  
+
   .m:hover:before {
     transform: translateX(300px) skewX(-15deg);
     opacity: 0.6;
     transition: 0.7s;
   }
-  
+
   .m:hover:after {
     transform: translateX(300px) skewX(-15deg);
     opacity: 1;
     transition: 0.7s;
   }
-  
-  
-  
-  
 
 .l {
     position: absolute;
@@ -81,7 +76,7 @@
     /* padding-bottom: 2px; */
     transform: translate(-50, -50);
   }
-  
+
   .l {
     background: rgb(14, 193, 100);
     color:white;
@@ -95,11 +90,10 @@
     margin-top: 170px;
     margin-left: 735px;
   }
-  
   .l:focus {
     outline: none;
   }
-  
+
   .l:before {
     content: "";
     display: block;
@@ -113,7 +107,7 @@
     filter: blur(30px);
     transform: translateX(-130px) skewX(-15deg);
   }
-  
+
   .l:after {
     content: "";
     display: block;
@@ -127,21 +121,20 @@
     filter: blur(30px);
     transform: translateX(-100px) scaleX(-15deg);
   }
-  
   .l:hover {
     background: rgb(10, 96, 37);
     cursor: pointer;
   }
-  
+
   .l:hover:before {
     transform: translateX(300px) skewX(-15deg);
     opacity: 0.6;
     transition: 0.7s;
   }
-  
+
   .l:hover:after {
     transform: translateX(300px) skewX(-15deg);
     opacity: 1;
     transition: 0.7s;
   }
-  
+

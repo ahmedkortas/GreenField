@@ -20,19 +20,16 @@ class MyJobs extends React.Component {
     e.preventDefault();
     this.setState({ view: "home" });
   }
-
   getJobiProg() {
     let obj = {
       employeeEmail: localStorage.getItem("currentUser"),
     };
-
     axios.post("/Task/findProg", obj).then((response) => {
       if (this.state.data.length !== response.data.length) {
         this.setState({ data: response.data });
       }
     });
   }
-
   render() {
     this.getJobiProg();
     return (
@@ -57,5 +54,4 @@ class MyJobs extends React.Component {
     );
   }
 }
-
 export default MyJobs;
